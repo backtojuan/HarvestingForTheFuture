@@ -1,0 +1,9 @@
+C:\Users\1007836893\source\repos\DataRequestment\model\bin\Debug\model.dll
+C:\Users\1007836893\source\repos\DataRequestment\model\bin\Debug\model.pdb
+C:\Users\1007836893\source\repos\DataRequestment\model\bin\Debug\Newtonsoft.Json.dll
+C:\Users\1007836893\source\repos\DataRequestment\model\bin\Debug\SODA.dll
+C:\Users\1007836893\source\repos\DataRequestment\model\bin\Debug\Newtonsoft.Json.xml
+C:\Users\1007836893\source\repos\DataRequestment\model\obj\Debug\model.csprojAssemblyReference.cache
+C:\Users\1007836893\source\repos\DataRequestment\model\obj\Debug\model.csproj.CopyComplete
+C:\Users\1007836893\source\repos\DataRequestment\model\obj\Debug\model.dll
+C:\Users\1007836893\source\repos\DataRequestment\model\obj\Debug\model.pdb
