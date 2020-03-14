@@ -10,3 +10,15 @@ C:\Users\1007836893\source\repos\DataRequestment\gui\obj\Debug\gui.csproj.Genera
 C:\Users\1007836893\source\repos\DataRequestment\gui\obj\Debug\gui.csproj.CopyComplete
 C:\Users\1007836893\source\repos\DataRequestment\gui\obj\Debug\gui.exe
 C:\Users\1007836893\source\repos\DataRequestment\gui\obj\Debug\gui.pdb
+C:\Users\Usuario\source\repos\DataRequestment\gui\bin\Debug\gui.exe.config
+C:\Users\Usuario\source\repos\DataRequestment\gui\bin\Debug\gui.exe
+C:\Users\Usuario\source\repos\DataRequestment\gui\bin\Debug\gui.pdb
+C:\Users\Usuario\source\repos\DataRequestment\gui\bin\Debug\model.dll
+C:\Users\Usuario\source\repos\DataRequestment\gui\bin\Debug\model.pdb
+C:\Users\Usuario\source\repos\DataRequestment\gui\obj\Debug\gui.csprojAssemblyReference.cache
+C:\Users\Usuario\source\repos\DataRequestment\gui\obj\Debug\gui.DataReader.resources
+C:\Users\Usuario\source\repos\DataRequestment\gui\obj\Debug\gui.Properties.Resources.resources
+C:\Users\Usuario\source\repos\DataRequestment\gui\obj\Debug\gui.csproj.GenerateResource.cache
+C:\Users\Usuario\source\repos\DataRequestment\gui\obj\Debug\gui.csproj.CopyComplete
+C:\Users\Usuario\source\repos\DataRequestment\gui\obj\Debug\gui.exe
+C:\Users\Usuario\source\repos\DataRequestment\gui\obj\Debug\gui.pdb

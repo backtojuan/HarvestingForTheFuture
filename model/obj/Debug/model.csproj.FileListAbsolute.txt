@@ -7,3 +7,12 @@ C:\Users\1007836893\source\repos\DataRequestment\model\obj\Debug\model.csprojAss
 C:\Users\1007836893\source\repos\DataRequestment\model\obj\Debug\model.csproj.CopyComplete
 C:\Users\1007836893\source\repos\DataRequestment\model\obj\Debug\model.dll
 C:\Users\1007836893\source\repos\DataRequestment\model\obj\Debug\model.pdb
+C:\Users\Usuario\source\repos\DataRequestment\model\bin\Debug\model.dll
+C:\Users\Usuario\source\repos\DataRequestment\model\bin\Debug\model.pdb
+C:\Users\Usuario\source\repos\DataRequestment\model\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Usuario\source\repos\DataRequestment\model\bin\Debug\SODA.dll
+C:\Users\Usuario\source\repos\DataRequestment\model\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Usuario\source\repos\DataRequestment\model\obj\Debug\model.csprojAssemblyReference.cache
+C:\Users\Usuario\source\repos\DataRequestment\model\obj\Debug\model.csproj.CopyComplete
+C:\Users\Usuario\source\repos\DataRequestment\model\obj\Debug\model.dll
+C:\Users\Usuario\source\repos\DataRequestment\model\obj\Debug\model.pdb

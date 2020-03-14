@@ -16,37 +16,37 @@ namespace model
         private string Date;
         private string EnvironmentalAuthority;
         private string StationName;
-        private string Tecnology;
+        private string Technology;
         private string Latitude;
-        private string Length;
+        private string Longitude;
         private string DepartmentCode;
-        private string Department;
+        private string DepartmentName;
         private string MunicipalityCode;
         private string MunicipalityName;
-        private string TypeOfStation;
-        private string ExhibithionTime;
+        private string TypeofStation;
+        private string ExhibitionTime;
         private string Variable;
         private string Units;
         private string Concentration;
 
 
         //This method allows to return an specific query
-        public Data(string Date, string EnvironmentalAuthority, string StationName, string Tecnology, string Latitude, string Length,
-                string DepartmentCode, string Department, string MunicipalityCode, string MunicipalityName, string TypeOfStation, string ExhibithionTime,
-               string Variable, string Units, string Concentration)
+        public Data(string Date, string EnvironmentalAuthority, string StationName, string Technology, string Latitude, 
+            string Longitude, string DepartmentCode, string DepartmentName, string MunicipalityCode, string MunicipalityName,
+            string TypeofStation, string ExhibitionTime, string Variable, string Units, string Concentration)
         {
             this.Date = Date;
             this.EnvironmentalAuthority = EnvironmentalAuthority;
             this.StationName = StationName;
-            this.Tecnology = Tecnology;
+            this.Technology = Technology;
             this.Latitude = Latitude;
-            this.Length = Length;
+            this.Longitude = Longitude;
             this.DepartmentCode = DepartmentCode;
-            this.Department = Department;
+            this.DepartmentName = DepartmentName;
             this.MunicipalityCode = MunicipalityCode;
             this.MunicipalityName = MunicipalityName;
-            this.TypeOfStation = TypeOfStation;
-            this.ExhibithionTime = ExhibithionTime;
+            this.TypeofStation = TypeofStation;
+            this.ExhibitionTime = ExhibitionTime;
             this.Variable = Variable;
             this.Units = Units;
             this.Concentration = Concentration;
@@ -55,15 +55,15 @@ namespace model
         public string GetDate { get => Date; set => Date = value; }
         public string GetEnvironmentalAuthority { get => EnvironmentalAuthority; set => EnvironmentalAuthority = value; }
         public string GetStationName { get => StationName; set => StationName = value; }
-        public string GetTecnology { get => Tecnology; set => Tecnology = value; }
+        public string GetTechnology { get => Technology; set => Technology = value; }
         public string GetLatitude { get => Latitude; set => Latitude = value; }
-        public string GetLength { get => Length; set => Length = value; }
+        public string GetLongitude { get => Longitude; set => Longitude = value; }
         public string GetDepartmentCode { get => DepartmentCode; set => DepartmentCode = value; }
-        public string GetDepartment { get => Department; set => Department = value; }
+        public string GetDepartmentName { get => DepartmentName; set => DepartmentName = value; }
         public string GetMunicipalityCode { get => MunicipalityCode; set => MunicipalityCode = value; }
         public string GetMunicipalityName { get => MunicipalityName; set => MunicipalityName = value; }
-        public string GetTypeOfStation { get => TypeOfStation; set => TypeOfStation = value; }
-        public string GetExhibithionTime { get => ExhibithionTime; set => ExhibithionTime = value; }
+        public string GetTypeofStation { get => TypeofStation; set => TypeofStation = value; }
+        public string GetExhibitionTime { get => ExhibitionTime; set => ExhibitionTime = value; }
         public string GetVariable { get => Variable; set => Variable = value; }
         public string GetUnits { get => Units; set => Units = value; }
         public string GetConcentration { get => Concentration; set => Concentration = value; }
@@ -71,8 +71,11 @@ namespace model
 
         public String toString()
         {
-            return Date + EnvironmentalAuthority + StationName + Tecnology + Latitude + Latitude + Length + DepartmentCode + Department + MunicipalityCode + MunicipalityName + TypeOfStation
-                + ExhibithionTime + Variable + Units + Concentration;
+            return "Date: " + Date + " Authority: " + EnvironmentalAuthority + " Station: " + StationName + 
+                " Tech: " + Technology + " Latitude: " + Latitude + " Longitude: " + Longitude +
+                " DepCode: " + DepartmentCode + " DepName: " + DepartmentName + " MunCode: " + MunicipalityCode + 
+                " MunName: " + MunicipalityName + " TypeStation " + TypeofStation + " ExhTime: " + ExhibitionTime +
+                " Var: " + Variable + " Units: " + Units + " Concentration: " + Concentration + "\n" + "\n";
         }
     }
 
