@@ -22,3 +22,15 @@ C:\Users\Usuario\source\repos\DataRequestment\gui\obj\Debug\gui.csproj.GenerateR
 C:\Users\Usuario\source\repos\DataRequestment\gui\obj\Debug\gui.csproj.CopyComplete
 C:\Users\Usuario\source\repos\DataRequestment\gui\obj\Debug\gui.exe
 C:\Users\Usuario\source\repos\DataRequestment\gui\obj\Debug\gui.pdb
+D:\R00TKIT\Downloads\DataRequestment\gui\bin\Debug\gui.exe.config
+D:\R00TKIT\Downloads\DataRequestment\gui\bin\Debug\gui.exe
+D:\R00TKIT\Downloads\DataRequestment\gui\bin\Debug\gui.pdb
+D:\R00TKIT\Downloads\DataRequestment\gui\bin\Debug\model.dll
+D:\R00TKIT\Downloads\DataRequestment\gui\bin\Debug\model.pdb
+D:\R00TKIT\Downloads\DataRequestment\gui\obj\Debug\gui.csprojAssemblyReference.cache
+D:\R00TKIT\Downloads\DataRequestment\gui\obj\Debug\gui.DataReader.resources
+D:\R00TKIT\Downloads\DataRequestment\gui\obj\Debug\gui.Properties.Resources.resources
+D:\R00TKIT\Downloads\DataRequestment\gui\obj\Debug\gui.csproj.GenerateResource.cache
+D:\R00TKIT\Downloads\DataRequestment\gui\obj\Debug\gui.csproj.CopyComplete
+D:\R00TKIT\Downloads\DataRequestment\gui\obj\Debug\gui.exe
+D:\R00TKIT\Downloads\DataRequestment\gui\obj\Debug\gui.pdb

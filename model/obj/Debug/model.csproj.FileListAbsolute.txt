@@ -16,3 +16,12 @@ C:\Users\Usuario\source\repos\DataRequestment\model\obj\Debug\model.csprojAssemb
 C:\Users\Usuario\source\repos\DataRequestment\model\obj\Debug\model.csproj.CopyComplete
 C:\Users\Usuario\source\repos\DataRequestment\model\obj\Debug\model.dll
 C:\Users\Usuario\source\repos\DataRequestment\model\obj\Debug\model.pdb
+D:\R00TKIT\Downloads\DataRequestment\model\bin\Debug\model.dll
+D:\R00TKIT\Downloads\DataRequestment\model\bin\Debug\model.pdb
+D:\R00TKIT\Downloads\DataRequestment\model\bin\Debug\Newtonsoft.Json.dll
+D:\R00TKIT\Downloads\DataRequestment\model\bin\Debug\SODA.dll
+D:\R00TKIT\Downloads\DataRequestment\model\bin\Debug\Newtonsoft.Json.xml
+D:\R00TKIT\Downloads\DataRequestment\model\obj\Debug\model.csprojAssemblyReference.cache
+D:\R00TKIT\Downloads\DataRequestment\model\obj\Debug\model.csproj.CopyComplete
+D:\R00TKIT\Downloads\DataRequestment\model\obj\Debug\model.dll
+D:\R00TKIT\Downloads\DataRequestment\model\obj\Debug\model.pdb

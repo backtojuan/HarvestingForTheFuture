@@ -30,6 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataReader));
             this.dataview = new System.Windows.Forms.ListView();
+            this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.EnviromentalAuthority = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.StationName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Technology = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Latitude = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Longitude = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DepartmentCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DepartmentName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MunicipalityCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MunicipalityName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TypeOfStation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ExhibitionTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Variable = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Units = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Concentration = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnsfilter = new System.Windows.Forms.ComboBox();
             this.selectcolumn = new System.Windows.Forms.Label();
             this.limit = new System.Windows.Forms.TextBox();
@@ -40,18 +55,110 @@
             this.condition = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.value = new System.Windows.Forms.TextBox();
-            this.filter = new System.Windows.Forms.Button();
+            this.Filter = new System.Windows.Forms.Button();
             this.title = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dataview
             // 
+            this.dataview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Date,
+            this.EnviromentalAuthority,
+            this.StationName,
+            this.Technology,
+            this.Latitude,
+            this.Longitude,
+            this.DepartmentCode,
+            this.DepartmentName,
+            this.MunicipalityCode,
+            this.MunicipalityName,
+            this.TypeOfStation,
+            this.ExhibitionTime,
+            this.Variable,
+            this.Units,
+            this.Concentration});
             this.dataview.HideSelection = false;
             this.dataview.Location = new System.Drawing.Point(12, 167);
             this.dataview.Name = "dataview";
             this.dataview.Size = new System.Drawing.Size(1102, 372);
             this.dataview.TabIndex = 0;
             this.dataview.UseCompatibleStateImageBehavior = false;
+            this.dataview.View = System.Windows.Forms.View.Details;
+            // 
+            // Date
+            // 
+            this.Date.Text = "Date";
+            this.Date.Width = 145;
+            // 
+            // EnviromentalAuthority
+            // 
+            this.EnviromentalAuthority.Text = "EnviromentalAuthority";
+            this.EnviromentalAuthority.Width = 115;
+            // 
+            // StationName
+            // 
+            this.StationName.Text = "StationName";
+            this.StationName.Width = 120;
+            // 
+            // Technology
+            // 
+            this.Technology.Text = "Technology";
+            this.Technology.Width = 120;
+            // 
+            // Latitude
+            // 
+            this.Latitude.Text = "Latitude";
+            this.Latitude.Width = 120;
+            // 
+            // Longitude
+            // 
+            this.Longitude.Text = "Longitude";
+            this.Longitude.Width = 120;
+            // 
+            // DepartmentCode
+            // 
+            this.DepartmentCode.Text = "Department Code";
+            this.DepartmentCode.Width = 120;
+            // 
+            // DepartmentName
+            // 
+            this.DepartmentName.Text = "Department Name";
+            this.DepartmentName.Width = 120;
+            // 
+            // MunicipalityCode
+            // 
+            this.MunicipalityCode.Text = "Municipality Code";
+            this.MunicipalityCode.Width = 120;
+            // 
+            // MunicipalityName
+            // 
+            this.MunicipalityName.Text = "Municipality Name";
+            this.MunicipalityName.Width = 120;
+            // 
+            // TypeOfStation
+            // 
+            this.TypeOfStation.Text = "Type Of Station";
+            this.TypeOfStation.Width = 120;
+            // 
+            // ExhibitionTime
+            // 
+            this.ExhibitionTime.Text = "Exhibition Time";
+            this.ExhibitionTime.Width = 100;
+            // 
+            // Variable
+            // 
+            this.Variable.Text = "Variable";
+            this.Variable.Width = 70;
+            // 
+            // Units
+            // 
+            this.Units.Text = "Units";
+            this.Units.Width = 80;
+            // 
+            // Concentration
+            // 
+            this.Concentration.Text = "Concentration";
+            this.Concentration.Width = 80;
             // 
             // columnsfilter
             // 
@@ -165,26 +272,25 @@
             this.value.Size = new System.Drawing.Size(100, 20);
             this.value.TabIndex = 10;
             // 
-            // filter
+            // Filter
             // 
-            this.filter.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.filter.Location = new System.Drawing.Point(840, 105);
-            this.filter.Name = "filter";
-            this.filter.Size = new System.Drawing.Size(128, 40);
-            this.filter.TabIndex = 11;
-            this.filter.Text = "FILTER";
-            this.filter.UseVisualStyleBackColor = true;
-            this.filter.Click += new System.EventHandler(this.filter_Click);
+            this.Filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Filter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Filter.Location = new System.Drawing.Point(840, 105);
+            this.Filter.Name = "Filter";
+            this.Filter.Size = new System.Drawing.Size(128, 40);
+            this.Filter.TabIndex = 11;
+            this.Filter.Text = "FILTER";
+            this.Filter.UseVisualStyleBackColor = true;
             // 
             // title
             // 
             this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.title.Location = new System.Drawing.Point(434, 9);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(196, 24);
+            this.title.Size = new System.Drawing.Size(190, 25);
             this.title.TabIndex = 12;
             this.title.Text = "Data Requestment";
             // 
@@ -196,7 +302,7 @@
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(1126, 551);
             this.Controls.Add(this.title);
-            this.Controls.Add(this.filter);
+            this.Controls.Add(this.Filter);
             this.Controls.Add(this.value);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.condition);
@@ -231,8 +337,22 @@
         private System.Windows.Forms.ComboBox condition;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox value;
-        private System.Windows.Forms.Button filter;
+        private System.Windows.Forms.Button Filter;
         private System.Windows.Forms.Label title;
+        private System.Windows.Forms.ColumnHeader Date;
+        private System.Windows.Forms.ColumnHeader EnviromentalAuthority;
+        private System.Windows.Forms.ColumnHeader StationName;
+        private System.Windows.Forms.ColumnHeader Technology;
+        private System.Windows.Forms.ColumnHeader Latitude;
+        private System.Windows.Forms.ColumnHeader Longitude;
+        private System.Windows.Forms.ColumnHeader DepartmentCode;
+        private System.Windows.Forms.ColumnHeader DepartmentName;
+        private System.Windows.Forms.ColumnHeader MunicipalityCode;
+        private System.Windows.Forms.ColumnHeader MunicipalityName;
+        private System.Windows.Forms.ColumnHeader TypeOfStation;
+        private System.Windows.Forms.ColumnHeader ExhibitionTime;
+        private System.Windows.Forms.ColumnHeader Variable;
+        private System.Windows.Forms.ColumnHeader Units;
+        private System.Windows.Forms.ColumnHeader Concentration;
     }
 }
-

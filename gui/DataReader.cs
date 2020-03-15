@@ -16,7 +16,6 @@ namespace gui
         public DataReader()
         {
             InitializeComponent();
-            initializelistview();
             User user = new User();
             user.Load(0, 0, "");
             
@@ -24,38 +23,24 @@ namespace gui
 
             foreach (Data row in data)
             {
-                dataview.Items.Add(new ListViewItem(new String[] { row.GetDate + "" + row.GetEnvironmentalAuthority + "" + row.GetStationName
-                 + "" + row.GetTechnology + "" + row.GetLatitude + "" + row.GetLongitude + "" + row.GetDepartmentCode + "" +
-                 row.GetDepartmentName + "" + row.GetMunicipalityCode + row.GetMunicipalityName + "" + row.GetTypeofStation
-                 + "" + row.GetExhibitionTime + "" + row.GetVariable + "" + "" + row.GetUnits + "" + row.GetConcentration}));
+                ListViewItem List = new ListViewItem(row.GetDate);
+                List.SubItems.Add(row.GetEnvironmentalAuthority);
+                List.SubItems.Add(row.GetStationName);
+                List.SubItems.Add(row.GetTechnology);
+                List.SubItems.Add(row.GetLatitude);
+                List.SubItems.Add(row.GetLongitude);
+                List.SubItems.Add(row.GetDepartmentCode);
+                List.SubItems.Add(row.GetDepartmentName);
+                List.SubItems.Add(row.GetMunicipalityCode);
+                List.SubItems.Add(row.GetMunicipalityName);
+                List.SubItems.Add(row.GetTypeofStation);
+                List.SubItems.Add(row.GetExhibitionTime);
+                List.SubItems.Add(row.GetVariable);
+                List.SubItems.Add(row.GetUnits);
+                List.SubItems.Add(row.GetConcentration);
+
+                dataview.Items.Add(List);
             }
-        }
-
-        public void initializelistview() 
-        {
-            dataview.View = View.Details;
-            dataview.Columns.Add("Date");
-            dataview.Columns.Add("EnviromentalAuthority");
-            dataview.Columns.Add("StationName");
-            dataview.Columns.Add("Technology");
-            dataview.Columns.Add("Latitude");
-            dataview.Columns.Add("Longitude");
-            dataview.Columns.Add("DepartmentCode");
-            dataview.Columns.Add("DepartmentName");
-            dataview.Columns.Add("MunicipalityCode");
-            dataview.Columns.Add("MunicipalityName");
-            dataview.Columns.Add("TypeofStation");
-            dataview.Columns.Add("ExhibitionTime");
-            dataview.Columns.Add("Variable");
-            dataview.Columns.Add("Units");
-            dataview.Columns.Add("Concentration");
-            //dataview.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            
-        }
-
-        private void filter_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
