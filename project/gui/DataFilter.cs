@@ -22,18 +22,19 @@ namespace gui
             //Initialize a label tag
             Label label = new Label();
             label.Text = "DATA RESULTS";
-            label.ForeColor = Color.White;
-            label.Location = new Point(25,25);
+            label.ForeColor = Color.Black;
+            label.Location = new Point(25, 25);
             this.Controls.Add(label);
             label.Show();
 
             //initializes a button to close the form mandatory
             Button button = new Button();
             button.Text = "Accept";
-            button.BackColor = Color.DarkGray;
+            button.BackColor = Color.Transparent;
             button.ForeColor = Color.Black;
-            button.Location = new Point(150,20);
+            button.Location = new Point(150, 20);
             button.Size = new Size(100, 25);
+            button.Cursor = Cursors.Hand;
             button.Click += (sender, args) =>
             {
                 this.Close();
@@ -42,6 +43,120 @@ namespace gui
             button.Show();
         }
 
+        /**
+         * This method initializes the data grid with when one column has been selected to be shown
+         */
+        public void FillDataGridViewColumn(String column, List<Data> data)
+        {
+            data.Reverse();
+            datagridview = new DataGridView();
+            datagridview.Columns.Add(column, column);
+
+            datagridview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            datagridview.Location = new Point(25, 50);
+            datagridview.Size = new Size(950, 250);
+            datagridview.AllowUserToAddRows = false;
+
+            foreach (Data row in data)
+            {
+                int i = datagridview.Rows.Add();
+
+                if (column.Equals("Date"))
+                {
+                    datagridview.Rows[i].Cells[0].Value = row.GetDate;
+                    this.Controls.Add(datagridview);
+                    datagridview.Show();
+                }
+                else if (column.Equals("Enviromental authority"))
+                {
+                    datagridview.Rows[i].Cells[0].Value = row.GetEnvironmentalAuthority;
+                    this.Controls.Add(datagridview);
+                    datagridview.Show();
+                }
+                else if (column.Equals("Station name"))
+                {
+                    datagridview.Rows[i].Cells[0].Value = row.GetStationName;
+                    this.Controls.Add(datagridview);
+                    datagridview.Show();
+                }
+                else if (column.Equals("Technology"))
+                {
+                    datagridview.Rows[i].Cells[0].Value = row.GetTechnology;
+                    this.Controls.Add(datagridview);
+                    datagridview.Show();
+                }
+                else if (column.Equals("Latitude"))
+                {
+                    datagridview.Rows[i].Cells[0].Value = row.GetLatitude;
+                    this.Controls.Add(datagridview);
+                    datagridview.Show();
+                }
+                else if (column.Equals("Longitude"))
+                {
+                    datagridview.Rows[i].Cells[0].Value = row.GetLongitude;
+                    this.Controls.Add(datagridview);
+                    datagridview.Show();
+                }
+                else if (column.Equals("Department name"))
+                {
+                    datagridview.Rows[i].Cells[0].Value = row.GetDepartmentName;
+                    this.Controls.Add(datagridview);
+                    datagridview.Show();
+                }
+                else if (column.Equals("Department code"))
+                {
+                    datagridview.Rows[i].Cells[0].Value = row.GetDepartmentCode;
+                    this.Controls.Add(datagridview);
+                    datagridview.Show();
+                }
+                else if (column.Equals("Municipality name"))
+                {   
+                    datagridview.Rows[i].Cells[0].Value = row.GetMunicipalityName;
+                    this.Controls.Add(datagridview);
+                    datagridview.Show();
+                }
+                else if (column.Equals("Municipality code"))
+                {
+                    datagridview.Rows[i].Cells[0].Value = row.GetMunicipalityCode;
+                    this.Controls.Add(datagridview);
+                    datagridview.Show();
+                }
+                else if (column.Equals("Type of station"))
+                {
+                    datagridview.Rows[i].Cells[0].Value = row.GetTypeofStation;
+                    this.Controls.Add(datagridview);
+                    datagridview.Show();
+                }
+                else if (column.Equals("Exhibition time"))
+                {
+                    datagridview.Rows[i].Cells[0].Value = row.GetExhibitionTime;
+                    this.Controls.Add(datagridview);
+                    datagridview.Show();
+                }
+                else if (column.Equals("Variable"))
+                {
+                    datagridview.Rows[i].Cells[0].Value = row.GetVariable;
+                    this.Controls.Add(datagridview);
+                    datagridview.Show();
+                }
+                else if (column.Equals("Units"))
+                {
+                    datagridview.Rows[i].Cells[0].Value = row.GetUnits;
+                    this.Controls.Add(datagridview);
+                    datagridview.Show();
+                }
+                else if (column.Equals("Concentration"))
+                {
+                    datagridview.Rows[i].Cells[0].Value = row.GetConcentration;
+                    this.Controls.Add(datagridview);
+                    datagridview.Show();
+                }
+            }
+        }
+
+        /**
+        * This method initializes the data grid with when all columns has to be shown
+        */
         public void FillDataGridView(List<Data> data)
         {
             data.Reverse();
@@ -66,7 +181,7 @@ namespace gui
             foreach (Data row in data)
             {
                 int i = datagridview.Rows.Add();
-                    
+
                 datagridview.Rows[i].Cells[0].Value = row.GetDate;
                 datagridview.Rows[i].Cells[1].Value = row.GetEnvironmentalAuthority;
                 datagridview.Rows[i].Cells[2].Value = row.GetStationName;
@@ -84,68 +199,12 @@ namespace gui
                 datagridview.Rows[i].Cells[14].Value = row.GetConcentration;
             }
             datagridview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            datagridview.Location = new Point(25,50);
-            datagridview.Size = new Size(950,250);
+            datagridview.Location = new Point(25, 50);
+            datagridview.Size = new Size(950, 250);
             datagridview.AllowUserToAddRows = false;
 
-            //this.Controls.Add(datagridview);
-            //datagridview.Show();
-        }
-
-        public void FillDataListView(List<Data> data) 
-        {
-            data.Reverse();
-            ListView dataview = new ListView();
-
-            dataview.View = View.Details;
-
-            dataview.Columns.Add("Date", "Date");
-            dataview.Columns.Add("EnviromentalAuthority", "EnviromentalAuthority");
-            dataview.Columns.Add("StationName", "StationName");
-            dataview.Columns.Add("Technology", "Technology");
-            dataview.Columns.Add("Latitude", "Latitude");
-            dataview.Columns.Add("Longitude", "Longitude");
-            dataview.Columns.Add("DepartmentCode", "DepartmentCode");
-            dataview.Columns.Add("DepartmentName", "DepartmentName");
-            dataview.Columns.Add("MunicipalityCode", "MunicipalityCode");
-            dataview.Columns.Add("MunicipalityName", "MunicipalityName");
-            dataview.Columns.Add("TypeofStation", "TypeofStation");
-            dataview.Columns.Add("ExhibitionTime", "ExhibitionTime");
-            dataview.Columns.Add("Variable", "Variable");
-            dataview.Columns.Add("Units", "Units");
-            dataview.Columns.Add("Concentration", "Concentration");
-
-
-            foreach (Data row in data) 
-            {
-                ListViewItem list = new ListViewItem(row.GetDate);
-                list.SubItems.Add(row.GetEnvironmentalAuthority);
-                list.SubItems.Add(row.GetStationName);
-                list.SubItems.Add(row.GetTechnology);
-                list.SubItems.Add(row.GetLatitude);
-                list.SubItems.Add(row.GetLongitude);
-                list.SubItems.Add(row.GetDepartmentCode);
-                list.SubItems.Add(row.GetDepartmentName);
-                list.SubItems.Add(row.GetMunicipalityCode);
-                list.SubItems.Add(row.GetMunicipalityName);
-                list.SubItems.Add(row.GetTypeofStation);
-                list.SubItems.Add(row.GetExhibitionTime);
-                list.SubItems.Add(row.GetVariable);
-                list.SubItems.Add(row.GetUnits);
-                list.SubItems.Add(row.GetConcentration);
-
-                dataview.Items.Add(list);
-            }
-
-            dataview.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            dataview.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            dataview.Location = new Point(25,50);
-            dataview.Size = new Size(950,250);
-            dataview.BackColor = Color.DarkGray;
-            dataview.ForeColor = Color.Black;
-
-            this.Controls.Add(dataview);
-            dataview.Show();
+            this.Controls.Add(datagridview);
+            datagridview.Show();
         }
     }
 }

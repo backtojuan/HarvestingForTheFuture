@@ -12,7 +12,9 @@ namespace model
 
     public class Data
     {
-        //Each attribute represents an specific column
+        /**
+         * Each attribute represents an specific column, and all columns represent one single row
+         */
         private string Date;
         private string EnvironmentalAuthority;
         private string StationName;
@@ -30,7 +32,9 @@ namespace model
         private string Concentration;
 
 
-        //This method allows to return an specific query
+        /**
+         * This method allows to return an specific data row composed by every value in its respective column
+         */
         public Data(string Date, string EnvironmentalAuthority, string StationName, string Technology, string Latitude, 
             string Longitude, string DepartmentCode, string DepartmentName, string MunicipalityCode, string MunicipalityName,
             string TypeofStation, string ExhibitionTime, string Variable, string Units, string Concentration)
@@ -52,6 +56,9 @@ namespace model
             this.Concentration = Concentration;
         }
 
+        /**
+         * allows to get the value saved at that specified column for the current data row
+         */
         public string GetDate { get => Date; set => Date = value; }
         public string GetEnvironmentalAuthority { get => EnvironmentalAuthority; set => EnvironmentalAuthority = value; }
         public string GetStationName { get => StationName; set => StationName = value; }
@@ -68,7 +75,9 @@ namespace model
         public string GetUnits { get => Units; set => Units = value; }
         public string GetConcentration { get => Concentration; set => Concentration = value; }
 
-
+        /**
+         * Allows to get a report of the values for the current data row
+         */
         public String toString()
         {
             return "Date: " + Date + " Authority: " + EnvironmentalAuthority + " Station: " + StationName + 

@@ -25,3 +25,13 @@ D:\R00TKIT\Downloads\DataRequestment\model\obj\Debug\model.csprojAssemblyReferen
 D:\R00TKIT\Downloads\DataRequestment\model\obj\Debug\model.csproj.CopyComplete
 D:\R00TKIT\Downloads\DataRequestment\model\obj\Debug\model.dll
 D:\R00TKIT\Downloads\DataRequestment\model\obj\Debug\model.pdb
+C:\Users\Backtojuan\source\repos\DataRequestment\project\model\bin\Debug\model.dll
+C:\Users\Backtojuan\source\repos\DataRequestment\project\model\bin\Debug\model.pdb
+C:\Users\Backtojuan\source\repos\DataRequestment\project\model\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Backtojuan\source\repos\DataRequestment\project\model\bin\Debug\SODA.dll
+C:\Users\Backtojuan\source\repos\DataRequestment\project\model\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Backtojuan\source\repos\DataRequestment\project\model\obj\Debug\model.csprojAssemblyReference.cache
+C:\Users\Backtojuan\source\repos\DataRequestment\project\model\obj\Debug\model.csproj.CoreCompileInputs.cache
+C:\Users\Backtojuan\source\repos\DataRequestment\project\model\obj\Debug\model.csproj.CopyComplete
+C:\Users\Backtojuan\source\repos\DataRequestment\project\model\obj\Debug\model.dll
+C:\Users\Backtojuan\source\repos\DataRequestment\project\model\obj\Debug\model.pdb
