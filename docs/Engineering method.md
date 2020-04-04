@@ -20,3 +20,8 @@ El enlace al documento online puede encontrarse en la siguiente ruta:
 
 https://docs.google.com/document/d/1yQZmt9YjSDvwfbwIgBkVPWsaK4trMoxAsx0tyadINsg/edit?usp=sharing
 
+El enlace a la presentación puede encontrarse en la siguiente ruta:
+
+https://youtu.be/CGrg7A6ZSnA
+
+
