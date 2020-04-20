@@ -18,7 +18,7 @@ Esta entrega incluye los siguientes puntos:
 
   ____________________
 
-  El enlace al video de la presentación puede encontrarse en la siguiente [ruta](). 
+  El enlace al video de la presentación puede encontrarse en la siguiente [ruta](https://youtu.be/NyrlmUq8GKM). 
   
   ___________________
   

@@ -30,7 +30,7 @@ Esta entrega incluye los siguientes puntos:
     
     *Anexos*
     
-    Esta entrega incluye un [diccionario](https://github.com/backtojuan/HarvestingForTheFuture/tree/master/docs/2nd-delivery/DataDictionary.xlsx) de datos que permite conocer un poco acerca de los valores que se encuentran almacenados dentro del data set, así como algunos de los posibles valores para algunas de las columnas.
+    Esta entrega incluye un [diccionario](https://github.com/backtojuan/HarvestingForTheFuture/tree/master/docs/1st-delivery/DataDictionary.xlsx) de datos que permite conocer un poco acerca de los valores que se encuentran almacenados dentro del data set, así como algunos de los posibles valores para algunas de las columnas.
 
 _____________________________
 
