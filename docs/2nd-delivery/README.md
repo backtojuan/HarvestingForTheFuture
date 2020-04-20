@@ -6,7 +6,7 @@ Esta entrega incluye los siguientes puntos:
 
 - Especificación de requerimientos funcionales.
 
-- [Diagrama]() de clases del modelo. 
+- [Diagrama](https://drive.google.com/file/d/1khdktTyoYZpk3YOs77DdQqvVRXclhKrg/view?usp=sharing) de clases del modelo. 
 
 - Listado de responsabilidades a realizar por cada uno de los integrantes.
 
