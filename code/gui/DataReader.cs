@@ -417,20 +417,14 @@ namespace gui
                     {
                         user.Load(selected, request);
                         data = user.GetData();
-<<<<<<< HEAD
                         Save(data);
-=======
->>>>>>> ce52f85316d5bda4b9225a64481ba2e88fe36968
                         LaunchResults(selectedcolumn, selected, various, 0, 0);
                     }
                     else if (!this.amount.Text.Equals(""))
                     {
                         user.Load(selected, Convert.ToDouble(this.amount.Text), request);
                         data = user.GetData();
-<<<<<<< HEAD
                         Save(data);
-=======
->>>>>>> ce52f85316d5bda4b9225a64481ba2e88fe36968
                         LaunchResults(selectedcolumn, selected, various, 0, 0);
                     }
                 }
@@ -439,7 +433,6 @@ namespace gui
             {
                 ae.ToString();
                 ShowGeneralWarning();
-<<<<<<< HEAD
             }
         }
 
@@ -452,8 +445,6 @@ namespace gui
                 {
                     file.WriteLine(Row.toString());
                 }
-=======
->>>>>>> ce52f85316d5bda4b9225a64481ba2e88fe36968
             }
         }
     }
