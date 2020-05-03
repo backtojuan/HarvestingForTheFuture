@@ -439,7 +439,7 @@ namespace gui
         protected void Save(List<Data> List)
         {
             //Be careful, put the route on your own computer
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter("D:\\R00TKIT\\Downloads\\HarvestingForTheFuture\\code\\Data\\VALLE_DEL_CAUCA_Humedad_Relativa.csv"))
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter("D:\\R00TKIT\\Downloads\\HarvestingForTheFuture\\code\\Data\\VALLE_DEL_CAUCA\\Velocidad_del_Viento.csv"))
             {
                 foreach (Data Row in List)
                 {
