@@ -80,12 +80,11 @@ namespace model
          */
         public String toString()
         {
-            return "Date: " + Date + " Authority: " + EnvironmentalAuthority + " Station: " + StationName + 
-                " Tech: " + Technology + " Latitude: " + Latitude + " Longitude: " + Longitude +
-                " DepCode: " + DepartmentCode + " DepName: " + DepartmentName + " MunCode: " + MunicipalityCode + 
-                " MunName: " + MunicipalityName + " TypeStation " + TypeofStation + " ExhTime: " + ExhibitionTime +
-                " Var: " + Variable + " Units: " + Units + " Concentration: " + Concentration + "\n" + "\n";
+            return Date + ";" + EnvironmentalAuthority + ";" + StationName +
+                ";" + Technology + ";" + Latitude + ";" + Longitude +
+                ";" + DepartmentCode + ";" + DepartmentName + ";" + MunicipalityCode +
+                ";" + MunicipalityName + ";" + TypeofStation + ";" + ExhibitionTime +
+                ";" + Variable + ";" + Units + ";" + Concentration;
         }
     }
-
 }

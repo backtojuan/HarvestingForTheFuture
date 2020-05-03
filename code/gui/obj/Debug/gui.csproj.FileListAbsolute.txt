@@ -63,3 +63,17 @@ C:\Users\Backtojuan\source\repos\HarvestingForTheFuture\code\gui\obj\Debug\gui.c
 C:\Users\Backtojuan\source\repos\HarvestingForTheFuture\code\gui\obj\Debug\gui.csproj.CopyComplete
 C:\Users\Backtojuan\source\repos\HarvestingForTheFuture\code\gui\obj\Debug\gui.exe
 C:\Users\Backtojuan\source\repos\HarvestingForTheFuture\code\gui\obj\Debug\gui.pdb
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\gui\bin\Debug\gui.exe.config
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\gui\bin\Debug\gui.exe
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\gui\bin\Debug\gui.pdb
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\gui\bin\Debug\model.dll
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\gui\bin\Debug\model.pdb
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\gui\obj\Debug\gui.csprojAssemblyReference.cache
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\gui\obj\Debug\gui.DataReader.resources
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\gui\obj\Debug\gui.DataFilter.resources
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\gui\obj\Debug\gui.Properties.Resources.resources
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\gui\obj\Debug\gui.csproj.GenerateResource.cache
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\gui\obj\Debug\gui.csproj.CoreCompileInputs.cache
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\gui\obj\Debug\gui.csproj.CopyComplete
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\gui\obj\Debug\gui.exe
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\gui\obj\Debug\gui.pdb

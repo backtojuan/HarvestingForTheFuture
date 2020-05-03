@@ -27,7 +27,7 @@ namespace gui
         /**
          * Shows a warning message to user in the case that there isn't enough information to do the query
          */
-        private void ShowWarning()
+        private void ShowGeneralWarning()
         {
 
             MessageBox.Show("You need to enter the complete criteria to request the filtering, at least the maximum amount" +
@@ -35,16 +35,30 @@ namespace gui
                 "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        private void showLimitWarning()
+        {
+
+            MessageBox.Show("The limit must be a multiple of the amount of data you requesting",
+                "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
         /**
          * Launches a new form to show the results done with the current query
         */
-        private void LaunchResults(String value, Boolean column)
+        private void LaunchResults(String value, Boolean column, Boolean various, Double limit, Double amount)
         {
             DataFilter datafilter = new DataFilter();
 
-            if (!column)
+            if (!column & !various)
             {
                 datafilter.FillDataGridView(data);
+                datafilter.ShowDialog();
+            }
+            else if (various)
+            {
+                datafilter.setLimit(Convert.ToInt32(limit));
+                datafilter.setLimit(Convert.ToInt32(amount));
+                datafilter.FillDataGridViewVarious(data, limit);
                 datafilter.ShowDialog();
             }
             else
@@ -119,6 +133,8 @@ namespace gui
 
                 Boolean selected = false;
 
+                Boolean various = false;
+
                 if ((specifiedvaluefordate.Equals("date") && datevalue.Equals(""))
                     || (specifiedvalueforenviromentalauthority.Equals("enviromental authority") && (enviromentalauthorityvalue.Equals("")))
                     || (specifiedvaluefortechnology.Equals("technology") && technologyvalue.Equals(""))
@@ -135,96 +151,91 @@ namespace gui
                     || (specifiedvalueforunits.Equals("units") && unitsvalue.Equals(""))
                     || (specifiedvalueforconcentration.Equals("concentration") && concentrationvalue.Equals("")))
                 {
-                    ShowWarning();
+                    ShowGeneralWarning();
                 }
                 else
                 {
                     if (this.amount.Text.Equals("") == false)
                     {
-                        request += User.Amount + Convert.ToDouble(this.amount.Text);
+                        request += User.Limit + Convert.ToDouble(this.amount.Text);
                     }
 
-                    if (this.limit.Text.Equals("") == false)
-                    {
-                        request += User.Addition + User.Limit + Convert.ToDouble(this.limit.Text);
-                    }
-                       
                     if (specifiedvaluefordate.Equals("date"))
                     {
                         request += User.Addition + User.date + datevalue.Replace(" ", User.Space);
                     }
-                    
+
                     if (specifiedvalueforenviromentalauthority.Equals("enviromental authority"))
                     {
                         request += User.Addition + User.enviromentalauthority + enviromentalauthorityvalue.Replace(" ", User.Space);
                     }
-                    
+
                     if (specifiedvalueforstationname.Equals("station name"))
                     {
                         request += User.Addition + User.stationname + stationnamevalue.Replace(" ", User.Space);
                     }
-                    
+
                     if (specifiedvaluefortechnology.Equals("technology"))
                     {
                         request += User.Addition + User.technology + technologyvalue;
                     }
-                    
+
                     if (specifiedvalueforlatitude.Equals("latitude"))
                     {
                         if (latitudecondition.Equals("Less than"))
                         {
-                            request += User.Addition + User.Condition + User.latitude.Replace(User.latitude.Last(),'<') + latitudevalue;
+                            request += User.Addition + User.Condition + User.latitude.Replace(User.latitude.Last(), '<') + latitudevalue;
                         }
-                        
+
                         else if (latitudecondition.Equals("Bigger than"))
                         {
                             request += User.Addition + User.Condition + User.latitude.Replace(User.latitude.Last(), '>') + latitudevalue;
                         }
-                        
-                        else 
+
+                        else
                         {
                             request += User.Addition + User.latitude + latitudevalue;
                         }
                     }
-                    
+
                     if (specifiedvalueforlongitude.Equals("longitude"))
                     {
                         if (longitudecondition.Equals("Less than"))
                         {
                             request += User.Addition + User.Condition + User.longitude.Replace(User.longitude.Last(), '<') + longitudevalue;
                         }
-                        
+
                         else if (longitudecondition.Equals("Bigger than"))
                         {
                             request += User.Addition + User.Condition + User.longitude.Replace(User.longitude.Last(), '>') + longitudevalue;
                         }
-                        
+
                         else
                         {
                             request += User.Addition + User.longitude + longitudevalue;
                         }
                     }
-                    
+
                     if (specifiedvaluefordepname.Equals("department name"))
                     {
                         request += User.Addition + User.departmentname + depnamevalue.Replace(" ", User.Space);
                     }
-                    
+
                     if (specifiedvaluefordepcode.Equals("department code"))
                     {
                         request += User.Addition + User.departmentcode + depcodevalue;
                     }
-                    
+
                     if (specifiedvalueformunname.Equals("municipality name"))
                     {
                         request += User.Addition + User.municipalityname + munnamevalue.Replace(" ", User.Space);
                     }
-                    
+
                     if (specifiedvalueformuncode.Equals("municipality code"))
                     {
                         request += User.Addition + User.municipalitycode + muncodevalue;
                     }
-                    
+
                     if (specifiedvaluefortypeofstation.Equals("type of station"))
                     {
                         request += User.Addition + User.typeofstation + typeofstationvalue;
@@ -234,10 +245,10 @@ namespace gui
                     {
                         if (exhibitiontimecondition.Equals("Less than"))
                         {
-                            request += User.Addition + User.Condition + User.exhibitiontime.Replace(User.exhibitiontime.Last(), '<') 
+                            request += User.Addition + User.Condition + User.exhibitiontime.Replace(User.exhibitiontime.Last(), '<')
                                 + exhibitiontimevalue;
                         }
-                        
+
                         else if (exhibitiontimecondition.Equals("Bigger than"))
                         {
                             request += User.Addition + User.Condition + User.exhibitiontime.Replace(User.exhibitiontime.Last(), '>')
@@ -279,13 +290,14 @@ namespace gui
                             request += User.Addition + User.concentration + concentrationvalue;
                         }
                     }
+
                     if (selectedcolumn.Equals("") == false)
                     {
                         selected = true;
 
-                        if (selectedcolumn.Equals("Date")) 
+                        if (selectedcolumn.Equals("Date"))
                         {
-                            request += User.Addition + User.Selected + User.date.Replace(User.date.Last(), ' '); 
+                            request += User.Addition + User.Selected + User.date.Replace(User.date.Last(), ' ');
                         }
 
                         if (selectedcolumn.Equals("Enviromental authority"))
@@ -325,7 +337,7 @@ namespace gui
 
                         if (selectedcolumn.Equals("Municipality name"))
                         {
-                            request += User.Addition + User.Selected + User.municipalityname.Replace(User.municipalityname.Last(), ' ');                           
+                            request += User.Addition + User.Selected + User.municipalityname.Replace(User.municipalityname.Last(), ' ');
                         }
 
                         if (selectedcolumn.Equals("Municipality code"))
@@ -350,59 +362,89 @@ namespace gui
 
                         if (selectedcolumn.Equals("Units"))
                         {
-                            request += User.Addition + User.Selected + User.units.Replace(User.units.Last(), ' ');                            
+                            request += User.Addition + User.Selected + User.units.Replace(User.units.Last(), ' ');
                         }
 
                         if (selectedcolumn.Equals("Concentration"))
                         {
-                            request += User.Addition + User.Selected + User.concentration.Replace(User.concentration.Last(), ' ');                           
+                            request += User.Addition + User.Selected + User.concentration.Replace(User.concentration.Last(), ' ');
                         }
                     }
-                    if (!this.amount.Text.Equals("") && !this.limit.Text.Equals("")) 
-                    {
-                        Double amount = Convert.ToDouble(this.amount.Text);
-                        Double limit = Convert.ToDouble(this.limit.Text);
 
-                        if (limit < amount)
+                    if (this.limit.Text.Equals("") == false)
+                    {
+                        request += User.Addition + User.Amount + Convert.ToDouble(this.limit.Text);
+                    }
+
+                    if (!this.amount.Text.Equals("") && !this.limit.Text.Equals(""))
+                    {
+                        try
                         {
-                            if (amount % limit == 0)
-                            {                                
-                                Double i = limit;
-                                String replace = "" + limit;
-                                while (i < amount) 
+                            various = true;
+                            Double amount = Convert.ToDouble(this.amount.Text);
+                            Double limit = Convert.ToDouble(this.limit.Text);
+
+                            if (limit % amount == 0)
+                            {
+                                double repeats = limit / amount;
+
+
+                                String proof = "json " + request + "\n";
+                                proof += "limit " + limit + " amount " + (amount + amount) + "\n";
+                                for (int i = 1; i <= repeats; i++)
                                 {
-                                    request.Replace(replace, "" + i);                                    
-                                    i = i + limit;                                    
+                                    user.Load(selected, request);
+                                    request.Replace(User.Amount + limit, User.Amount + (amount + amount));
+                                    proof += "json " + request + "\n";
                                 }
+
+                                MessageBox.Show(proof);
+                                data = user.GetData();
+                                LaunchResults(selectedcolumn, selected, various, limit, amount);
                             }
-                            else 
-                            { 
-                            
+                            else
+                            {
+                                showLimitWarning();
                             }
                         }
-                        else 
-                        { 
-                        
+                        catch (ArithmeticException ae)
+                        {
+                            ae.ToString();
+                            showLimitWarning();
                         }
                     }
                     else if (this.amount.Text.Equals("") && this.limit.Text.Equals(""))
                     {
-                        user.Load(selected,request);
+                        user.Load(selected, request);
                         data = user.GetData();
-                        LaunchResults(selectedcolumn, selected);
+                        Save(data);
+                        LaunchResults(selectedcolumn, selected, various, 0, 0);
                     }
                     else if (!this.amount.Text.Equals(""))
                     {
-                        user.Load(selected, Convert.ToDouble(this.amount.Text),request);
+                        user.Load(selected, Convert.ToDouble(this.amount.Text), request);
                         data = user.GetData();
-                        LaunchResults(selectedcolumn, selected);
-                    }                    
+                        Save(data);
+                        LaunchResults(selectedcolumn, selected, various, 0, 0);
+                    }
                 }
             }
-            catch (InvalidCastException ae) 
+            catch (InvalidCastException ae)
             {
                 ae.ToString();
-                ShowWarning();
+                ShowGeneralWarning();
+            }
+        }
+
+        protected void Save(List<Data> List)
+        {
+            //Be careful, put the route on your own computer
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter("D:\\R00TKIT\\Downloads\\HarvestingForTheFuture\\code\\Data\\VALLE_DEL_CAUCA_Humedad_Relativa.csv"))
+            {
+                foreach (Data Row in List)
+                {
+                    file.WriteLine(Row.toString());
+                }
             }
         }
     }
