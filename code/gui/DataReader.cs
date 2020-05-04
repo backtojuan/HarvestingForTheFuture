@@ -27,11 +27,18 @@ namespace gui
         /**
          * Shows a warning message to user in the case that there isn't enough information to do the query
          */
-        private void ShowWarning()
+        private void ShowGeneralWarning()
         {
 
             MessageBox.Show("You need to enter the complete criteria to request the filtering, at least the maximum amount" +
                 "of data you want to be search",
+                "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void showLimitWarning()
+        {
+
+            MessageBox.Show("The limit must be a multiple of the amount of data you requesting",
                 "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
@@ -118,7 +125,7 @@ namespace gui
                 String selectedcolumn = this.columnsfilter.Text;
 
                 Boolean selected = false;
-
+             
                 if ((specifiedvaluefordate.Equals("date") && datevalue.Equals(""))
                     || (specifiedvalueforenviromentalauthority.Equals("enviromental authority") && (enviromentalauthorityvalue.Equals("")))
                     || (specifiedvaluefortechnology.Equals("technology") && technologyvalue.Equals(""))
@@ -135,96 +142,91 @@ namespace gui
                     || (specifiedvalueforunits.Equals("units") && unitsvalue.Equals(""))
                     || (specifiedvalueforconcentration.Equals("concentration") && concentrationvalue.Equals("")))
                 {
-                    ShowWarning();
+                    ShowGeneralWarning();
                 }
                 else
                 {
                     if (this.amount.Text.Equals("") == false)
                     {
-                        request += User.Amount + Convert.ToDouble(this.amount.Text);
+                        request += User.Limit + Convert.ToDouble(this.amount.Text);
                     }
 
-                    if (this.limit.Text.Equals("") == false)
-                    {
-                        request += User.Addition + User.Limit + Convert.ToDouble(this.limit.Text);
-                    }
-                       
                     if (specifiedvaluefordate.Equals("date"))
                     {
                         request += User.Addition + User.date + datevalue.Replace(" ", User.Space);
                     }
-                    
+
                     if (specifiedvalueforenviromentalauthority.Equals("enviromental authority"))
                     {
                         request += User.Addition + User.enviromentalauthority + enviromentalauthorityvalue.Replace(" ", User.Space);
                     }
-                    
+
                     if (specifiedvalueforstationname.Equals("station name"))
                     {
                         request += User.Addition + User.stationname + stationnamevalue.Replace(" ", User.Space);
                     }
-                    
+
                     if (specifiedvaluefortechnology.Equals("technology"))
                     {
                         request += User.Addition + User.technology + technologyvalue;
                     }
-                    
+
                     if (specifiedvalueforlatitude.Equals("latitude"))
                     {
                         if (latitudecondition.Equals("Less than"))
                         {
-                            request += User.Addition + User.Condition + User.latitude.Replace(User.latitude.Last(),'<') + latitudevalue;
+                            request += User.Addition + User.Condition + User.latitude.Replace(User.latitude.Last(), '<') + latitudevalue;
                         }
-                        
+
                         else if (latitudecondition.Equals("Bigger than"))
                         {
                             request += User.Addition + User.Condition + User.latitude.Replace(User.latitude.Last(), '>') + latitudevalue;
                         }
-                        
-                        else 
+
+                        else
                         {
                             request += User.Addition + User.latitude + latitudevalue;
                         }
                     }
-                    
+
                     if (specifiedvalueforlongitude.Equals("longitude"))
                     {
                         if (longitudecondition.Equals("Less than"))
                         {
                             request += User.Addition + User.Condition + User.longitude.Replace(User.longitude.Last(), '<') + longitudevalue;
                         }
-                        
+
                         else if (longitudecondition.Equals("Bigger than"))
                         {
                             request += User.Addition + User.Condition + User.longitude.Replace(User.longitude.Last(), '>') + longitudevalue;
                         }
-                        
+
                         else
                         {
                             request += User.Addition + User.longitude + longitudevalue;
                         }
                     }
-                    
+
                     if (specifiedvaluefordepname.Equals("department name"))
                     {
                         request += User.Addition + User.departmentname + depnamevalue.Replace(" ", User.Space);
                     }
-                    
+
                     if (specifiedvaluefordepcode.Equals("department code"))
                     {
                         request += User.Addition + User.departmentcode + depcodevalue;
                     }
-                    
+
                     if (specifiedvalueformunname.Equals("municipality name"))
                     {
                         request += User.Addition + User.municipalityname + munnamevalue.Replace(" ", User.Space);
                     }
-                    
+
                     if (specifiedvalueformuncode.Equals("municipality code"))
                     {
                         request += User.Addition + User.municipalitycode + muncodevalue;
                     }
-                    
+
                     if (specifiedvaluefortypeofstation.Equals("type of station"))
                     {
                         request += User.Addition + User.typeofstation + typeofstationvalue;
@@ -234,10 +236,10 @@ namespace gui
                     {
                         if (exhibitiontimecondition.Equals("Less than"))
                         {
-                            request += User.Addition + User.Condition + User.exhibitiontime.Replace(User.exhibitiontime.Last(), '<') 
+                            request += User.Addition + User.Condition + User.exhibitiontime.Replace(User.exhibitiontime.Last(), '<')
                                 + exhibitiontimevalue;
                         }
-                        
+
                         else if (exhibitiontimecondition.Equals("Bigger than"))
                         {
                             request += User.Addition + User.Condition + User.exhibitiontime.Replace(User.exhibitiontime.Last(), '>')
@@ -279,13 +281,14 @@ namespace gui
                             request += User.Addition + User.concentration + concentrationvalue;
                         }
                     }
+
                     if (selectedcolumn.Equals("") == false)
                     {
                         selected = true;
 
-                        if (selectedcolumn.Equals("Date")) 
+                        if (selectedcolumn.Equals("Date"))
                         {
-                            request += User.Addition + User.Selected + User.date.Replace(User.date.Last(), ' '); 
+                            request += User.Addition + User.Selected + User.date.Replace(User.date.Last(), ' ');
                         }
 
                         if (selectedcolumn.Equals("Enviromental authority"))
@@ -325,7 +328,7 @@ namespace gui
 
                         if (selectedcolumn.Equals("Municipality name"))
                         {
-                            request += User.Addition + User.Selected + User.municipalityname.Replace(User.municipalityname.Last(), ' ');                           
+                            request += User.Addition + User.Selected + User.municipalityname.Replace(User.municipalityname.Last(), ' ');
                         }
 
                         if (selectedcolumn.Equals("Municipality code"))
@@ -350,59 +353,52 @@ namespace gui
 
                         if (selectedcolumn.Equals("Units"))
                         {
-                            request += User.Addition + User.Selected + User.units.Replace(User.units.Last(), ' ');                            
+                            request += User.Addition + User.Selected + User.units.Replace(User.units.Last(), ' ');
                         }
 
                         if (selectedcolumn.Equals("Concentration"))
                         {
-                            request += User.Addition + User.Selected + User.concentration.Replace(User.concentration.Last(), ' ');                           
+                            request += User.Addition + User.Selected + User.concentration.Replace(User.concentration.Last(), ' ');
                         }
                     }
-                    if (!this.amount.Text.Equals("") && !this.limit.Text.Equals("")) 
-                    {
-                        Double amount = Convert.ToDouble(this.amount.Text);
-                        Double limit = Convert.ToDouble(this.limit.Text);
 
-                        if (limit < amount)
-                        {
-                            if (amount % limit == 0)
-                            {                                
-                                Double i = limit;
-                                String replace = "" + limit;
-                                while (i < amount) 
-                                {
-                                    request.Replace(replace, "" + i);                                    
-                                    i = i + limit;                                    
-                                }
-                            }
-                            else 
-                            { 
-                            
-                            }
-                        }
-                        else 
-                        { 
-                        
-                        }
-                    }
-                    else if (this.amount.Text.Equals("") && this.limit.Text.Equals(""))
+                    if (this.limit.Text.Equals("") == false)
                     {
-                        user.Load(selected,request);
-                        data = user.GetData();
+                        request += User.Addition + User.Amount + Convert.ToDouble(this.limit.Text);
+                    }
+                    else if (this.amount.Text.Equals(""))
+                    {
+                        user.Load(selected, request);
+                        data = user.GetData();                        
                         LaunchResults(selectedcolumn, selected);
                     }
                     else if (!this.amount.Text.Equals(""))
                     {
-                        user.Load(selected, Convert.ToDouble(this.amount.Text),request);
+                        user.Load(selected, Convert.ToDouble(this.amount.Text), request);
                         data = user.GetData();
+                        Save(data);
                         LaunchResults(selectedcolumn, selected);
-                    }                    
+                    }
                 }
             }
-            catch (InvalidCastException ae) 
+            catch (InvalidCastException ae)
             {
                 ae.ToString();
-                ShowWarning();
+                ShowGeneralWarning();
+            }
+        }
+
+        private void Save(List<Data> List)
+        {
+            String namevalue = this.depnamevalue.Text.Replace(" ", "_");
+            String var = this.variablevalue.Text.Replace(" ", "_");
+
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter("..\\..\\..\\..\\code\\data\\" + namevalue + "\\" + var + ".csv")) 
+            {
+                foreach (Data Row in List)
+                {
+                    file.WriteLine(Row.toString());
+                }
             }
         }
     }

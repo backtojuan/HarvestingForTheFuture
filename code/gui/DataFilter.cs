@@ -15,6 +15,10 @@ namespace gui
     {
         private DataGridView datagridview;
 
+        Button button = new Button();
+        Button right = new Button();
+        Button left = new Button();
+
         public DataFilter()
         {
             InitializeComponent();
@@ -28,7 +32,6 @@ namespace gui
             label.Show();
 
             //initializes a button to close the form mandatory
-            Button button = new Button();
             button.Text = "Accept";
             button.BackColor = Color.Transparent;
             button.ForeColor = Color.Black;
@@ -110,7 +113,7 @@ namespace gui
                     datagridview.Show();
                 }
                 else if (column.Equals("Municipality name"))
-                {   
+                {
                     datagridview.Rows[i].Cells[0].Value = row.GetMunicipalityName;
                     this.Controls.Add(datagridview);
                     datagridview.Show();
@@ -152,6 +155,8 @@ namespace gui
                     datagridview.Show();
                 }
             }
+            this.right.Enabled = true;
+            this.left.Enabled = true;
         }
 
         /**
@@ -205,6 +210,9 @@ namespace gui
 
             this.Controls.Add(datagridview);
             datagridview.Show();
+
+            this.right.Enabled = true;
+            this.left.Enabled = true;
         }
     }
 }

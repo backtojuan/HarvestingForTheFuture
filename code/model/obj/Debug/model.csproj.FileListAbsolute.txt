@@ -45,3 +45,13 @@ C:\Users\Backtojuan\source\repos\HarvestingForTheFuture\code\model\obj\Debug\mod
 C:\Users\Backtojuan\source\repos\HarvestingForTheFuture\code\model\obj\Debug\model.csproj.CopyComplete
 C:\Users\Backtojuan\source\repos\HarvestingForTheFuture\code\model\obj\Debug\model.dll
 C:\Users\Backtojuan\source\repos\HarvestingForTheFuture\code\model\obj\Debug\model.pdb
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\model\bin\Debug\model.dll
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\model\bin\Debug\model.pdb
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\model\bin\Debug\Newtonsoft.Json.dll
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\model\bin\Debug\SODA.dll
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\model\bin\Debug\Newtonsoft.Json.xml
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\model\obj\Debug\model.csprojAssemblyReference.cache
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\model\obj\Debug\model.csproj.CoreCompileInputs.cache
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\model\obj\Debug\model.csproj.CopyComplete
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\model\obj\Debug\model.dll
+D:\R00TKIT\Downloads\HarvestingForTheFuture\code\model\obj\Debug\model.pdb
