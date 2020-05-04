@@ -151,6 +151,7 @@
             // limit
             // 
             this.limit.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.limit.Enabled = false;
             this.limit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.limit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.limit.Location = new System.Drawing.Point(391, 58);

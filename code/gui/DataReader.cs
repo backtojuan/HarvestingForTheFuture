@@ -45,20 +45,13 @@ namespace gui
         /**
          * Launches a new form to show the results done with the current query
         */
-        private void LaunchResults(String value, Boolean column, Boolean various, Double limit, Double amount)
+        private void LaunchResults(String value, Boolean column)
         {
             DataFilter datafilter = new DataFilter();
 
-            if (!column & !various)
+            if (!column)
             {
                 datafilter.FillDataGridView(data);
-                datafilter.ShowDialog();
-            }
-            else if (various)
-            {
-                datafilter.setLimit(Convert.ToInt32(limit));
-                datafilter.setLimit(Convert.ToInt32(amount));
-                datafilter.FillDataGridViewVarious(data, limit);
                 datafilter.ShowDialog();
             }
             else
@@ -132,9 +125,7 @@ namespace gui
                 String selectedcolumn = this.columnsfilter.Text;
 
                 Boolean selected = false;
-
-                Boolean various = false;
-
+             
                 if ((specifiedvaluefordate.Equals("date") && datevalue.Equals(""))
                     || (specifiedvalueforenviromentalauthority.Equals("enviromental authority") && (enviromentalauthorityvalue.Equals("")))
                     || (specifiedvaluefortechnology.Equals("technology") && technologyvalue.Equals(""))
@@ -375,57 +366,18 @@ namespace gui
                     {
                         request += User.Addition + User.Amount + Convert.ToDouble(this.limit.Text);
                     }
-
-                    if (!this.amount.Text.Equals("") && !this.limit.Text.Equals(""))
-                    {
-                        try
-                        {
-                            various = true;
-                            Double amount = Convert.ToDouble(this.amount.Text);
-                            Double limit = Convert.ToDouble(this.limit.Text);
-
-                            if (limit % amount == 0)
-                            {
-                                double repeats = limit / amount;
-
-
-                                String proof = "json " + request + "\n";
-                                proof += "limit " + limit + " amount " + (amount + amount) + "\n";
-                                for (int i = 1; i <= repeats; i++)
-                                {
-                                    user.Load(selected, request);
-                                    request.Replace(User.Amount + limit, User.Amount + (amount + amount));
-                                    proof += "json " + request + "\n";
-                                }
-
-                                MessageBox.Show(proof);
-                                data = user.GetData();
-                                LaunchResults(selectedcolumn, selected, various, limit, amount);
-                            }
-                            else
-                            {
-                                showLimitWarning();
-                            }
-                        }
-                        catch (ArithmeticException ae)
-                        {
-                            ae.ToString();
-                            showLimitWarning();
-                        }
-                    }
-                    else if (this.amount.Text.Equals("") && this.limit.Text.Equals(""))
+                    else if (this.amount.Text.Equals(""))
                     {
                         user.Load(selected, request);
-                        data = user.GetData();
-                        Save(data);
-                        LaunchResults(selectedcolumn, selected, various, 0, 0);
+                        data = user.GetData();                        
+                        LaunchResults(selectedcolumn, selected);
                     }
                     else if (!this.amount.Text.Equals(""))
                     {
                         user.Load(selected, Convert.ToDouble(this.amount.Text), request);
                         data = user.GetData();
                         Save(data);
-                        LaunchResults(selectedcolumn, selected, various, 0, 0);
+                        LaunchResults(selectedcolumn, selected);
                     }
                 }
             }
@@ -436,10 +388,12 @@ namespace gui
             }
         }
 
-        protected void Save(List<Data> List)
+        private void Save(List<Data> List)
         {
-            //Be careful, put the route on your own computer
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter("D:\\R00TKIT\\Downloads\\HarvestingForTheFuture\\code\\Data\\VALLE_DEL_CAUCA\\Velocidad_del_Viento.csv"))
+            String namevalue = this.depnamevalue.Text.Replace(" ", "_");
+            String var = this.variablevalue.Text.Replace(" ", "_");
+
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter("..\\..\\..\\..\\code\\data\\" + namevalue + "\\" + var + ".csv")) 
             {
                 foreach (Data Row in List)
                 {
