@@ -1,0 +1,4 @@
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project\HarvestingForTheFuture\code\Project\obj\Debug\Project.csprojAssemblyReference.cache
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project\HarvestingForTheFuture\code\Project\obj\Debug\Project.Properties.Resources.resources
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project\HarvestingForTheFuture\code\Project\obj\Debug\Project.csproj.GenerateResource.cache
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project\HarvestingForTheFuture\code\Project\obj\Debug\Project.csproj.CoreCompileInputs.cache
