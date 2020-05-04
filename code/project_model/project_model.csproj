@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Analyzer.cs" />
     <Compile Include="Area.cs" />
+    <Compile Include="Farming.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
