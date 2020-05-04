@@ -14,20 +14,18 @@ namespace project_model
 
         private String Color;
         private double TemperaturePercent;
-        private double LiquidPrecipiationPercent;
-        private double UVBRadiationPercent;
+        private double LiquidPrecipiationPercent;        
 
         public Relation()
         {
 
         }
 
-        public Relation(String Color,  double TemperaturePercent, double LiquidPrecipiationPercent, double UVBRadiationPercent, Area Area, Farming Farming)
+        public Relation(String Color, double TemperaturePercent, double LiquidPrecipiationPercent, Area Area, Farming Farming)
         {
             this.Color = Color;
             this.TemperaturePercent = TemperaturePercent;
-            this.LiquidPrecipiationPercent = LiquidPrecipiationPercent;
-            this.UVBRadiationPercent = UVBRadiationPercent;
+            this.LiquidPrecipiationPercent = LiquidPrecipiationPercent;            
             this.Area = Area;
             this.Farming = Farming;
         }
@@ -35,7 +33,6 @@ namespace project_model
         public String GetColor { get => Color; set => Color = value; }
         public double GetTemperaturePercent { get => TemperaturePercent; set => TemperaturePercent = value; }
         public double GetLiquidPrecipiationPercent { get => LiquidPrecipiationPercent; set => LiquidPrecipiationPercent = value; }
-        public double GetUVBRadiationPercent { get => UVBRadiationPercent; set => UVBRadiationPercent = value; }
         public Area GetArea { get => Area; set => Area = value; }
         public Farming GetFarming { get => Farming; set => Farming = value; }
     }
