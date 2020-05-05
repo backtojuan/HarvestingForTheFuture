@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project_model
+namespace project_gui
 {
-    class Program
+    class MainController
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }
