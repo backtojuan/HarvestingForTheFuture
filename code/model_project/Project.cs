@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project_model
+namespace model_project
 {
     class Project
     {
-
         public static String DEPARTMENTS_ROUTE = "";
         public static String DESCRIPTIONS_ROUTE = "";
 
@@ -26,9 +25,5 @@ namespace project_model
         {
 
         }
-
-
-
-
     }
 }

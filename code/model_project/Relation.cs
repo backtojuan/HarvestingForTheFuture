@@ -4,17 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project_model
+namespace model_project
 {
     class Relation
     {
-
         private Area Area;
         private Farming Farming;
 
         private String Color;
         private double TemperaturePercent;
-        private double LiquidPrecipiationPercent;        
+        private double LiquidPrecipiationPercent;
 
         public Relation()
         {
@@ -25,7 +24,7 @@ namespace project_model
         {
             this.Color = Color;
             this.TemperaturePercent = TemperaturePercent;
-            this.LiquidPrecipiationPercent = LiquidPrecipiationPercent;            
+            this.LiquidPrecipiationPercent = LiquidPrecipiationPercent;
             this.Area = Area;
             this.Farming = Farming;
         }
@@ -35,5 +34,6 @@ namespace project_model
         public double GetLiquidPrecipiationPercent { get => LiquidPrecipiationPercent; set => LiquidPrecipiationPercent = value; }
         public Area GetArea { get => Area; set => Area = value; }
         public Farming GetFarming { get => Farming; set => Farming = value; }
+
     }
 }

@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project_model
+namespace model_project
 {
     class Analyzer
     {
-
         public Analyzer()
         {
 
@@ -23,7 +22,5 @@ namespace project_model
         {
             return true;
         }
-
-
     }
 }

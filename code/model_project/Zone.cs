@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project_model
+namespace model_project
 {
     class Zone
     {
-
         private List<Area> Areas;
 
         public Zone()
@@ -23,4 +22,5 @@ namespace project_model
 
         public List<Area> GetAreas { get => Areas; set => Areas = value; }
     }
+}
 }
