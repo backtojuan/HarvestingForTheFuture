@@ -45,7 +45,13 @@
   <ItemGroup>
     <Compile Include="Analyzer.cs" />
     <Compile Include="Area.cs" />
+<<<<<<< HEAD:code/model_project/model_project.csproj
     <Compile Include="Program.cs" />
+=======
+    <Compile Include="Association.cs" />
+    <Compile Include="Farming.cs" />
+    <Compile Include="Project.cs" />
+>>>>>>> origin/interface:code/project_model/project_model.csproj
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

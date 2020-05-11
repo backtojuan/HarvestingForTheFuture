@@ -21,6 +21,7 @@ namespace model_project
         }
 
         public List<Area> GetAreas { get => Areas; set => Areas = value; }
+
     }
 }
 }

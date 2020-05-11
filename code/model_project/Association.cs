@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +29,6 @@ namespace model_project
 
         public Zone GetZone { get => zone; set => zone = value; }
         public List<Farming> GetFarmings { get => farmings; set => farmings = value; }
-        public List<Relation> GetRelations { get => relations; set => relations = value; }
+        public List<Relation> GetRelations { get => relations; set => relations = value;
     }
 }
