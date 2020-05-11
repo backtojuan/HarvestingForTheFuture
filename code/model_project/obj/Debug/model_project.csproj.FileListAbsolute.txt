@@ -1,7 +1,0 @@
-D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project\HarvestingForTheFuture\code\model_project\bin\Debug\model_project.exe.config
-D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project\HarvestingForTheFuture\code\model_project\bin\Debug\model_project.exe
-D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project\HarvestingForTheFuture\code\model_project\bin\Debug\model_project.pdb
-D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project\HarvestingForTheFuture\code\model_project\obj\Debug\model_project.csprojAssemblyReference.cache
-D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project\HarvestingForTheFuture\code\model_project\obj\Debug\model_project.csproj.CoreCompileInputs.cache
-D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project\HarvestingForTheFuture\code\model_project\obj\Debug\model_project.exe
-D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project\HarvestingForTheFuture\code\model_project\obj\Debug\model_project.pdb
