@@ -57,7 +57,7 @@ publish
 [Oo]bj
 sql
 TestResults
-*.Cache
+*.cache
 ClientBin
 ~$*
 *.dbmdl

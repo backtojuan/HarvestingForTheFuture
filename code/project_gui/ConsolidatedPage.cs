@@ -12,9 +12,17 @@ namespace project_gui
 {
     public partial class ConsolidatedPage : Form
     {
+
+        private Label departmentLabel;
+
         public ConsolidatedPage()
         {
             InitializeComponent();
+        }
+
+        public void loadPage()
+        {
+
         }
     }
 }
