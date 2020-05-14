@@ -8,12 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using GMap.NET;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
+
+
 namespace project_gui
 {
     public partial class ConsolidatedPage : Form
     {
-
-        private Label departmentLabel;
+        private GMarkerGoogle marker;
+        private GMapOverlay mapOverlay;
+        private double latInitial = 3.4372201;
+        private double longInitial = -76.5224991;
 
         public ConsolidatedPage()
         {
@@ -24,5 +32,20 @@ namespace project_gui
         {
 
         }
+
+        private void harvestingCmb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        /*
+        private void gMapControl_Load_1(object sender, EventArgs e)
+        {
+            gMapControl.MapProvider = GMapProviders.GoogleMap;
+            gMapControl.Position = new PointLatLng(latInitial, longInitial);
+            gMapControl.MinZoom = 0;
+            gMapControl.MaxZoom = 24;
+            gMapControl.Zoom = 9;
+            gMapControl.AutoScroll = true;
+        }*/
     }
 }
