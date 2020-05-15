@@ -58,6 +58,12 @@
     <Compile Include="ConsolidatedPage.designer.cs">
       <DependentUpon>ConsolidatedPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FirstPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirstPage.designer.cs">
+      <DependentUpon>FirstPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControl1.cs">
@@ -68,6 +74,9 @@
     </Compile>
     <EmbeddedResource Include="ConsolidatedPage.resx">
       <DependentUpon>ConsolidatedPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirstPage.resx">
+      <DependentUpon>FirstPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
