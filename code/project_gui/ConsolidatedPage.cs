@@ -7,19 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/*
 using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
-using GMap.NET.WindowsForms.Markers;
+using GMap.NET.WindowsForms.Markers;*/
 
 
 namespace project_gui
 {
     public partial class ConsolidatedPage : Form
-    {
+    {/*
         private GMarkerGoogle marker;
-        private GMapOverlay mapOverlay;
+        private GMapOverlay mapOverlay;*/
         private double latInitial = 3.4372201;
         private double longInitial = -76.5224991;
 
