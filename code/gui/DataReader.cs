@@ -42,6 +42,12 @@ namespace gui
                 "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        private void showConfirmation()
+        {
+            MessageBox.Show("The processing of the data by the recopilation dates has been successful");
+
+        }
+
         /**
          * Launches a new form to show the results done with the current query
         */
@@ -393,13 +399,132 @@ namespace gui
             String namevalue = this.depnamevalue.Text.Replace(" ", "_");
             String var = this.variablevalue.Text.Replace(" ", "_");
 
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter("..\\..\\..\\..\\code\\data\\" + namevalue + "\\" + var + ".csv")) 
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter("..\\..\\..\\..\\code\\Data\\" + namevalue + "\\" + var + "\\" + var + ".csv")) 
             {
                 foreach (Data Row in List)
                 {
                     file.WriteLine(Row.toString());
                 }
             }
+        }
+
+        private void LoadDepartmentData(String namevalue, String var)
+        {
+            List<Data> partialdata = new List<Data>();
+            try
+            {
+                using (System.IO.StreamReader file = new System.IO.StreamReader("..\\..\\..\\..\\code\\Data\\" + namevalue + "\\" + var + "\\" + var + ".csv"))
+                {
+                    String line = file.ReadLine();
+
+                    while (line != null)
+                    {
+                        String[] infor = line.Split(';');
+
+                        String[] partialdate = infor[0].Split(' ');
+
+                        String date = partialdate[0];
+                        String enviromentalauthority = infor[1];
+                        String stationname = infor[2];
+                        String technology = infor[3];
+                        String latitude = infor[4];
+                        String longitude = infor[5];
+                        String deparmentcode = infor[6];
+                        String deparmentname = infor[7];
+                        String municipalitycode = infor[8];
+                        String municipalityname = infor[9];
+                        String typeofstation = infor[10];
+                        String exhibitiontime = infor[11];
+                        String variable = infor[12];
+                        String units = infor[13];
+                        String concentration = infor[14];
+
+                        Data data = new Data(date, enviromentalauthority, stationname, technology, latitude, longitude, deparmentcode, deparmentname, municipalitycode,
+                            municipalityname, typeofstation, exhibitiontime, variable, units, concentration);
+
+                        partialdata.Add(data);
+
+                        line = file.ReadLine();
+                    }
+
+                    ExtractByDate(partialdata, namevalue, var);
+                }
+            }
+            catch (System.IO.FileNotFoundException exception)
+            {
+                MessageBox.Show("Exception due to: " + exception.Message);
+            }           
+            
+        }
+
+        private void ExtractByDate(List<Data> partialdata, String namevalue, String var) 
+        {
+            List<Data> data2011 = new List<Data>();
+            List<Data> data2012 = new List<Data>();
+            List<Data> data2013 = new List<Data>();
+            List<Data> data2014 = new List<Data>();
+            List<Data> data2015 = new List<Data>();
+            List<Data> data2016 = new List<Data>();
+            List<Data> data2017 = new List<Data>();
+
+            foreach (Data row in partialdata) 
+            {
+                if (row.GetDate.Contains("2011")) 
+                {
+                    data2011.Add(row);
+                }
+                else if (row.GetDate.Contains("2012")) 
+                {
+                    data2012.Add(row);
+                }
+                else if (row.GetDate.Contains("2013"))
+                {
+                    data2013.Add(row);
+                }
+                else if (row.GetDate.Contains("2014"))
+                {
+                    data2014.Add(row);
+                }
+                else if (row.GetDate.Contains("2015"))
+                {
+                    data2015.Add(row);
+                }
+                else if (row.GetDate.Contains("2016"))
+                {
+                    data2016.Add(row);
+                }
+                else if (row.GetDate.Contains("2017"))
+                {
+                    data2017.Add(row);
+                }
+            }
+            SaveByDate(data2011, namevalue, var, "2011");
+            SaveByDate(data2011, namevalue, var, "2012");
+            SaveByDate(data2011, namevalue, var, "2013");
+            SaveByDate(data2011, namevalue, var, "2014");
+            SaveByDate(data2011, namevalue, var, "2015");
+            SaveByDate(data2011, namevalue, var, "2016");
+            SaveByDate(data2011, namevalue, var, "2017");            
+        }
+
+        private void SaveByDate(List<Data> List, String namevalue, String var, String year)
+        {         
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter("..\\..\\..\\..\\code\\Data\\" + namevalue + "\\" +
+                var + "\\" + year + "\\" + var + ".csv"))
+            {
+                foreach (Data Row in List)
+                {
+                    file.WriteLine(Row.toString());
+                }
+            }
+        }
+
+        private void Load_Click(object sender, EventArgs e)
+        {
+            String namevalue = this.depnamevalue.Text.Replace(" ", "_");
+            String var = this.variablevalue.Text.Replace(" ", "_");
+            LoadDepartmentData(namevalue, var);
+            showConfirmation();
         }
     }
 }
