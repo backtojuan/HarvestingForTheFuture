@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsolidatedPage));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.harvestingCmb = new System.Windows.Forms.ComboBox();
@@ -39,9 +40,13 @@
             this.descriptionDep = new System.Windows.Forms.Label();
             this.harvestingLabel = new System.Windows.Forms.Label();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -50,18 +55,19 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1080, 26);
+            this.panel1.Size = new System.Drawing.Size(1221, 26);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(72)))), ((int)(((byte)(84)))));
+            this.panel2.Controls.Add(this.dataGridView);
             this.panel2.Controls.Add(this.harvestingCmb);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 26);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(291, 683);
+            this.panel2.Size = new System.Drawing.Size(291, 668);
             this.panel2.TabIndex = 1;
             // 
             // harvestingCmb
@@ -92,10 +98,11 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(965, 563);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 583);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(28, 78);
+            this.pictureBox2.Size = new System.Drawing.Size(35, 85);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -116,9 +123,9 @@
             // descriptionHar
             // 
             this.descriptionHar.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionHar.Location = new System.Drawing.Point(658, 183);
+            this.descriptionHar.Location = new System.Drawing.Point(759, 152);
             this.descriptionHar.Name = "descriptionHar";
-            this.descriptionHar.Size = new System.Drawing.Size(311, 142);
+            this.descriptionHar.Size = new System.Drawing.Size(427, 171);
             this.descriptionHar.TabIndex = 4;
             this.descriptionHar.Text = "Descripción del cultivo";
             // 
@@ -127,9 +134,9 @@
             this.descriptionDep.AccessibleDescription = "descriptionDep";
             this.descriptionDep.AccessibleName = "descriptionDep";
             this.descriptionDep.Font = new System.Drawing.Font("Calibri", 15F);
-            this.descriptionDep.Location = new System.Drawing.Point(318, 138);
+            this.descriptionDep.Location = new System.Drawing.Point(318, 122);
             this.descriptionDep.Name = "descriptionDep";
-            this.descriptionDep.Size = new System.Drawing.Size(295, 187);
+            this.descriptionDep.Size = new System.Drawing.Size(405, 187);
             this.descriptionDep.TabIndex = 5;
             this.descriptionDep.Text = "Descripción del departamento";
             // 
@@ -140,7 +147,7 @@
             this.harvestingLabel.AutoSize = true;
             this.harvestingLabel.Font = new System.Drawing.Font("Adobe Gothic Std B", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.harvestingLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(72)))), ((int)(((byte)(84)))));
-            this.harvestingLabel.Location = new System.Drawing.Point(686, 122);
+            this.harvestingLabel.Location = new System.Drawing.Point(755, 105);
             this.harvestingLabel.Name = "harvestingLabel";
             this.harvestingLabel.Size = new System.Drawing.Size(140, 47);
             this.harvestingLabel.TabIndex = 6;
@@ -154,7 +161,7 @@
             this.gMapControl1.GrayScaleMode = false;
             this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMapControl1.LevelsKeepInMemmory = 5;
-            this.gMapControl1.Location = new System.Drawing.Point(322, 343);
+            this.gMapControl1.Location = new System.Drawing.Point(322, 350);
             this.gMapControl1.MarkersEnabled = true;
             this.gMapControl1.MaxZoom = 2;
             this.gMapControl1.MinZoom = 2;
@@ -168,31 +175,62 @@
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(419, 250);
+            this.gMapControl1.Size = new System.Drawing.Size(667, 344);
             this.gMapControl1.TabIndex = 7;
             this.gMapControl1.Zoom = 0D;
             this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(72)))), ((int)(((byte)(84)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(72)))), ((int)(((byte)(84)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(1, 302);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.Size = new System.Drawing.Size(265, 348);
+            this.dataGridView.TabIndex = 5;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(1186, 26);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(35, 668);
+            this.panel3.TabIndex = 8;
             // 
             // ConsolidatedPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1080, 709);
+            this.ClientSize = new System.Drawing.Size(1064, 661);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.gMapControl1);
             this.Controls.Add(this.harvestingLabel);
             this.Controls.Add(this.descriptionDep);
             this.Controls.Add(this.descriptionHar);
             this.Controls.Add(this.departmentLabel);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "ConsolidatedPage";
             this.Text = "ConsolidatedPage";
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,5 +248,7 @@
         private System.Windows.Forms.Label descriptionDep;
         private System.Windows.Forms.Label harvestingLabel;
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Panel panel3;
     }
 }
