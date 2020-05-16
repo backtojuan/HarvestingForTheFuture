@@ -30,17 +30,41 @@ namespace project_gui
             LoadPage();
         }
 
+
+        /*
+         * Carga la pagina UserControl
+         * crea las columnas de la tabla para el dataGridView y
+         * carga la lista de los cultivos 
+         */
         public void LoadPage()
         {
             table = new DataTable();
             table.Columns.Add(new DataColumn("Posicion", typeof(int)));
             table.Columns.Add(new DataColumn("Nombre", typeof(String)));
             table.Columns.Add(new DataColumn("Compatibilidad", typeof(double)));
+            table.Columns.Add(new DataColumn("Latitud", typeof(double)));
+            table.Columns.Add(new DataColumn("Longitud", typeof(double)));
+
+        }
+
+        public void test()
+        {
+
+        }
+
+        public void AddToDataGridView(int pos, String name, double Comp, double lat, double lng)
+        {
+            table.Rows.Add(pos, name, Comp, lat, lng);
+        }
+
+        public void SetHarvestingLabel(String harverting)
+        {
+            harvestingLabel.Text = harverting;
         }
 
         private void descriptionDep_Click(object sender, EventArgs e)
         {
-
+            //borrar - error
         }
 
         private void gMapControl1_Load(object sender, EventArgs e)
