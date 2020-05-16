@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//This class contain descriptions and image
-
-namespace Description
+namespace DataFistPage
 {
-    public class ImageAndDescription
+    class references
     {
         private String image;
         private String description;
@@ -24,6 +22,4 @@ namespace Description
         const String TOLIMAIM = "https://3.cdnpt.com/Destinations/2003/2003/melgar-4160787945-L.jpg";
         const String VALLEIM = "https://colombiareports.com/wp-content/uploads/2017/03/cali_f_wikipedia-1170x585.jpg";
     }
-
-
 }
