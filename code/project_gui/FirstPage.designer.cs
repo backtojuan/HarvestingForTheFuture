@@ -29,29 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FirstPage));
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.image = new System.Windows.Forms.FlowLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.description = new System.Windows.Forms.FlowLayoutPanel();
             this.actualice = new System.Windows.Forms.Button();
             this.ir = new System.Windows.Forms.Button();
             this.departamentos = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel3.SuspendLayout();
+            this.image.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel3
+            // image
             // 
-            this.flowLayoutPanel3.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel3.Controls.Add(this.splitContainer1);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(41, 166);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(288, 200);
-            this.flowLayoutPanel3.TabIndex = 2;
+            this.image.BackColor = System.Drawing.Color.White;
+            this.image.Controls.Add(this.splitContainer1);
+            this.image.Location = new System.Drawing.Point(41, 166);
+            this.image.Name = "image";
+            this.image.Size = new System.Drawing.Size(288, 200);
+            this.image.TabIndex = 2;
+            this.image.Paint += new System.Windows.Forms.PaintEventHandler(this.image_Paint);
             // 
             // splitContainer1
             // 
@@ -61,13 +62,13 @@
             this.splitContainer1.Size = new System.Drawing.Size(150, 0);
             this.splitContainer1.TabIndex = 0;
             // 
-            // flowLayoutPanel4
+            // description
             // 
-            this.flowLayoutPanel4.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(389, 166);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(362, 200);
-            this.flowLayoutPanel4.TabIndex = 3;
+            this.description.BackColor = System.Drawing.Color.White;
+            this.description.Location = new System.Drawing.Point(389, 166);
+            this.description.Name = "description";
+            this.description.Size = new System.Drawing.Size(362, 200);
+            this.description.TabIndex = 3;
             // 
             // actualice
             // 
@@ -175,11 +176,11 @@
             this.Controls.Add(this.departamentos);
             this.Controls.Add(this.ir);
             this.Controls.Add(this.actualice);
-            this.Controls.Add(this.flowLayoutPanel4);
-            this.Controls.Add(this.flowLayoutPanel3);
+            this.Controls.Add(this.description);
+            this.Controls.Add(this.image);
             this.Name = "FirstPage";
             this.Text = "FirstPage";
-            this.flowLayoutPanel3.ResumeLayout(false);
+            this.image.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -189,8 +190,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.FlowLayoutPanel image;
+        private System.Windows.Forms.FlowLayoutPanel description;
         private System.Windows.Forms.Button actualice;
         private System.Windows.Forms.Button ir;
         private System.Windows.Forms.SplitContainer splitContainer1;

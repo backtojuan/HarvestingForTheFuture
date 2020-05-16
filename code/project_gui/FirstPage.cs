@@ -15,6 +15,8 @@ namespace project_gui
         public FirstPage()
         {
             InitializeComponent();
+            //addElementsComboBox();
+
             //agregar metodo de carga;
             //departamentos.DropDownStyle = ComboBoxStyle.DropDownList;
 
@@ -34,6 +36,19 @@ namespace project_gui
         {
             
            
+        }
+        private void addElementsComboBox(List<String> list, ComboBox comboBox)
+        {
+
+            for (int i=0; i < list.Count; i++)
+            {
+                comboBox.Items.Add(list.ElementAt(i));
+            }
+        }
+
+        private void image_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
