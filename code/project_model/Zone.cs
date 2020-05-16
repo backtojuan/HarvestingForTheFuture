@@ -15,12 +15,11 @@ namespace project_model
 
         }
 
-        public void AddArea()
+        public void AddArea(Area area)
         {
-
+            Areas.Add(area);
         }
 
-        public List<Area> GetAreas { get => Areas; set => Areas = value; }
-
+        public List<Area> GetAreas { get => Areas;}
     }
 }

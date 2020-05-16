@@ -7,28 +7,24 @@ using System.Threading.Tasks;
 namespace project_model
 {
     class Area
-    {
+    {           
         private int LiquidPrecipitation;
-        private double RH;
-        private double Temperature;
-        private double Concentration;
-
-        public Area()
-        {
-
-        }
-        public Area(int LiquidPrecipitation, double RH, double Temperature, double Concentration)
+        private double RelativeHumidity;
+        private double Temperature;        
+        private double Windspeed;
+        
+        public Area(int LiquidPrecipitation, double RelativeHumidity, double Temperature, double Windspeed)
         {
             this.LiquidPrecipitation = LiquidPrecipitation;
-            this.RH = RH;
+            this.RelativeHumidity = RelativeHumidity;
             this.Temperature = Temperature;
-            this.Concentration = Concentration;
+            this.Windspeed = Windspeed;
         }
 
         public int GetLiquidPrecipitation { get => LiquidPrecipitation; set => LiquidPrecipitation = value; }
-        public double GetRH { get => RH; set => RH = value; }
+        public double GetRelativeHumidity { get => RelativeHumidity; set => RelativeHumidity = value; }
         public double GetTemperature { get => Temperature; set => Temperature = value; }
-        public double GetConcentration { get => Concentration; set => Concentration = value; }
+        public double GetConcentration { get => Windspeed; set => Windspeed = value; }
 
     }
 }

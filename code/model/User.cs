@@ -11,6 +11,9 @@ using SODA;
 
 namespace model
 {
+    /*
+     * This class allows to do a Json file processing for the data set of interest 
+     */
     public class User
     {
         //Json location
@@ -41,6 +44,12 @@ namespace model
         public const String variable = "variable=";
         public const String units = "unidades=";
         public const String concentration = "concentraci_n=";
+
+        //specified variables of interest
+        public const String LP = "Precipitación_Líquida";
+        public const String RH = "Humedad_Relativa";
+        public const String TMP = "Temperatura";
+        public const String WS = "Velocidad_del_viento";
 
         public String report;
 

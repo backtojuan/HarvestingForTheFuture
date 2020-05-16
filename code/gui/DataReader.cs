@@ -11,6 +11,9 @@ using model;
 
 namespace gui
 {
+    /**
+     * This form allows the user to enter desired filters on an interactive way
+     */
     public partial class DataReader : Form
     {
         //stores the data rows
@@ -30,18 +33,24 @@ namespace gui
         private void ShowGeneralWarning()
         {
 
-            MessageBox.Show("You need to enter the complete criteria to request the filtering, at least the maximum amount" +
-                "of data you want to be search",
+            MessageBox.Show("You need to enter the complete criteria to request the filtering" +
+                "of data you want to search",
                 "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        /**
+         * Shows a warning message to user when requesting amount of data
+         */
         private void showLimitWarning()
         {
 
             MessageBox.Show("The limit must be a multiple of the amount of data you requesting",
                 "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-
+        
+        /**
+         * Shows a confirmation message when data processing is successful
+         */
         private void showConfirmation()
         {
             MessageBox.Show("The processing of the data by the recopilation dates has been successful");
@@ -68,13 +77,16 @@ namespace gui
         }
 
         /**
-         * Triggered and event caused by the user. Filter the information on the json according to the 
+         * Triggered event caused by the user. Filter the information on the json according to the 
          * criteria entered.
          */
         private void Filter_Click(object sender, EventArgs e)
         {
             try
             {
+                /**
+                 * gets all information entered on the form
+                 */
                 User user = new User();
 
                 String request = User.URL;
@@ -131,7 +143,10 @@ namespace gui
                 String selectedcolumn = this.columnsfilter.Text;
 
                 Boolean selected = false;
-             
+                
+                /**
+                 * checks if a column that has been selected has the proper value to do the query
+                 */
                 if ((specifiedvaluefordate.Equals("date") && datevalue.Equals(""))
                     || (specifiedvalueforenviromentalauthority.Equals("enviromental authority") && (enviromentalauthorityvalue.Equals("")))
                     || (specifiedvaluefortechnology.Equals("technology") && technologyvalue.Equals(""))
@@ -150,6 +165,9 @@ namespace gui
                 {
                     ShowGeneralWarning();
                 }
+                /**
+                 * Checks the information entered in order to apply the correct filters provided by the API of the dataset
+                 */
                 else
                 {
                     if (this.amount.Text.Equals("") == false)
@@ -287,7 +305,9 @@ namespace gui
                             request += User.Addition + User.concentration + concentrationvalue;
                         }
                     }
-
+                    /**
+                     * Checks if the user wants to show one column
+                     */
                     if (selectedcolumn.Equals("") == false)
                     {
                         selected = true;
@@ -366,24 +386,30 @@ namespace gui
                         {
                             request += User.Addition + User.Selected + User.concentration.Replace(User.concentration.Last(), ' ');
                         }
-                    }
-
+                    }                    
                     if (this.limit.Text.Equals("") == false)
                     {
                         request += User.Addition + User.Amount + Convert.ToDouble(this.limit.Text);
                     }
-                    else if (this.amount.Text.Equals(""))
+                    /**
+                     * loads the json path in the case that no limit has been set
+                     */
+                    if (this.amount.Text.Equals(""))
                     {
                         user.Load(selected, request);
                         data = user.GetData();                        
                         LaunchResults(selectedcolumn, selected);
                     }
+                    /**
+                     * loads the json path in the case that a limit has been set
+                     */
                     else if (!this.amount.Text.Equals(""))
                     {
                         user.Load(selected, Convert.ToDouble(this.amount.Text), request);
                         data = user.GetData();
                         Save(data);
                         LaunchResults(selectedcolumn, selected);
+                        showConfirmation();
                     }
                 }
             }
@@ -394,20 +420,32 @@ namespace gui
             }
         }
 
+        /**
+         * Saves a report of interest for a selected department and variable
+         */
         private void Save(List<Data> List)
         {
             String namevalue = this.depnamevalue.Text.Replace(" ", "_");
             String var = this.variablevalue.Text.Replace(" ", "_");
-
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter("..\\..\\..\\..\\code\\Data\\" + namevalue + "\\" + var + "\\" + var + ".csv")) 
+            try
             {
-                foreach (Data Row in List)
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter("..\\..\\..\\..\\code\\Data\\" + namevalue + "\\" + var + "\\" + var + ".csv"))
                 {
-                    file.WriteLine(Row.toString());
+                    foreach (Data Row in List)
+                    {
+                        file.WriteLine(Row.toString());
+                    }
                 }
+            }
+            catch (System.IO.FileNotFoundException exception)
+            {
+                MessageBox.Show("Exception due to: " + exception.Message);
             }
         }
 
+        /**
+         * Loads the report of interest for a selected department and variable in order to divided by individual reports by year
+         */
         private void LoadDepartmentData(String namevalue, String var)
         {
             List<Data> partialdata = new List<Data>();
@@ -457,6 +495,9 @@ namespace gui
             
         }
 
+        /**
+         * Separates the data recolected for a variable on every year of tracking
+         */
         private void ExtractByDate(List<Data> partialdata, String namevalue, String var) 
         {
             List<Data> data2011 = new List<Data>();
@@ -507,24 +548,37 @@ namespace gui
             SaveByDate(data2011, namevalue, var, "2017");            
         }
 
+        /**
+         * Saves individually the report of a variable for every year of tracking
+         */
         private void SaveByDate(List<Data> List, String namevalue, String var, String year)
-        {         
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter("..\\..\\..\\..\\code\\Data\\" + namevalue + "\\" +
-                var + "\\" + year + "\\" + var + ".csv"))
+        {
+            try
             {
-                foreach (Data Row in List)
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter("..\\..\\..\\..\\code\\Data\\" + namevalue + "\\" +
+                    var + "\\" + year + "\\" + var + ".csv"))
                 {
-                    file.WriteLine(Row.toString());
+                    foreach (Data Row in List)
+                    {
+                        file.WriteLine(Row.toString());
+                    }
                 }
             }
+            catch (System.IO.FileNotFoundException exception)
+            {
+                MessageBox.Show("Exception due to: " + exception.Message);
+            }
         }
-
+        
+        /**
+        * Triggered event caused by the user. Allows to partitionate the data on every year of tracking
+        */
         private void Load_Click(object sender, EventArgs e)
         {
             String namevalue = this.depnamevalue.Text.Replace(" ", "_");
             String var = this.variablevalue.Text.Replace(" ", "_");
-            LoadDepartmentData(namevalue, var);
+            LoadDepartmentData(namevalue, var);            
             showConfirmation();
-        }
+        }        
     }
 }
