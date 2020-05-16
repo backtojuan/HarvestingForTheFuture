@@ -180,6 +180,7 @@
             this.Controls.Add(this.image);
             this.Name = "FirstPage";
             this.Text = "FirstPage";
+            this.Load += new System.EventHandler(this.FirstPage_Load);
             this.image.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
