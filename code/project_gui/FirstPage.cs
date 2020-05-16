@@ -50,5 +50,10 @@ namespace project_gui
         {
 
         }
+
+        private void FirstPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

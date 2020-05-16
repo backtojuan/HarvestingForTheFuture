@@ -4,14 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//This class contain descriptions and image
-
-namespace Description
+namespace DataFistPage
 {
-    public class ImageAndDescription
+    class Images
     {
-        private String image;
-        private String description;
+        
         const String ANTIOQUIAIM = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Aerial_view_at_Guatape%2C_Antioquia%2C_Colombia.jpg/1200px-Aerial_view_at_Guatape%2C_Antioquia%2C_Colombia.jpg";
         const String BOYACAIM = "https://www.eltiempo.com/files/image_640_428/uploads/2020/02/06/5e3c4a0f120fa.jpeg";
         const String CESARIM = "https://i.pinimg.com/originals/96/89/e6/9689e69691c6ecf375f2ed8b10090ea4.jpg";
@@ -24,6 +21,6 @@ namespace Description
         const String TOLIMAIM = "https://3.cdnpt.com/Destinations/2003/2003/melgar-4160787945-L.jpg";
         const String VALLEIM = "https://colombiareports.com/wp-content/uploads/2017/03/cali_f_wikipedia-1170x585.jpg";
     }
-
+    
 
 }
