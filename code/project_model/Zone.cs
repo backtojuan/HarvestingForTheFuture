@@ -6,20 +6,32 @@ using System.Threading.Tasks;
 
 namespace project_model
 {
+    /**
+     * This class allows to create a zone which is an specied set of areas
+     */
     class Zone
     {
         private List<Area> Areas;
 
+        /**
+         * Zone Constructor
+         */
         public Zone()
         {
 
         }
 
+        /**
+         * Adds a new area for this zone
+         */
         public void AddArea(Area area)
         {
             Areas.Add(area);
         }
 
-        public List<Area> GetAreas { get => Areas;}
+        /**
+         * Allows to get all areas on a zone
+         */
+        public List<Area> GetAreas { get => Areas; }
     }
 }

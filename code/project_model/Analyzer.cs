@@ -8,7 +8,7 @@ using System.IO;
 using model;
 
 namespace project_model
-{    
+{
     /**
      * This class allows to do the right processing and estimating of the recolected data of interest.
      */
@@ -17,45 +17,115 @@ namespace project_model
         private Zone zone;
 
         /**
-         * This works like a dictionary where evey list inside of the general list contains the data recolected for an specified year (since 2011 until 2017) and so on.
+         * This works like a dictionary where evey list inside of the general list contains another list for each department of the data 
+         * recolected for an specified year (since 2011 until 2017) and so on.
          */
-        private List<List<Data>> LiquidPrecipitationData;
-        private List<List<Data>> RelativeHumidityData;
-        private List<List<Data>> TemperatureData;
-        private List<List<Data>> WindSpeedData;
-        
+        private List<List<List<List<Data>>>> data;
+
+        private const double zvalue = 1.64;
+
+        /**
+         * Analyzer constructor
+         */
         public Analyzer()
         {
-            LiquidPrecipitationData = new List<List<Data>>();
-            RelativeHumidityData = new List<List<Data>>();
-            TemperatureData = new List<List<Data>>();
-            WindSpeedData = new List<List<Data>>();
+            init();
+            zone = new Zone();
+        }
 
-            zone = new Zone();            
+        private void init() {
+            for (int i = 0; i < data.Count; i++)
+            {
+                data.Add(new List<List<List<Data>>>());
+            }
+
+            data.ElementAt(0).ElementAt(0).Add(LoadRequest("ANTIOQUIA",User.LiquidPrecipitation));
+            data.ElementAt(0).ElementAt(1).Add(LoadRequest("ANTIOQUIA", User.RelativeHumidity));
+            data.ElementAt(0).ElementAt(2).Add(LoadRequest("ANTIOQUIA", User.Temperature));
+            data.ElementAt(0).ElementAt(3).Add(LoadRequest("ANTIOQUIA", User.WindSpeed));
+
+            data.ElementAt(1).ElementAt(0).Add(LoadRequest("BOYACÁ", User.LiquidPrecipitation));
+            data.ElementAt(1).ElementAt(1).Add(LoadRequest("BOYACÁ", User.RelativeHumidity));
+            data.ElementAt(1).ElementAt(2).Add(LoadRequest("BOYACÁ", User.Temperature));
+            data.ElementAt(1).ElementAt(3).Add(LoadRequest("BOYACÁ", User.WindSpeed));
+
+            data.ElementAt(2).ElementAt(0).Add(LoadRequest("CESAR", User.LiquidPrecipitation));
+            data.ElementAt(2).ElementAt(1).Add(LoadRequest("CESAR", User.RelativeHumidity));
+            data.ElementAt(2).ElementAt(2).Add(LoadRequest("CESAR", User.Temperature));
+            data.ElementAt(2).ElementAt(3).Add(LoadRequest("CESAR", User.WindSpeed));
+
+            data.ElementAt(3).ElementAt(0).Add(LoadRequest("CHOCÓ", User.LiquidPrecipitation));
+            data.ElementAt(3).ElementAt(1).Add(LoadRequest("CHOCÓ", User.RelativeHumidity));
+            data.ElementAt(3).ElementAt(2).Add(LoadRequest("CHOCÓ", User.Temperature));
+            data.ElementAt(3).ElementAt(3).Add(LoadRequest("CHOCÓ", User.WindSpeed));
+
+            data.ElementAt(4).ElementAt(0).Add(LoadRequest("CUNDINAMARCA", User.LiquidPrecipitation));
+            data.ElementAt(4).ElementAt(1).Add(LoadRequest("CUNDINAMARCA", User.RelativeHumidity));
+            data.ElementAt(4).ElementAt(2).Add(LoadRequest("CUNDINAMARCA", User.Temperature));
+            data.ElementAt(4).ElementAt(3).Add(LoadRequest("CUNDINAMARCA", User.WindSpeed));
+
+            data.ElementAt(5).ElementAt(0).Add(LoadRequest("LA_GUAJIRA", User.LiquidPrecipitation));
+            data.ElementAt(5).ElementAt(1).Add(LoadRequest("LA_GUAJIRA", User.RelativeHumidity));
+            data.ElementAt(5).ElementAt(2).Add(LoadRequest("LA_GUAJIRA", User.Temperature));
+            data.ElementAt(5).ElementAt(3).Add(LoadRequest("LA_GUAJIRA", User.WindSpeed));
+
+            data.ElementAt(6).ElementAt(0).Add(LoadRequest("MAGDALENA", User.LiquidPrecipitation));
+            data.ElementAt(6).ElementAt(1).Add(LoadRequest("MAGDALENA", User.RelativeHumidity));
+            data.ElementAt(6).ElementAt(2).Add(LoadRequest("MAGDALENA", User.Temperature));
+            data.ElementAt(6).ElementAt(3).Add(LoadRequest("MAGDALENA", User.WindSpeed));
+
+            data.ElementAt(7).ElementAt(0).Add(LoadRequest("META", User.LiquidPrecipitation));
+            data.ElementAt(7).ElementAt(1).Add(LoadRequest("META", User.RelativeHumidity));
+            data.ElementAt(7).ElementAt(2).Add(LoadRequest("META", User.Temperature));
+            data.ElementAt(7).ElementAt(3).Add(LoadRequest("META", User.WindSpeed));
+
+            data.ElementAt(8).ElementAt(0).Add(LoadRequest("SANTANDER", User.LiquidPrecipitation));
+            data.ElementAt(8).ElementAt(1).Add(LoadRequest("SANTANDER", User.RelativeHumidity));
+            data.ElementAt(8).ElementAt(2).Add(LoadRequest("SANTANDER", User.Temperature));
+            data.ElementAt(8).ElementAt(3).Add(LoadRequest("SANTANDER", User.WindSpeed));
+
+            data.ElementAt(9).ElementAt(0).Add(LoadRequest("TOLIMA", User.LiquidPrecipitation));
+            data.ElementAt(9).ElementAt(1).Add(LoadRequest("TOLIMA", User.RelativeHumidity));
+            data.ElementAt(9).ElementAt(2).Add(LoadRequest("TOLIMA", User.Temperature));
+            data.ElementAt(9).ElementAt(3).Add(LoadRequest("TOLIMA", User.WindSpeed));
+
+            data.ElementAt(10).ElementAt(0).Add(LoadRequest("VALLE_DEL_CAUCA", User.LiquidPrecipitation));
+            data.ElementAt(10).ElementAt(1).Add(LoadRequest("VALLE_DEL_CAUCA", User.RelativeHumidity));
+            data.ElementAt(10).ElementAt(2).Add(LoadRequest("VALLE_DEL_CAUCA", User.Temperature));
+            data.ElementAt(10).ElementAt(3).Add(LoadRequest("VALLE_DEL_CAUCA", User.WindSpeed));
+
+            createArea("ANTIOQUIA", 0);
+            createArea("BOYACÁ", 1);
+            createArea("CESAR", 2);
+            createArea("CHOCÓ", 3);
+            createArea("CUNDINAMARCA", 4);
+            createArea("LA_GUAJIRA", 5);
+            createArea("MAGDALENA", 6);
+            createArea("META", 7);
+            createArea("SANTANDER", 8);
+            createArea("TOLIMA", 9);
+            createArea("VALLE_DEL_CAUCA", 10);          
         }
 
         /**
          * This method loads the divided individual reports in order to get ready to do an estimation from them.
          */
-        public void LoadRequest(String namevalue, String var)
+        public List<Data> LoadRequest(String namevalue, String var)
         {
-            
+            List<Data> dataofyears = new List<Data>();
+
             String general = "..\\..\\..\\..\\code\\Data\\" + namevalue + "\\" + var;
-            
-            if (Directory.Exists(general)) 
+            List<Data> partialdata = new List<Data>();
+
+            if (Directory.Exists(general))
             {
                 int i = 0;
                 while (i < 7)
                 {
-                    String text = "";
-
+                    
                     String year = "201" + (i + 1);
                     String path = "..\\..\\..\\..\\code\\Data\\" + namevalue + "\\" + var + "\\" + year + "\\" + var + ".csv";
-                    List<Data> partialdata = new List<Data>();
-
-                    text += year + "\n";
-                    text += path + "\n";
-
+                                        
                     using (System.IO.StreamReader file = new System.IO.StreamReader(path))
                     {
                         String line = file.ReadLine();
@@ -86,84 +156,58 @@ namespace project_model
                                 municipalityname, typeofstation, exhibitiontime, variable, units, concentration);
 
                             partialdata.Add(data);
-                            text += data.toString() + "\n";
+                            
                             line = file.ReadLine();
-                        }
-                        if (var.Equals(User.LP))
-                        {
-                            LiquidPrecipitationData.Add(partialdata);
-                        }                        
-                        else if (var.Equals(User.RH))
-                        {
-                            RelativeHumidityData.Add(partialdata);
-                        }
-                        else if (var.Equals(User.TMP))
-                        {
-                            TemperatureData.Add(partialdata);
-                        }
-                        else if (var.Equals(User.WS)) 
-                        {
-                            WindSpeedData.Add(partialdata);
-                        }
-                        i++;
-                    }
-                }
-            }            
+                        }                                                
+                    }                    
+                    i++;
+                }                
+            }
+            return dataofyears;
         }
-            
+
         /**
          * This method estimates the liquid precipitation of an Area
          */
-        public int EstimateLiquidPrecipitation() 
+        public double EstimateLiquidPrecipitation(int department)
         {
-            int estimator = 0;
+            double estimator = 0;
+            List<Data> liquidprecipitationdata = data.ElementAt(department).ElementAt(0).ElementAt(0);
+            List<double> observations = new List<double>();
 
-            if (!LiquidPrecipitationData.Any())
-            {                
-                int sumofvalues = 0;
+            if (!liquidprecipitationdata.Any()) {
+                double sumofvalues = 0;
                 int totalvalues = 0;
 
-                int i = 0;
-                while (i < 7)
+                foreach (Data data in liquidprecipitationdata) 
                 {
-                    totalvalues += LiquidPrecipitationData.ElementAt(i).Count();
-
-                    foreach (Data data in LiquidPrecipitationData.ElementAt(i))
-                    {
-                        sumofvalues += Convert.ToInt32(data.GetConcentration);
-                    }
-                    i++;
-                }
-                estimator = sumofvalues / totalvalues;                
-            }
-
-            return estimator;
+                    sumofvalues += Convert.ToInt32(data.GetConcentration);
+                    totalvalues ++;                    
+                }                
+                estimator = sumofvalues / totalvalues;
+            }            
+            return estimator;            
         }
 
         /**
         * This method estimates the relative humedity of an Area
         */
-        public double EstimateRH() 
+        public double EstimateRelativeHumidity(int department)
         {
             double estimator = 0;
+            List<Data> relativehumiditydata = data.ElementAt(department).ElementAt(1).ElementAt(0);
+            List<double> observations = new List<double>();
 
-            if (!RelativeHumidityData.Any())
+            if (!relativehumiditydata.Any())
             {
                 double sumofvalues = 0;
                 int totalvalues = 0;
 
-                int i = 0;
-                while (i < 7)
+                foreach (Data data in relativehumiditydata)
                 {
-                    totalvalues += RelativeHumidityData.ElementAt(i).Count();
-
-                    foreach (Data data in RelativeHumidityData.ElementAt(i))
-                    {
-                        sumofvalues += Convert.ToDouble(data.GetConcentration);
-                    }
-                    i++;
+                    sumofvalues += Convert.ToInt32(data.GetConcentration);
+                    totalvalues++;
                 }
-
                 estimator = sumofvalues / totalvalues;
             }
 
@@ -173,74 +217,88 @@ namespace project_model
         /**
         * This method estimates the temperature of an Area
         */
-        public double EstimateTemperature()
+        public double EstimateTemperature(int department)
         {
             double estimator = 0;
+            List<Data> temperaturedata = data.ElementAt(department).ElementAt(2).ElementAt(0);
+            List<double> observations = new List<double>();
 
-            if (!TemperatureData.Any())
+            if (!temperaturedata.Any())
             {
                 double sumofvalues = 0;
                 int totalvalues = 0;
 
-                int i = 0;
-                while (i < 7)
+                foreach (Data data in temperaturedata)
                 {
-                    totalvalues += TemperatureData.ElementAt(i).Count();
-
-                    foreach (Data data in TemperatureData.ElementAt(i))
-                    {
-                        sumofvalues += Convert.ToDouble(data.GetConcentration);
-                    }
-                    i++;
+                    sumofvalues += Convert.ToInt32(data.GetConcentration);
+                    totalvalues++;
                 }
-
                 estimator = sumofvalues / totalvalues;
             }
-            
             return estimator;
         }
 
         /**
         * This method estimates the windspeed of an Area
         */
-        public double EstimateWindSpeed()
-        {            
+        public double EstimateWindSpeed(int department)
+        {
             double estimator = 0;
+            List<Data> windspeeddata = data.ElementAt(department).ElementAt(3).ElementAt(0);
+            List<double> observations = new List<double>();
 
-            if (!WindSpeedData.Any())
+            if (!windspeeddata.Any())
             {
                 double sumofvalues = 0;
                 int totalvalues = 0;
 
-                int i = 0;
-                while (i < 7)
+                foreach (Data data in windspeeddata)
                 {
-                    totalvalues += WindSpeedData.ElementAt(i).Count();
-
-                    foreach (Data data in WindSpeedData.ElementAt(i))
-                    {
-                        sumofvalues += Convert.ToDouble(data.GetConcentration);
-                    }
-                    i++;
+                    sumofvalues += Convert.ToInt32(data.GetConcentration);
+                    totalvalues++;
                 }
-
                 estimator = sumofvalues / totalvalues;
             }
-
             return estimator;
         }
 
         /**
-         * This method creates the Area Requested in order to add it to the collected areas
+         * this method calculates the standard deviation of a given set of values
          */
-        public void createArea() 
+        private double CalculateStandardDeviation(List<double> observations)
         {
-            int estimatedLiquidPrecipitation = EstimateLiquidPrecipitation();
-            double estimatedRelativeHumidity = EstimateRH();
-            double estimatedTemperature = EstimateTemperature();
-            double estimatedWindSpeed = EstimateWindSpeed();
+            double average = observations.Average();
+            double sumOfSquaresOfDifferences = observations.Select(val => (val - average) * (val - average)).Sum();
+            double sd = Math.Sqrt(sumOfSquaresOfDifferences / observations.Count());
 
-            Area area = new Area(estimatedLiquidPrecipitation, estimatedRelativeHumidity, estimatedTemperature, estimatedWindSpeed);
+            return sd;
+        }
+
+        /**
+         * This method calculates the confidence interval for the estimated value of a variable
+         */
+        private double[] CalculateConfidenceInterval(double estimator,int totalvalues, double standarddeviation, double zvalue)         
+        {
+            double[] confidenceinterval = new double[2];
+            double calculated = zvalue * (standarddeviation / (Math.Sqrt(totalvalues)));
+
+            confidenceinterval[0] = estimator - calculated;
+            confidenceinterval[1] = estimator + calculated;
+
+            return confidenceinterval;
+        }
+
+        /**
+        * This method creates the Area Requested in order to add it to the collected areas
+        */
+        public void createArea(string name, int department) 
+        {
+            double estimatedLiquidPrecipitation = EstimateLiquidPrecipitation(department);
+            double estimatedRelativeHumidity = EstimateRelativeHumidity(department);
+            double estimatedTemperature = EstimateTemperature(department);
+            double estimatedWindSpeed = EstimateWindSpeed(department);
+
+            Area area = new Area(name,estimatedLiquidPrecipitation, estimatedRelativeHumidity, estimatedTemperature, estimatedWindSpeed);
 
             zone.AddArea(area);
         }
