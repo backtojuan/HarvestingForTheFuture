@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace project_model
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
-        {
+        private Analyzer analyzer;
+        private Association association;
 
+        public Program() 
+        {
+            analyzer = new Analyzer();
+            association = new Association();
         }
+
+        public Analyzer GetAnalyzer { get => analyzer; set => analyzer = value; }
+        public Association GetAssociation { get => association; set => association = value; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace project_model
 {
-    class Relation
+    public class Relation
     {
         private Area Area;
         private Farming Farming;
@@ -14,11 +14,11 @@ namespace project_model
         private String Color;
         
         private double LiquidPrecipiationPercent;
-        private double RelativeHumidityPercent;        
-        private double TemperaturePercent;
+        private double[] RelativeHumidityPercent;        
+        private double[] TemperaturePercent;
         private double WindSpeedPercent;
 
-        public Relation(String Color, double LiquidPrecipiationPercent, double RelativeHumidityPercent, double TemperaturePercent, double WindSpeedPercent,  
+        public Relation(String Color, double LiquidPrecipiationPercent, double[] RelativeHumidityPercent, double[] TemperaturePercent, double WindSpeedPercent,  
             Area Area, Farming Farming)
         {
             this.Color = Color;
@@ -32,8 +32,8 @@ namespace project_model
 
         public String GetColor { get => Color; set => Color = value; }
         public double GetLiquidPrecipiationPercent { get => LiquidPrecipiationPercent; set => LiquidPrecipiationPercent = value; }
-        public double GetRelativeHumidityPercent { get => RelativeHumidityPercent; set => RelativeHumidityPercent = value; }        
-        public double GetTemperaturePercent { get => TemperaturePercent; set => TemperaturePercent = value; }
+        public double[] GetRelativeHumidityPercent { get => RelativeHumidityPercent; set => RelativeHumidityPercent = value; }        
+        public double[] GetTemperaturePercent { get => TemperaturePercent; set => TemperaturePercent = value; }
         public double GetWindSpeedPercent { get => WindSpeedPercent; set => WindSpeedPercent = value; }
         public Area GetArea { get => Area; set => Area = value; }
         public Farming GetFarming { get => Farming; set => Farming = value; }

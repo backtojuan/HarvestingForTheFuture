@@ -46,10 +46,10 @@ namespace model
         public const String concentration = "concentraci_n=";
 
         //specified variables of interest
-        public const String LP = "Precipitación_Líquida";
-        public const String RH = "Humedad_Relativa";
-        public const String TMP = "Temperatura";
-        public const String WS = "Velocidad_del_viento";
+        public const String LiquidPrecipitation = "Precipitación_Líquida";
+        public const String RelativeHumidity = "Humedad_Relativa";
+        public const String Temperature = "Temperatura";
+        public const String WindSpeed = "Velocidad_del_viento";
 
         public String report;
 
