@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using project_gui;
 //using project_model;
+//using project_model.Program;
 
 
 namespace project_gui
@@ -23,7 +25,7 @@ namespace project_gui
          * representa la relación con el modelo
          */
 
-       // private Program ModelProgram;
+        //private Program ModelProgram;
 
 
         /*
@@ -38,9 +40,11 @@ namespace project_gui
          * Carga ConsolidatedPage
          * 
          */
-        public void LoadConsolidatedPage()
+        public void LoadConsolidatedPage(String name)
         {
             ConsolidatedPage = new ConsolidatedPage();
+            ConsolidatedPage.SetDepartmentLabel(name);
+            ConsolidatedPage.ShowDialog();
         }
 
         /*

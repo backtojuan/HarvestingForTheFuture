@@ -17,22 +17,26 @@ namespace project_gui
     {
         
 
-        public ConsolidatedPage(String department)
+        public ConsolidatedPage()
         {
             InitializeComponent();
-            LoadPage(department);
+            LoadPage();
         }
 
         /*
          * 
          */
-        public void LoadPage(String name)
+        public void LoadPage()
         {
-            //cambiar titulo
-            departmentLabel.Text = name;
             //cargar cultivos
             userControl11.LoadPage();
             Test();
+        }
+
+        public void SetDepartmentLabel(String name)
+        {
+            //cambiar titulo
+            departmentLabel.Text = name;
         }
 
         public void Test()

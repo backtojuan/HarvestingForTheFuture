@@ -34,7 +34,7 @@
             this.description = new System.Windows.Forms.FlowLayoutPanel();
             this.actualice = new System.Windows.Forms.Button();
             this.ir = new System.Windows.Forms.Button();
-            this.departamentos = new System.Windows.Forms.ComboBox();
+            this.departmentsCmb = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.image.SuspendLayout();
@@ -109,39 +109,27 @@
             this.ir.UseVisualStyleBackColor = false;
             this.ir.Click += new System.EventHandler(this.ir_Click);
             // 
-            // departamentos
+            // departmentsCmb
             // 
-            this.departamentos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.departmentsCmb.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.departamentos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.departamentos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-            this.departamentos.BackColor = System.Drawing.Color.White;
-            this.departamentos.CausesValidation = false;
-            this.departamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.departamentos.Font = new System.Drawing.Font("Constantia", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.departamentos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(72)))), ((int)(((byte)(84)))));
-            this.departamentos.FormattingEnabled = true;
-            this.departamentos.Items.AddRange(new object[] {
-            "Antioquia",
-            "Boyaca",
-            "Cesar",
-            "Choco",
-            "Cundinamarca",
-            "La Guagira",
-            "Magdalena",
-            "Meta",
-            "Santander",
-            "Tolima",
-            "Valle del Cauca"});
-            this.departamentos.Location = new System.Drawing.Point(389, 93);
-            this.departamentos.Margin = new System.Windows.Forms.Padding(30, 45, 6, 3);
-            this.departamentos.MaxDropDownItems = 4;
-            this.departamentos.Name = "departamentos";
-            this.departamentos.Size = new System.Drawing.Size(362, 50);
-            this.departamentos.TabIndex = 0;
-            this.departamentos.Text = "Departamento";
-            this.departamentos.SelectedIndexChanged += new System.EventHandler(this.departamentos_SelectedIndexChanged);
+            this.departmentsCmb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.departmentsCmb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
+            this.departmentsCmb.BackColor = System.Drawing.Color.White;
+            this.departmentsCmb.CausesValidation = false;
+            this.departmentsCmb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.departmentsCmb.Font = new System.Drawing.Font("Constantia", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.departmentsCmb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(72)))), ((int)(((byte)(84)))));
+            this.departmentsCmb.FormattingEnabled = true;
+            this.departmentsCmb.Location = new System.Drawing.Point(389, 93);
+            this.departmentsCmb.Margin = new System.Windows.Forms.Padding(30, 45, 6, 3);
+            this.departmentsCmb.MaxDropDownItems = 4;
+            this.departmentsCmb.Name = "departmentsCmb";
+            this.departmentsCmb.Size = new System.Drawing.Size(362, 50);
+            this.departmentsCmb.TabIndex = 0;
+            this.departmentsCmb.Text = "Departamento";
+            this.departmentsCmb.SelectedIndexChanged += new System.EventHandler(this.departamentos_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
@@ -173,7 +161,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.departamentos);
+            this.Controls.Add(this.departmentsCmb);
             this.Controls.Add(this.ir);
             this.Controls.Add(this.actualice);
             this.Controls.Add(this.description);
@@ -196,7 +184,7 @@
         private System.Windows.Forms.Button actualice;
         private System.Windows.Forms.Button ir;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ComboBox departamentos;
+        private System.Windows.Forms.ComboBox departmentsCmb;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
