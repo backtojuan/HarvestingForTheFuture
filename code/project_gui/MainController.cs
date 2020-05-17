@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using project_gui;
 //using project_model;
 //using project_model.Program;
+//using _DataFirstPage_;
 
 
 namespace project_gui
@@ -32,8 +33,6 @@ namespace project_gui
          */
          //private Principal Principal;
          
-
-
         /*
          * Constructor del Main controller
          * first es la pagina FirstPage Activa del proyecto
@@ -64,6 +63,7 @@ namespace project_gui
             //ModelProgram.getAssociation.getRelationList(Name).Count;
             return 0;
           }
+<<<<<<< HEAD
 
         /*
          * uno de los metodo que retorna la info para mostrar la info del match
@@ -76,6 +76,17 @@ namespace project_gui
             return "Holii";
         }
         
+=======
+            /*
+             * Metodo que llena la lista del comboBox de la clase FirtsPage
+             */
+
+            /*  public List<String> deps(List<String> list)
+                {
+            list.ElementAt < i > = principalFirstPage.getList().getName();
+            }
+            */
+>>>>>>> origin/interface
        
 
 

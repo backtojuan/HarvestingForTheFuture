@@ -109,6 +109,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <ProjectReference Include="..\model\model.csproj">
       <Project>{d5965cb9-bed2-4153-a6ce-effbb8c70120}</Project>
       <Name>model</Name>
@@ -116,6 +117,11 @@
     <ProjectReference Include="..\project_model\project_model.csproj">
       <Project>{274dc759-c9f6-47f3-88f2-46829336ab8a}</Project>
       <Name>project_model</Name>
+=======
+    <ProjectReference Include="..\_DataFirstPage_\_DataFirstPage_.csproj">
+      <Project>{f0e68bf9-300b-4bda-ae1e-76a07392af42}</Project>
+      <Name>_DataFirstPage_</Name>
+>>>>>>> origin/interface
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Collections;
 
 
 namespace DataFistPage
@@ -40,6 +41,25 @@ namespace DataFistPage
         sr.Close();
 
         }
+
+       /* public List<String> getList()
+        {
+            return departament;
+        }
+
+        /*
+         * Metodo que busca dentro de la tabla el elemento seleccionado delsde el caomboBox en la interfaz
+         */
+
+         /*
+          *
+        public void buscar()
+        {
+            Hashtable table = new Hashtable();
+
+            table.Add(Departament.getName, Departament);
+
+        }*/
         
     }
 }
