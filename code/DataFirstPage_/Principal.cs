@@ -34,7 +34,7 @@ namespace DataFistPage
             {
                 //Console.WriteLine(line);
                 String[] depar = line.Split(';');
-                departament.Add(new Departament(depar[0], depar[1], depar[2]);
+                departament.Add(new Departament(depar[0], depar[1], depar[2]));
                 
             }
         sr.Close();

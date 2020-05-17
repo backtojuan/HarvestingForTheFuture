@@ -45,11 +45,19 @@
     <Compile Include="Area.cs" />
     <Compile Include="Association.cs" />
     <Compile Include="Farming.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relation.cs" />
     <Compile Include="Zone.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gui\gui.csproj">
+      <Project>{adc0df96-fd84-4563-8ee1-522772583082}</Project>
+      <Name>gui</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\model\model.csproj">
+      <Project>{d5965cb9-bed2-4153-a6ce-effbb8c70120}</Project>
+      <Name>model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

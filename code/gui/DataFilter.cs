@@ -11,8 +11,14 @@ using model;
 
 namespace gui
 {
+    /**
+     * This form shows to the user the results done after a query
+     */
     public partial class DataFilter : Form
     {
+        /**
+         * Attributtes
+         */
         private DataGridView datagridview;
 
         Button button = new Button();
