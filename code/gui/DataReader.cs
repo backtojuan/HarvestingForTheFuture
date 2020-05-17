@@ -429,7 +429,7 @@ namespace gui
             String var = this.variablevalue.Text.Replace(" ", "_");
             try
             {
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter("..\\..\\..\\..\\code\\Data\\" + namevalue + "\\" + var + "\\" + var + ".csv"))
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter("..\\..\\..\\..\\code\\data\\" + namevalue + "\\" + var + "\\" + var + ".csv"))
                 {
                     foreach (Data Row in List)
                     {
@@ -451,7 +451,7 @@ namespace gui
             List<Data> partialdata = new List<Data>();
             try
             {
-                using (System.IO.StreamReader file = new System.IO.StreamReader("..\\..\\..\\..\\code\\Data\\" + namevalue + "\\" + var + "\\" + var + ".csv"))
+                using (System.IO.StreamReader file = new System.IO.StreamReader("..\\..\\..\\..\\code\\data\\" + namevalue + "\\" + var + "\\" + var + ".csv"))
                 {
                     String line = file.ReadLine();
 
@@ -555,7 +555,7 @@ namespace gui
         {
             try
             {
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter("..\\..\\..\\..\\code\\Data\\" + namevalue + "\\" +
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter("..\\..\\..\\..\\code\\data\\" + namevalue + "\\" +
                     var + "\\" + year + "\\" + var + ".csv"))
                 {
                     foreach (Data Row in List)

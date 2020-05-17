@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace project_model
 {
-    class Area
+    public class Area
     {
         private String name;
         private double LiquidPrecipitation;
@@ -23,10 +23,16 @@ namespace project_model
             this.Windspeed = Windspeed;
         }
 
+        public String toString() 
+        {
+            return name + ";" + LiquidPrecipitation + ";" + RelativeHumidity + ";" + Temperature + ";" + Windspeed;
+        
+        }
+
         public String GetName { get => name; set => name = value; }
         public double GetLiquidPrecipitation { get => LiquidPrecipitation; set => LiquidPrecipitation = value; }
         public double GetRelativeHumidity { get => RelativeHumidity; set => RelativeHumidity = value; }
         public double GetTemperature { get => Temperature; set => Temperature = value; }
-        public double GetConcentration { get => Windspeed; set => Windspeed = value; }
+        public double GetWindSpeed { get => Windspeed; set => Windspeed = value; }
     }
 }

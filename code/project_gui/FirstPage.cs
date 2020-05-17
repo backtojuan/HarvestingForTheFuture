@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using project_gui;
+using project_model;
+using model;
 
 namespace project_gui
 {
@@ -54,7 +56,8 @@ namespace project_gui
         private void ir_Click(object sender, EventArgs e)
         {
             //cargar consolidatedPage
-            MainController.LoadConsolidatedPage(departmentsCmb.Text);
+            //MainController.LoadConsolidatedPage(departmentsCmb.Text);
+            Analyzer analyzer = new Analyzer();
         }
 
         private void departamentos_SelectedIndexChanged(object sender, EventArgs e)

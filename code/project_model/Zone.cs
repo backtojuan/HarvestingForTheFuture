@@ -9,7 +9,7 @@ namespace project_model
     /**
      * This class allows to create a zone which is an specied set of areas
      */
-    class Zone
+    public class Zone
     {
         private List<Area> Areas;
 
@@ -18,7 +18,7 @@ namespace project_model
          */
         public Zone()
         {
-
+            Areas = new List<Area>();
         }
 
         /**

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace project_model
 {
-    class Relation
+    public class Relation
     {
         private Area Area;
         private Farming Farming;
