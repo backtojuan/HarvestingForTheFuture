@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DataFistPage
 {
     //Esta clase contiene la lista de departamentos que se agregarán en el comboBox de la clase FirstPage
-    class ListDepartament
+    class Departament
     {
         public List<String> list;
 
