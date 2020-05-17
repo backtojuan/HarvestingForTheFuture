@@ -17,7 +17,7 @@ namespace project_gui
 {
     public partial class UserControl1 : UserControl
     {
-        
+        private DataTable table;
 
         private GMarkerGoogle marker;
         private GMapOverlay markerOverlay;
@@ -38,16 +38,27 @@ namespace project_gui
          */
         public void LoadPage()
         {
-            
+            test();
 
         }
 
         public void test()
         {
+            table = new DataTable();
+            table.Columns.Add(new DataColumn("Posicion", typeof(int)));
+            table.Columns.Add(new DataColumn("Nombre", typeof(String)));
+            table.Columns.Add(new DataColumn("Compatibilidad", typeof(double)));
+            AddToDataGridView(1, "Papa", 90);
+            AddToDataGridView(2, "Tomate", 85);
+            AddToDataGridView(3, "Trigo", 70);
 
+            dataGridView.DataSource = table;
         }
 
-        
+        public void AddToDataGridView(int pos, String name, double Comp)
+        {
+            table.Rows.Add(pos, name, Comp);
+        }
 
         public void SetHarvestingLabel(String harverting)
         {
@@ -81,6 +92,18 @@ namespace project_gui
 
             //Agregar el marcador al map control
             gMapControl1.Overlays.Add(markerOverlay);
+        }
+
+        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dataGridView.Columns[e.ColumnIndex].Name == "Compatibilidad")
+            {
+                if (Convert.ToInt32(e.Value) >= 90)
+                {
+                    e.CellStyle.ForeColor = Color.DarkGreen;
+                    e.CellStyle.BackColor = Color.GreenYellow;
+                }
+            }
         }
     }
 }
