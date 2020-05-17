@@ -17,7 +17,7 @@ namespace project_gui
 {
     public partial class UserControl1 : UserControl
     {
-        private DataTable table;
+        
 
         private GMarkerGoogle marker;
         private GMapOverlay markerOverlay;
@@ -38,12 +38,7 @@ namespace project_gui
          */
         public void LoadPage()
         {
-            table = new DataTable();
-            table.Columns.Add(new DataColumn("Posicion", typeof(int)));
-            table.Columns.Add(new DataColumn("Nombre", typeof(String)));
-            table.Columns.Add(new DataColumn("Compatibilidad", typeof(double)));
-            table.Columns.Add(new DataColumn("Latitud", typeof(double)));
-            table.Columns.Add(new DataColumn("Longitud", typeof(double)));
+            
 
         }
 
@@ -52,10 +47,7 @@ namespace project_gui
 
         }
 
-        public void AddToDataGridView(int pos, String name, double Comp, double lat, double lng)
-        {
-            table.Rows.Add(pos, name, Comp, lat, lng);
-        }
+        
 
         public void SetHarvestingLabel(String harverting)
         {
@@ -69,8 +61,7 @@ namespace project_gui
 
         private void gMapControl1_Load(object sender, EventArgs e)
         {
-            table.Rows.Add(1, "Cali", 90);
-            dataGridView.DataSource = table;
+            
 
             gMapControl1.MapProvider = GMapProviders.GoogleMap;
             gMapControl1.Position = new PointLatLng(latInitial, longInitial);

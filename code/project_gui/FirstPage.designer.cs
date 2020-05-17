@@ -87,6 +87,7 @@
             this.actualice.Text = "Actualizar base de datos";
             this.actualice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.actualice.UseVisualStyleBackColor = false;
+            this.actualice.Click += new System.EventHandler(this.actualice_Click);
             // 
             // ir
             // 

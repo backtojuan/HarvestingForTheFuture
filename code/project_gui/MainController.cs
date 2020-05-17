@@ -27,6 +27,12 @@ namespace project_gui
 
         //private Program ModelProgram;
 
+        /*
+         * representa la relación con el paquete de las descripciones para los detalles de la interfaz
+         */
+         //private Principal Principal;
+         
+
 
         /*
          * Constructor del Main controller
@@ -35,7 +41,10 @@ namespace project_gui
         public MainController(FirstPage first)
         {
             FirstPage = first;
+            //ModelProgram = new Program();
+            //Principal = new Principal();
         }
+
         /*
          * Carga ConsolidatedPage
          * 
@@ -49,13 +58,23 @@ namespace project_gui
 
         /*
          */
-         
           public int HarvestingListSize(String Name)
           {
             
             //ModelProgram.getAssociation.getRelationList(Name).Count;
             return 0;
           }
+
+        /*
+         * uno de los metodo que retorna la info para mostrar la info del match
+         */
+         public String InfoHarvesting(String HarvestingName)
+        {
+            //traer información del modelo para mostrar la info
+            //llamar el metodo de mostrar
+
+            return "Holii";
+        }
         
        
 

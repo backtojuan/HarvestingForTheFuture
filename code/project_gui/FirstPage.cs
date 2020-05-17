@@ -33,6 +33,7 @@ namespace project_gui
             Test();
             
         }
+
         /*
          * Es un metod con información que cambia algunas cosas de la interfaz
          * para realizar pruebas del funcionamiento mientras se realiza la conexión con el modelo
@@ -56,8 +57,8 @@ namespace project_gui
         private void ir_Click(object sender, EventArgs e)
         {
             //cargar consolidatedPage
-            //MainController.LoadConsolidatedPage(departmentsCmb.Text);
-            Analyzer analyzer = new Analyzer();
+            MainController.LoadConsolidatedPage(departmentsCmb.Text);
+            
         }
 
         private void departamentos_SelectedIndexChanged(object sender, EventArgs e)
@@ -82,6 +83,11 @@ namespace project_gui
         private void FirstPage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void actualice_Click(object sender, EventArgs e)
+        {
+            //MainController.ActualiceDB();
         }
     }
 }

@@ -15,7 +15,8 @@ namespace project_gui
 {
     public partial class ConsolidatedPage : Form
     {
-        
+
+        private DataTable table;
 
         public ConsolidatedPage()
         {
@@ -30,6 +31,13 @@ namespace project_gui
         {
             //cargar cultivos
             userControl11.LoadPage();
+
+            table = new DataTable();
+            table.Columns.Add(new DataColumn("Posicion", typeof(int)));
+            table.Columns.Add(new DataColumn("Nombre", typeof(String)));
+            table.Columns.Add(new DataColumn("Compatibilidad", typeof(double)));
+            
+
             Test();
         }
 
@@ -39,29 +47,23 @@ namespace project_gui
             departmentLabel.Text = name;
         }
 
+        public void AddToDataGridView(int pos, String name, double Comp)
+        {
+            table.Rows.Add(pos, name, Comp);
+        }
+
         public void Test()
         {
-            harvestingCmb.Items.Add("Antioquia");
-            harvestingCmb.Items.Add("Valle del cauca ");
+            AddToDataGridView(1, "Papa", 90);
+            AddToDataGridView(2, "Tomate", 85);
+            AddToDataGridView(3, "Trigo", 70);
+            dataGridView.DataSource = table;
         }
 
         /*
          * 
          */
-        private void harvestingCmb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //actualizar info cuando cambie el cultivo
-
-            //cambiar titulo del cultivo
-            userControl11.SetHarvestingLabel(harvestingCmb.Text);
-            //cambiar descripción del cultivo
-            //cargar el data grid con la info
-
-            //add all harvesting like option
-            //in this option the description harvesting ir null
-
-
-        }
+        
 
         
 
