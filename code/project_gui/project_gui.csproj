@@ -107,11 +107,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DataFistPage\DataFistPage.csproj">
-      <Project>{8bfba07e-05d5-4e85-ad99-f4927abfaa9d}</Project>
-      <Name>DataFistPage</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

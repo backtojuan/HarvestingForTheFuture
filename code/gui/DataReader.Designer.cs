@@ -264,6 +264,7 @@
             this.title.Size = new System.Drawing.Size(618, 24);
             this.title.TabIndex = 12;
             this.title.Text = "Data Requestment : Datos de la calidad del aire en Colombia";
+            this.title.Click += new System.EventHandler(this.title_Click);
             // 
             // specifiedvaluefordate
             // 
