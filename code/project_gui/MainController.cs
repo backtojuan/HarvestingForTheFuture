@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using project_gui;
-//using project_model;
-//using project_model.Program;
+using project_model;
+
 
 
 namespace project_gui
@@ -25,7 +25,7 @@ namespace project_gui
          * representa la relación con el modelo
          */
 
-        //private Program ModelProgram;
+        private Program program;
 
         /*
          * representa la relación con el paquete de las descripciones para los detalles de la interfaz
@@ -41,7 +41,7 @@ namespace project_gui
         public MainController(FirstPage first)
         {
             FirstPage = first;
-            //ModelProgram = new Program();
+            program = new Program();
             //Principal = new Principal();
         }
 

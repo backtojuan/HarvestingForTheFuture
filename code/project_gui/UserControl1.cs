@@ -19,6 +19,8 @@ namespace project_gui
     {
         private DataTable table;
 
+        private ConsolidatedPage ConsolidatedPage;
+
         private GMarkerGoogle marker;
         private GMapOverlay markerOverlay;
         private double latInitial = 3.4372201;
@@ -27,7 +29,7 @@ namespace project_gui
         public UserControl1()
         {
             InitializeComponent();
-            LoadPage();
+            
         }
 
 
@@ -36,8 +38,9 @@ namespace project_gui
          * crea las columnas de la tabla para el dataGridView y
          * carga la lista de los cultivos 
          */
-        public void LoadPage()
+        public void LoadPage(ConsolidatedPage consolidated)
         {
+            ConsolidatedPage = consolidated;
             test();
 
         }
@@ -104,6 +107,16 @@ namespace project_gui
                     e.CellStyle.BackColor = Color.GreenYellow;
                 }
             }
+        }
+
+        private void HarvestingSelect(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int rowSelected = e.RowIndex;
+            String Harvesting = dataGridView.Rows[rowSelected].Cells[1].Value.ToString();
+            harvestingLabel.Text = Harvesting;
+            //metodo para cargar la info
+            ConsolidatedPage.ShowInfoHarvesting(Harvesting);
+
         }
     }
 }

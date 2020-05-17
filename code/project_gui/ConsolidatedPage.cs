@@ -30,7 +30,7 @@ namespace project_gui
         public void LoadPage()
         {
             //cargar cultivos
-            userControl11.LoadPage();
+            userControl11.LoadPage(this);
 
             
             
@@ -58,7 +58,11 @@ namespace project_gui
         /*
          * 
          */
-
+         public void ShowInfoHarvesting(String Harvesting)
+        {
+            //Llamar metodo para mostar info
+            //MainController.
+        }
 
 
 
