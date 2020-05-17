@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_DataFirstPage_", "_DataFir
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFiltering", "TestFiltering2\TestFiltering.csproj", "{C785A621-E8AE-4682-98BB-3833AFA63CE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSirecpa", "TestSirecpa2\TestSirecpa.csproj", "{FFBBF1DF-7AD7-4F27-8566-F7C5ADB867CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{C785A621-E8AE-4682-98BB-3833AFA63CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C785A621-E8AE-4682-98BB-3833AFA63CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C785A621-E8AE-4682-98BB-3833AFA63CE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFBBF1DF-7AD7-4F27-8566-F7C5ADB867CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFBBF1DF-7AD7-4F27-8566-F7C5ADB867CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFBBF1DF-7AD7-4F27-8566-F7C5ADB867CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFBBF1DF-7AD7-4F27-8566-F7C5ADB867CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

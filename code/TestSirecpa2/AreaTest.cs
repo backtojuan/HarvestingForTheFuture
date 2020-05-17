@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace TestSirecpa2
 {
     [TestClass]
-    public class AnalyzerTest
+    public class AreaTest
     {
         protected project_model.Analyzer Analyzer;
 
