@@ -16,7 +16,7 @@ namespace project_gui
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ConsolidatedPage());
+            Application.Run(new FirstPage());
         }
     }
 }
