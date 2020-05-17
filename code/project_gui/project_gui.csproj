@@ -107,5 +107,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\_DataFirstPage_\_DataFirstPage_.csproj">
+      <Project>{f0e68bf9-300b-4bda-ae1e-76a07392af42}</Project>
+      <Name>_DataFirstPage_</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
