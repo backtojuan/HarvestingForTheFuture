@@ -23,8 +23,8 @@ namespace project_gui
 
         private GMarkerGoogle marker;
         private GMapOverlay markerOverlay;
-        private double latInitial = 3.4372201;
-        private double longInitial = -76.5224991;
+        private double latitude;
+        private double longitude;
 
         public UserControl1()
         {
@@ -38,27 +38,15 @@ namespace project_gui
          * crea las columnas de la tabla para el dataGridView y
          * carga la lista de los cultivos 
          */
-        public void LoadPage(ConsolidatedPage consolidated)
+        public void LoadPage(ConsolidatedPage consolidated, double lat, double lon)
         {
             ConsolidatedPage = consolidated;
-            //test();
+            latitude = lat;
+            longitude = lon;
             table = new DataTable();
             table.Columns.Add(new DataColumn("Posicion", typeof(int)));
             table.Columns.Add(new DataColumn("Nombre", typeof(String)));
             table.Columns.Add(new DataColumn("Compatibilidad", typeof(double)));
-        }
-
-        public void test()
-        {
-            table = new DataTable();
-            table.Columns.Add(new DataColumn("Posicion", typeof(int)));
-            table.Columns.Add(new DataColumn("Nombre", typeof(String)));
-            table.Columns.Add(new DataColumn("Compatibilidad", typeof(double)));
-            AddToDataGridView(1, "Papa", 90);
-            AddToDataGridView(2, "Tomate", 85);
-            AddToDataGridView(3, "Trigo", 70);
-
-            dataGridView.DataSource = table;
         }
 
         public void AddToDataGridView(int pos, String name, double Comp)
@@ -77,17 +65,42 @@ namespace project_gui
             //borrar - error
         }
 
-        public void AddPointInHumidity(double x, double y)
+        //Humidity Relative
+        public void AddPointInHumidityDep(double x, double y)
         {
             HumidChart.Series["Departamento"].Points.AddXY(x, y);
+        }
+        public void AddPointInHumidityMinHarv(double x, double y)
+        {
+            HumidChart.Series["Cultivo Min"].Points.AddXY(x, y);
+        }
+
+        public void AddPointInHumidityMaxHarv(double x, double y)
+        {
+            HumidChart.Series["Cultivo Max"].Points.AddXY(x, y);
+        }
+
+        //Temperature 
+        public void AddPointInTemperatureDep(double x, double y)
+        {
+            TempChart.Series["Departamento"].Points.AddXY(x, y);
+        }
+
+        public void AddPointInTemperatureMaxDHar(double x, double y)
+        {
+            TempChart.Series["Cultivo Max"].Points.AddXY(x, y);
+        }
+
+        public void AddPointInTemperatureMinDHar(double x, double y)
+        {
+            TempChart.Series["Cultivo Min"].Points.AddXY(x, y);
         }
 
         private void gMapControl1_Load(object sender, EventArgs e)
         {
-            
 
             gMapControl1.MapProvider = GMapProviders.GoogleMap;
-            gMapControl1.Position = new PointLatLng(latInitial, longInitial);
+            gMapControl1.Position = new PointLatLng(latitude, longitude);
             gMapControl1.MinZoom = 0;
             gMapControl1.MaxZoom = 24;
             gMapControl1.Zoom = 9;
@@ -95,12 +108,12 @@ namespace project_gui
 
             //Marcador
             markerOverlay = new GMapOverlay("Marcador");
-            marker = new GMarkerGoogle(new PointLatLng(latInitial, longInitial), GMarkerGoogleType.green);
+            marker = new GMarkerGoogle(new PointLatLng(latitude, longitude), GMarkerGoogleType.green);
             markerOverlay.Markers.Add(marker);//Agregarlo al mapa
 
             //Agregar un tooltip de texto a los marcadores
             marker.ToolTipMode = MarkerTooltipMode.Always;
-            marker.ToolTipText = String.Format("Ubicación: \n Latitud:{0} \n Longitud: {1}", latInitial, longInitial) + "\n Compatibilidad: 90%";
+            marker.ToolTipText = String.Format("Ubicación: \n Latitud:{0} \n Longitud: {1}", latitude, longitude));
 
             //Agregar el marcador al map control
             gMapControl1.Overlays.Add(markerOverlay);
