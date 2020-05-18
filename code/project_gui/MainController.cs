@@ -4,8 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using project_gui;
+<<<<<<< HEAD
+//using project_model;
+//using project_model.Program;
+//using _DataFirstPage_;
+=======
 using project_model;
 
+>>>>>>> e107a379326c19c66c01c762b4c411f30c89e6cc
 
 
 namespace project_gui
@@ -33,6 +39,11 @@ namespace project_gui
          //private Principal Principal;
          
 
+        /*
+         * representa la relacion con el modelo de FirstPage
+         */
+
+        //private Principal principalFirstPage;
 
         /*
          * Constructor del Main controller
@@ -82,6 +93,17 @@ namespace project_gui
             //project.getAssociation.getRelationList(Name).Count;
             return 0;
           }
+<<<<<<< HEAD
+            /*
+             * Metodo que llena la lista del comboBox de la clase FirtsPage
+             */
+
+            /*  public List<String> deps(List<String> list)
+                {
+            list.ElementAt < i > = principalFirstPage.getList().getName();
+            }
+            */
+=======
 
         /*
          * uno de los metodo que retorna la info para mostrar la info del match
@@ -98,6 +120,7 @@ namespace project_gui
         public double[] 
 
         
+>>>>>>> e107a379326c19c66c01c762b4c411f30c89e6cc
        
 
 
