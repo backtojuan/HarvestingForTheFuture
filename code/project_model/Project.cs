@@ -55,5 +55,8 @@ namespace project_model
             return 1.0;
         }
 
+        public Analyzer GetZone { get => analyzer; set => analyzer = value; }
+        public Association GetAssociation { get => association; set => association = value; }
+
     }
 }
