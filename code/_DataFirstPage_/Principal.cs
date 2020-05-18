@@ -13,18 +13,21 @@ namespace DataFistPage
     class Principal
     {
 
+        const String DEPARTAMENTS = "..\\..\\..\\..\\code\\Data\\DATA_FIRST_PAGE\\Departament.txt";
+        const String CULTIVO = "..\\..\\..\\..\\code\\Data\\DATA_FIRST_PAGE\\Cultivo.txt";
+        public List<Departament> departament; //new List<Departament>();
+        public Dictionary<String, List<Departament>> dictionary; //new Dictionary<String,List<Departament>>();
+
         public Principal()
         {
+            departament = new List<Departament>();
+            dictionary = new Dictionary<String, List<Departament>>();
 
         }
 
-        const String DEPARTAMENTS = "..\\..\\..\\..\\code\\Data\\DATA_FIRST_PAGE\\Departament.txt";
-        const String CULTIVO = "..\\..\\..\\..\\code\\Data\\DATA_FIRST_PAGE\\Cultivo.txt";
-
-        public List<Departament> departament = new List<Departament>();
-
-        public void Read()
+    public void Read()
         {
+            
             String line;
 
             StreamReader sr = new StreamReader(DEPARTAMENTS);
@@ -35,8 +38,9 @@ namespace DataFistPage
             {
                 //Console.WriteLine(line);
                 String[] depar = line.Split(';');
-                departament.Add(new Departament(depar[0], depar[1], depar[2]);
-                
+                departament.Add(new Departament(depar[0], depar[1], depar[2]));
+
+                dictionary.Add(depar[0], departament);
             }
         sr.Close();
 
@@ -51,13 +55,13 @@ namespace DataFistPage
          * Metodo que busca dentro de la tabla el elemento seleccionado delsde el caomboBox en la interfaz
          */
 
-         /*
-          *
-        public void buscar()
+         
+          
+       /* public void buscar()
         {
             Hashtable table = new Hashtable();
 
-            table.Add(Departament.getName, Departament);
+            table.Add(departament[0], depar);
 
         }*/
         
