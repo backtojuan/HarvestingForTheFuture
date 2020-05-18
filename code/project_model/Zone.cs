@@ -32,6 +32,6 @@ namespace project_model
         /**
          * Allows to get all areas on a zone
          */
-        public List<Area> GetAreas { get => Areas; }
+        public List<Area> GetAreas { get => Areas; set => Areas = value; }
     }
 }
