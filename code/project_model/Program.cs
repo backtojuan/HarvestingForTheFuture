@@ -8,16 +8,31 @@ namespace project_model
 {
     public class Program
     {
-        private Analyzer analyzer;
+		
         private Association association;
+        private Analyzer analyzer;
+        
 
+        /*
+         * Constructor de la clase
+         */
         public Program()
         {
-            analyzer = new Analyzer();
-            association = new Association();
+            
         }
 
-        public Analyzer GetAnalyzer { get => analyzer; set => analyzer = value; }
-        public Association GetAssociation { get => association; set => association = value; }
+        /*
+         * realiza el pre-procesamiento de datos de la base de datso principal
+         * y serializa la información
+         */
+        public void ActualiceDB()
+        {
+            analyzer = new Analyzer();
+        }
+
+        public void Association(String DepartmentName)
+        {
+            //association = new Association(DepartmentName);
+        }
     }
 }
