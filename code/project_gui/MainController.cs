@@ -10,7 +10,7 @@ using project_model;
 
 namespace project_gui
 {
-    class MainController
+    public class MainController
     {
         /*
          * Representa la relación con la interfaz FirstPage
@@ -25,7 +25,7 @@ namespace project_gui
          * representa la relación con el modelo
          */
 
-        private Program program;
+        private Project project;
 
         /*
          * representa la relación con el paquete de las descripciones para los detalles de la interfaz
@@ -41,7 +41,7 @@ namespace project_gui
         public MainController(FirstPage first)
         {
             FirstPage = first;
-            program = new Program();
+            project = new Project();
             //Principal = new Principal();
         }
 
