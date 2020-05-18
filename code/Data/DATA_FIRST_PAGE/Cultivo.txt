@@ -1,0 +1,8 @@
+Aguacate;Aguacate
+Cacao;Cacao
+Chontaduro;Chontaduro
+Granadilla;Granadilla
+Soya;Soya
+Trigo;Trigo
+Tomate;Tomate
+Yuca;Yuca

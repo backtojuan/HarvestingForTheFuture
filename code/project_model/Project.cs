@@ -30,9 +30,21 @@ namespace project_model
             analyzer = new Analyzer();
         }
 
+        /*
+         * Renorna el tamaño de la lista de Relaciones
+         */ 
+        public int HarvestingSize()
+        {
+            return association.GetRelations.Count;
+        }
+
+        /*
+         * se encarga de realizar la asociacion entre el departamento seleccionado por el usuario y los cultivos
+         */
         public void Association(String DepartmentName)
         {
-            //association = new Association(DepartmentName);
+            association = new Association(DepartmentName);
+            association.Compare();
         }
 
         /*
@@ -41,8 +53,7 @@ namespace project_model
          */
         public String NameHarvisting(int i)
         {
-            //association.getRelations()[i].GetFarming().GetName;
-            return "hi";
+            return association.GetRelations[i].GetFarming.GetName; ;
         }
 
         /*
@@ -50,9 +61,18 @@ namespace project_model
          * en la posisción entregada por parametro
          */
         public double CompatibilityHarvisting(int i)
+        {        
+            return association.GetRelations[i].GetCompatibility;
+        }
+
+        public double GetInfoHumidity(int name)
         {
-            //association.getRelations()[i].GetFarming().GetCompatibility();
-            return 1.0;
+            return association.GetRelations[name].GetRelativeHumidityPercent;
+        }
+
+        public int[] GetInfoHumidityHarv(int Relation)
+        {
+            return association.GetRelations[Relation].GetFarming.GetRelativeHumidity;
         }
 
         public Analyzer GetZone { get => analyzer; set => analyzer = value; }

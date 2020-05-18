@@ -1,59 +1,54 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
 
 namespace project_model
 {
+    /**
+     * This class works like a connection between areas and farmings
+     */
     public class Association
     {
 
         private Zone zone;
-        
-        private List<Farming> farmings;        
+
+        private List<Farming> farmings;
         private List<Relation> relations;
 
+        /**
+         * Association constructor
+         */
         public Association(String area)
         {
+            zone = new Zone();
             farmings = new List<Farming>();
             loadFarming(Farming.path);
             loadZone(area);
             relations = new List<Relation>();
         }
 
+        /**
+         * This method deserialize the object saved on previous moments and recover it to be used
+         */
         private void loadZone(String department)
         {
-            zone = new Zone();
-            using (System.IO.StreamReader file = new System.IO.StreamReader(Analyzer.path + department + ".csv"))
-            {
-                String line = file.ReadLine();
-
-                while (line != null)
-                {
-                    String[] infor = line.Split(' ');
-
-                    String name = infor[0];
-                    double estimatedliquidprecipitation = Convert.ToDouble(infor[1]);
-                    double estimatedrelativehumidity = Convert.ToDouble(infor[2]);
-                    double estimatedtemperature = Convert.ToDouble(infor[3]);
-                    double estimatedwindspeed = Convert.ToDouble(infor[4]);
-                    double liquidprecipitationconfidence = Convert.ToDouble(infor[5]);
-                    double relativehumidityconfidence = Convert.ToDouble(infor[6]);
-                    double temperatureconfidence = Convert.ToDouble(infor[7]);
-                    double windspeedconfidence = Convert.ToDouble(infor[8]);
-
-                    Area area = new Area(name, estimatedliquidprecipitation, estimatedrelativehumidity, estimatedtemperature, estimatedwindspeed,
-                        liquidprecipitationconfidence, relativehumidityconfidence, temperatureconfidence, windspeedconfidence);
-                    zone.AddArea(area);
-                    line = file.ReadLine();
-                }
-            }
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(Analyzer.path + department, FileMode.Open,FileAccess.Read);
+            Area area = (Area)formatter.Deserialize(stream);
+            zone.AddArea(area);
         }
 
+        /**
+         * This method loads the farmings saved on a textfile
+         */
         private void loadFarming(String path)
         {
             using (System.IO.StreamReader file = new System.IO.StreamReader(path))
@@ -63,7 +58,8 @@ namespace project_model
 
                 while (line != null)
                 {
-                    String[] infor = line.Split(',');
+                    Console.WriteLine(line);
+                    String[] infor = line.Split(';');
 
                     String Name = infor[0];
                     int LiquidPrecipitation = 0;
@@ -108,71 +104,87 @@ namespace project_model
             }
         }
 
+        /**
+         * This method compares an area with each farming of interest in order to determine wether it's compatible to be harvested or not
+         */
         public void Compare()
         {
             foreach (Area area in zone.GetAreas)
             {
                 List<Relation> relationS = new List<Relation>();
                 int i = 0;
-                while (i < 10)
+                while (i < farmings.Count)
                 {
-                    double LiquidPrecipitationPercent = Match(farmings.ElementAt(i).GetLiquidPrecipitation/1000,
-                                                        area.GetLiquidPrecipitation,
-                                                        (area.GetLiquidPrecipitation - area.GetLiquidPrecipitationConfidence),
-                                                        (area.GetLiquidPrecipitation + area.GetLiquidPrecipitationConfidence));
+                    double LiquidPrecipitationPercent = Match(farmings.ElementAt(i).GetLiquidPrecipitation,
+                                                        ((area.GetLiquidPrecipitation)*1000),
+                                                        ((area.GetLiquidPrecipitation - area.GetLiquidPrecipitationConfidence)*1000),
+                                                        ((area.GetLiquidPrecipitation + area.GetLiquidPrecipitationConfidence))*1000);
 
-                    double[] RelativeHumidityPercent = new double[2];
-
-                    RelativeHumidityPercent[0] = Match(farmings.ElementAt(i).GetRelativeHumidity[0]/100,
-                                                         area.GetRelativeHumidity,
-                                                         (area.GetRelativeHumidity - area.GetRelativeHumidityConfidence),
-                                                         (area.GetRelativeHumidity + area.GetRelativeHumidityConfidence));
-
-                    RelativeHumidityPercent[0] = Match(farmings.ElementAt(i).GetRelativeHumidity[1]/100,
+                    
+                    double RelativeHumidityPercent = Match(farmings.ElementAt(i).GetRelativeHumidity[0],
+                                                        farmings.ElementAt(i).GetRelativeHumidity[1],
                                                         area.GetRelativeHumidity,
                                                         (area.GetRelativeHumidity - area.GetRelativeHumidityConfidence),
                                                         (area.GetRelativeHumidity + area.GetRelativeHumidityConfidence));
-
-                    double[] TemperaturePercent = new double[2];
-
-                    TemperaturePercent[0] = Match(farmings.ElementAt(i).GetMinTemperature,
-                                                        area.GetTemperature,
-                                                        (area.GetTemperature - area.GetTemperatureConfidence),
-                                                        (area.GetTemperature + area.GetTemperatureConfidence));
-
-                    TemperaturePercent[0] = Match(farmings.ElementAt(i).GetMaxTemperature,
-                                                        area.GetTemperature,
-                                                        (area.GetTemperature - area.GetTemperatureConfidence),
-                                                        (area.GetTemperature + area.GetTemperatureConfidence));
-
+                                        
+                    double TemperaturePercent = Match(farmings.ElementAt(i).GetMinTemperature,
+                                                    farmings.ElementAt(i).GetMaxTemperature,
+                                                    area.GetTemperature,
+                                                    (area.GetTemperature - area.GetTemperatureConfidence),
+                                                    (area.GetTemperature + area.GetTemperatureConfidence));
+                    
                     double WindSpeedPercent = Match(farmings.ElementAt(i).GetWindSpeed,
                                                         area.GetWindSpeed,
                                                         (area.GetWindSpeed - area.GetWindspeedConfidence),
                                                         (area.GetWindSpeed + area.GetWindspeedConfidence));
 
-                    double compatibility = (LiquidPrecipitationPercent + RelativeHumidityPercent[0] + RelativeHumidityPercent[1] + TemperaturePercent[0] +
-                        TemperaturePercent[1] + WindSpeedPercent) /6;
-                   
-                    Relation relation = new Relation(compatibility , LiquidPrecipitationPercent, RelativeHumidityPercent, TemperaturePercent, 
+                    double compatibility = (LiquidPrecipitationPercent + RelativeHumidityPercent + TemperaturePercent + WindSpeedPercent) / 6;
+
+                    Relation relation = new Relation(compatibility, LiquidPrecipitationPercent, RelativeHumidityPercent, TemperaturePercent,
                         WindSpeedPercent, area, farmings.ElementAt(i));
 
-                    relationS.Add(relation);
+                   relations.Add(relation);
+                    i++;
                 }
             }
-            
+
         }
 
+        /**
+         * This method measures the compatibility percent of the expected value and the current value of the variable of interest.
+         */
         public double Match(int expected, double current, double inf, double sup)
         {
             double compatible = 0;
 
             if (inf < expected && expected < sup)
             {
-                compatible = current/expected;
+                compatible = current / expected;
             }
             return compatible;
         }
 
+        /**
+        * This method measures the compatibility percent of the expected value and the current value of the variable of interest.
+        */
+        public double Match(int expectedinf, int expectedsup, double current, double inf, double sup) 
+        {
+            double compatible = 0;
+
+            if ((expectedinf < inf && inf < expectedsup)) 
+            {
+                compatible = current / expectedinf;
+            }
+			else if((expectedinf < sup && sup < expectedsup))
+			{
+				compatible = current / expectedsup;
+			}
+            return compatible;
+        }
+
+        /**
+         * This Gets and Sets important values in this class
+         */
         public Zone GetZone { get => zone; set => zone = value; }
         public List<Farming> GetFarmings { get => farmings; set => farmings = value; }
         public List<Relation> GetRelations { get => relations; set => relations = value; }

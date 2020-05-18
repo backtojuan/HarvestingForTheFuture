@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace project_model
 {
+    /**
+     * This class saves information for farmings of interest
+     */
     public class Farming
     {
         private string Name;
@@ -18,6 +21,9 @@ namespace project_model
         public const String path = "..\\..\\..\\..\\code\\Data\\CULTIVOS\\DATOSDECULTIVOS.csv";
         public const String noregister = "S/R";
 
+        /**
+         * Farming constructor
+         */
         public Farming(String Name, int LiquidPrecipitation, int[] RelativeHumidity, int WindSpeed, int MinTemperature, int MaxTemperature)
         {
             this.Name = Name;
@@ -28,6 +34,9 @@ namespace project_model
             this.WindSpeed = WindSpeed;
         }
 
+        /**
+         * This Gets and Sets important values in this class
+         */
         public string GetName { get => Name; set => Name = value; }
         public int GetLiquidPrecipitation { get => LiquidPrecipitation; set => LiquidPrecipitation = value; }
         public int[] GetRelativeHumidity { get => RelativeHumidity; set => RelativeHumidity = value; }

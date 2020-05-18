@@ -77,3 +77,31 @@ D:\R00TKIT\Downloads\HarvestingForTheFuture\code\gui\obj\Debug\gui.csproj.CoreCo
 D:\R00TKIT\Downloads\HarvestingForTheFuture\code\gui\obj\Debug\gui.csproj.CopyComplete
 D:\R00TKIT\Downloads\HarvestingForTheFuture\code\gui\obj\Debug\gui.exe
 D:\R00TKIT\Downloads\HarvestingForTheFuture\code\gui\obj\Debug\gui.pdb
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project_HFF\HarvestingForTheFuture\code\gui\bin\Debug\gui.exe.config
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project_HFF\HarvestingForTheFuture\code\gui\bin\Debug\gui.exe
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project_HFF\HarvestingForTheFuture\code\gui\bin\Debug\gui.pdb
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project_HFF\HarvestingForTheFuture\code\gui\bin\Debug\model.dll
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project_HFF\HarvestingForTheFuture\code\gui\bin\Debug\model.pdb
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project_HFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.csprojAssemblyReference.cache
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project_HFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.DataReader.resources
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project_HFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.DataFilter.resources
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project_HFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.Properties.Resources.resources
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project_HFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.csproj.GenerateResource.cache
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project_HFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.csproj.CoreCompileInputs.cache
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project_HFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.csproj.CopyComplete
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project_HFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.exe
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project_HFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.pdb
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\gui\bin\Debug\gui.exe.config
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\gui\bin\Debug\gui.exe
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\gui\bin\Debug\gui.pdb
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\gui\bin\Debug\model.dll
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\gui\bin\Debug\model.pdb
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.csprojAssemblyReference.cache
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.DataReader.resources
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.DataFilter.resources
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.Properties.Resources.resources
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.csproj.GenerateResource.cache
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.csproj.CoreCompileInputs.cache
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.csproj.CopyComplete
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.exe
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.pdb
