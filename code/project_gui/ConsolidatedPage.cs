@@ -16,10 +16,12 @@ namespace project_gui
     public partial class ConsolidatedPage : Form
     {
 
-        
+        private MainController MainController;
 
-        public ConsolidatedPage()
+
+        public ConsolidatedPage(MainController main)
         {
+            MainController = main;
             InitializeComponent();
             LoadPage();
         }
@@ -35,7 +37,7 @@ namespace project_gui
             
             
 
-            Test();
+            //Test();
         }
 
         public void SetDepartmentLabel(String name)
@@ -66,10 +68,16 @@ namespace project_gui
         /*
          * 
          */
-         public void ShowInfoHarvesting(String Harvesting)
+        public void ShowInfoHarvesting(String Harvesting, int Relation)
         {
             //Llamar metodo para mostar info
-            //MainController.
+            double [] data = MainController.GetInfoChartHumidity(Relation);
+            //int year = 2011;
+            for(int i = 0; i < data.Length; i++)
+            {
+                userControl11.AddPointInHumidity(i+1, data[i]);
+
+            }
         }
 
 

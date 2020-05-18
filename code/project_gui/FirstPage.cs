@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using project_gui;
 using project_model;
-using model;
 
 namespace project_gui
 {
@@ -25,13 +24,17 @@ namespace project_gui
             InitializeComponent();
             //Inicializa MainController
             MainController = new MainController(this);
-
             //addElementsComboBox();
 
             //agregar metodo de carga;
             //departamentos.DropDownStyle = ComboBoxStyle.DropDownList;
-            Test();
+            //Test();
             
+        }
+
+        public void LoadFirstPage(List<String> departmets)
+        {
+            addElementsComboBox(departmets, departmentsCmb);
         }
 
         /*
@@ -46,47 +49,43 @@ namespace project_gui
             addElementsComboBox(list, departmentsCmb);
         }
 
-        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
         /*
          * Carga la pagina ConsolidatedPage
          */
         private void ir_Click(object sender, EventArgs e)
         {
             //cargar consolidatedPage
-            //MainController.LoadConsolidatedPage(departmentsCmb.Text);                                    
+            MainController.LoadConsolidatedPage(departmentsCmb.Text);                                    
         }
 
-        private void departamentos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-           
-        }
+        /*
+         * Agrega los elementos de la lista pasada por paramtro al combobox indicado
+         */
         private void addElementsComboBox(List<String> list, ComboBox comboBox)
         {
-
             for (int i=0; i < list.Count; i++)
             {
                 comboBox.Items.Add(list.ElementAt(i));
             }
         }
 
-        private void image_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void FirstPage_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        /*
+         * Evento, sucede al hacer clic sobre el boton de actualizar
+         * actualiza la base de datos, incia el llamado para el pre-procedamiento
+         */
         private void actualice_Click(object sender, EventArgs e)
         {
-            //MainController.ActualiceDB();
+            MainController.ActualizeDB();
+        }
+
+        /*
+         * Cambia la información que se muestra en la interfaz
+         * de acuerdo al departamento seleccionado.
+         */
+        private void departments_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            desciptionLabel.Text = MainController.GetDepartmentDescription(departmentsCmb.Text);
+            //image.
         }
     }
 }

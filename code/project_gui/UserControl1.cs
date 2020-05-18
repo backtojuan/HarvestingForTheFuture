@@ -41,8 +41,11 @@ namespace project_gui
         public void LoadPage(ConsolidatedPage consolidated)
         {
             ConsolidatedPage = consolidated;
-            test();
-
+            //test();
+            table = new DataTable();
+            table.Columns.Add(new DataColumn("Posicion", typeof(int)));
+            table.Columns.Add(new DataColumn("Nombre", typeof(String)));
+            table.Columns.Add(new DataColumn("Compatibilidad", typeof(double)));
         }
 
         public void test()
@@ -61,6 +64,7 @@ namespace project_gui
         public void AddToDataGridView(int pos, String name, double Comp)
         {
             table.Rows.Add(pos, name, Comp);
+            dataGridView.DataSource = table;
         }
 
         public void SetHarvestingLabel(String harverting)
@@ -71,6 +75,11 @@ namespace project_gui
         private void descriptionDep_Click(object sender, EventArgs e)
         {
             //borrar - error
+        }
+
+        public void AddPointInHumidity(double x, double y)
+        {
+            HumidChart.Series["Departamento"].Points.AddXY(x, y);
         }
 
         private void gMapControl1_Load(object sender, EventArgs e)
@@ -101,6 +110,8 @@ namespace project_gui
         {
             if (this.dataGridView.Columns[e.ColumnIndex].Name == "Compatibilidad")
             {
+                
+
                 if (Convert.ToInt32(e.Value) >= 90)
                 {
                     e.CellStyle.ForeColor = Color.DarkGreen;
@@ -115,7 +126,8 @@ namespace project_gui
             String Harvesting = dataGridView.Rows[rowSelected].Cells[1].Value.ToString();
             harvestingLabel.Text = Harvesting;
             //metodo para cargar la info
-            ConsolidatedPage.ShowInfoHarvesting(Harvesting);
+
+            ConsolidatedPage.ShowInfoHarvesting(Harvesting, rowSelected);
 
         }
     }

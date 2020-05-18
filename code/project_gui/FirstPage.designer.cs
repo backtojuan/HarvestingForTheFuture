@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FirstPage));
             this.image = new System.Windows.Forms.FlowLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.description = new System.Windows.Forms.FlowLayoutPanel();
             this.actualice = new System.Windows.Forms.Button();
             this.ir = new System.Windows.Forms.Button();
             this.departmentsCmb = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.desciptionLabel = new System.Windows.Forms.Label();
             this.image.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.SuspendLayout();
@@ -52,7 +52,6 @@
             this.image.Name = "image";
             this.image.Size = new System.Drawing.Size(288, 200);
             this.image.TabIndex = 2;
-            this.image.Paint += new System.Windows.Forms.PaintEventHandler(this.image_Paint);
             // 
             // splitContainer1
             // 
@@ -61,14 +60,6 @@
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Size = new System.Drawing.Size(150, 0);
             this.splitContainer1.TabIndex = 0;
-            // 
-            // description
-            // 
-            this.description.BackColor = System.Drawing.Color.White;
-            this.description.Location = new System.Drawing.Point(389, 166);
-            this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(362, 200);
-            this.description.TabIndex = 3;
             // 
             // actualice
             // 
@@ -130,7 +121,7 @@
             this.departmentsCmb.Size = new System.Drawing.Size(362, 50);
             this.departmentsCmb.TabIndex = 0;
             this.departmentsCmb.Text = "Departamento";
-            this.departmentsCmb.SelectedIndexChanged += new System.EventHandler(this.departamentos_SelectedIndexChanged);
+            this.departmentsCmb.SelectedIndexChanged += new System.EventHandler(this.departments_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
@@ -154,22 +145,29 @@
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
+            // desciptionLabel
+            // 
+            this.desciptionLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.desciptionLabel.Location = new System.Drawing.Point(377, 172);
+            this.desciptionLabel.Name = "desciptionLabel";
+            this.desciptionLabel.Size = new System.Drawing.Size(389, 193);
+            this.desciptionLabel.TabIndex = 8;
+            // 
             // FirstPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.desciptionLabel);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.departmentsCmb);
             this.Controls.Add(this.ir);
             this.Controls.Add(this.actualice);
-            this.Controls.Add(this.description);
             this.Controls.Add(this.image);
             this.Name = "FirstPage";
             this.Text = "FirstPage";
-            this.Load += new System.EventHandler(this.FirstPage_Load);
             this.image.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -181,12 +179,12 @@
 
         #endregion
         private System.Windows.Forms.FlowLayoutPanel image;
-        private System.Windows.Forms.FlowLayoutPanel description;
         private System.Windows.Forms.Button actualice;
         private System.Windows.Forms.Button ir;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ComboBox departmentsCmb;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label desciptionLabel;
     }
 }

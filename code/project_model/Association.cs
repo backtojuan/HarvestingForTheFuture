@@ -63,6 +63,7 @@ namespace project_model
 
                 while (line != null)
                 {
+                    Console.WriteLine(line);
                     String[] infor = line.Split(',');
 
                     String Name = infor[0];
@@ -114,7 +115,7 @@ namespace project_model
             {
                 List<Relation> relationS = new List<Relation>();
                 int i = 0;
-                while (i < 10)
+                while (i < farmings.Count)
                 {
                     double LiquidPrecipitationPercent = Match(farmings.ElementAt(i).GetLiquidPrecipitation / 1000,
                                                         area.GetLiquidPrecipitation,
@@ -156,7 +157,8 @@ namespace project_model
                     Relation relation = new Relation(compatibility, LiquidPrecipitationPercent, RelativeHumidityPercent, TemperaturePercent,
                         WindSpeedPercent, area, farmings.ElementAt(i));
 
-                    relationS.Add(relation);
+                    relations.Add(relation);
+                    i++;
                 }
             }
 

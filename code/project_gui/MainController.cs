@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using project_gui;
-using _DataFirstPage_;
 using project_model;
-
+using Library;
 
 
 namespace project_gui
@@ -31,7 +29,7 @@ namespace project_gui
         /*
          * representa la relación con el paquete de las descripciones para los detalles de la interfaz
          */
-         //private Principal Principal;
+        private Principal Principal;
 
 
         /*
@@ -40,26 +38,50 @@ namespace project_gui
          */
         public MainController(FirstPage first)
         {
-            FirstPage = first;
-
+            Principal = new Principal();
             project = new Project();
+            FirstPage = first;
+            LoadDepartmentsCmbFirstPage();
+           
+            
+        }
 
-            //Principal = new Principal();
+        /*
+         * Carga la lista del combobox de departamento en FirstPage
+         */
+        public void LoadDepartmentsCmbFirstPage()
+        {
+            List<String> departments = Principal.GetDepartmentsName;
+            FirstPage.LoadFirstPage(departments);
+        }
+
+        /*
+         * Retorna la descripción del depatamento indicado por parametro
+         */
+        public String GetDepartmentDescription(String departmentName)
+        {
+            return Principal.GetDepartments[departmentName].GetDescription;
+        } 
+
+        /*
+         * Retorna el path del departamento indicado por parametro
+         */
+        public String GetDepartpentPath(String departmentName)
+        {
+            return Principal.GetDepartments[departmentName].GetPath;
         }
 
         /*
          * Carga ConsolidatedPage
-         * 
          */
         public void LoadConsolidatedPage(String name)
         {
-            ConsolidatedPage = new ConsolidatedPage();
+            ConsolidatedPage = new ConsolidatedPage(this);
             ConsolidatedPage.SetDepartmentLabel(name);
-            project.Association(name);
+            project.Association(GetDepartpentPath(name));
             //load grid de harvestings
-            //project.
+            LoadGridOfConsolidatedPage();
             ConsolidatedPage.ShowDialog();
-
         }
 
         /*
@@ -67,55 +89,48 @@ namespace project_gui
          */
         public void LoadGridOfConsolidatedPage()
         {
+            Console.WriteLine(HarvestingListSize() + "aqui esta el numero");
             for(int i = 0; i < HarvestingListSize(); i++)
             {
                 String name = project.NameHarvisting(i);
                 double comp = project.CompatibilityHarvisting(i);
                 ConsolidatedPage.AddToDataGridView(i+1, name, comp);
+                Console.WriteLine(name);
             }
+        }
 
+        public double[] GetInfoChartHumidity(int Relation)
+        {
+            return project.GetInfoHumidity(Relation);
         }
 
         /*
          */
         public int HarvestingListSize()
-          {
-            
-            //project.getAssociation().getRelationList().Count;
-            return 0;
-          }
-
-            /*
-             * Metodo que llena la lista del comboBox de la clase FirtsPage
-             */
-
-            /*  public List<String> deps(List<String> list)
-                {
-            list.ElementAt < i > = principalFirstPage.getList().getName();
-            }
-*/
+        {            
+            return project.HarvestingSize();
+        }
 
         /*
          * uno de los metodo que retorna la info para mostrar la info del match
          */
-<<<<<<< HEAD
-         public String InfoHarvesting(String HarvestingName)
-=======
-         public String InfoHarvesting()
->>>>>>> d83612c3d9f11ac5ef855136b5b9b66dd03d34ca
-         {
+        public String InfoHarvesting(String HarvestingName)
+        {
             //traer información del modelo para mostrar la info
             //llamar el metodo de mostrar
 
-
             return "Holii";
-<<<<<<< HEAD
-         }             
-=======
-         }
-       
+        }
+
+        /*
+         * Evento, sucede al hacer clic sobre el boton de actualizar
+         * actualiza la base de datos, continua con el llamado para el pre-procedamiento
+         */
+        public void ActualizeDB()
+        {
+            project.ActualiceDB();
+        }
 
 
->>>>>>> d83612c3d9f11ac5ef855136b5b9b66dd03d34ca
     }
 }

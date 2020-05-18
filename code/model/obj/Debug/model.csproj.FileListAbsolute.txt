@@ -65,3 +65,13 @@ D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project_HFF\HarvestingFor
 D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project_HFF\HarvestingForTheFuture\code\model\obj\Debug\model.csproj.CopyComplete
 D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project_HFF\HarvestingForTheFuture\code\model\obj\Debug\model.dll
 D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\Project_HFF\HarvestingForTheFuture\code\model\obj\Debug\model.pdb
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\model\bin\Debug\model.dll
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\model\bin\Debug\model.pdb
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\model\bin\Debug\Newtonsoft.Json.dll
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\model\bin\Debug\SODA.dll
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\model\bin\Debug\Newtonsoft.Json.xml
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\model\obj\Debug\model.csprojAssemblyReference.cache
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\model\obj\Debug\model.csproj.CoreCompileInputs.cache
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\model\obj\Debug\model.csproj.CopyComplete
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\model\obj\Debug\model.dll
+D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\model\obj\Debug\model.pdb
