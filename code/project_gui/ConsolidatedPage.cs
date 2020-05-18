@@ -71,17 +71,8 @@ namespace project_gui
         public void ShowInfoHarvesting(String Harvesting, int Relation)
         {
             //Llamar metodo para mostar info
-            double [] data = MainController.GetInfoChartHumidity(Relation);
-            //int year = 2011;
-            for(int i = 0; i < data.Length; i++)
-            {
-                userControl11.AddPointInHumidity(i+1, data[i]);
-
-            }
+            double data = MainController.GetInfoChartHumidity(Relation);
+            //int year = 2011;            
         }
-
-
-
-
     }
 }

@@ -66,7 +66,7 @@ namespace project_model
             return association.GetRelations[i].GetCompatibility;
         }
 
-        public double[] GetInfoHumidity(int name)
+        public double GetInfoHumidity(int name)
         {
             return association.GetRelations[name].GetRelativeHumidityPercent;
         }

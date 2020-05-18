@@ -99,7 +99,7 @@ namespace project_gui
             }
         }
 
-        public double[] GetInfoChartHumidity(int Relation)
+        public double GetInfoChartHumidity(int Relation)
         {
             return project.GetInfoHumidity(Relation);
         }
