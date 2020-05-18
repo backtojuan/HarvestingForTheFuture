@@ -42,8 +42,7 @@ namespace project_gui
             project = new Project();
             FirstPage = first;
             LoadDepartmentsCmbFirstPage();
-           
-            
+
         }
 
         /*
@@ -102,6 +101,24 @@ namespace project_gui
         public double GetInfoChartHumidity(int Relation)
         {
             return project.GetInfoHumidity(Relation);
+        }
+
+        public int[] GetHumidityHarv(int Relation)
+        {
+            return project.GetInfoHumidityHarv(Relation);
+        }
+
+        public double GetLongitude()
+        {
+            //return project.GetAssociation.GetZone.Get
+            return -76.5224991;
+        }
+
+
+        public double GetLatitude()
+        { 
+            //dw
+            return 3.437220;
         }
 
         /*

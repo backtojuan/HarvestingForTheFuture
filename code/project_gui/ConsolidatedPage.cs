@@ -31,29 +31,15 @@ namespace project_gui
          */
         public void LoadPage()
         {
-            //cargar cultivos
-            userControl11.LoadPage(this);
-
-            
-            
-
-            //Test();
+            double lat = MainController.GetLatitude();
+            double lon = MainController.GetLongitude();
+            userControl11.LoadPage(this, lat, lon);
         }
 
         public void SetDepartmentLabel(String name)
         {
             //cambiar titulo
             departmentLabel.Text = name;
-        }
-
-        
-
-        public void Test()
-        {
-            
-            
-            //dataGridView.DataSource = table;
-
         }
 
         /*
@@ -66,13 +52,20 @@ namespace project_gui
 
 
         /*
-         * 
+         * todas la s graficas
          */
         public void ShowInfoHarvesting(String Harvesting, int Relation)
         {
             //Llamar metodo para mostar info
-            double data = MainController.GetInfoChartHumidity(Relation);
-            //int year = 2011;            
+            double [] data = MainController.GetInfoChartHumidity(Relation);
+            int [] harvData = MainController.GetHumidityHarv(Relation);
+            //int year = 2011;
+            for(int i = 0; i < data.Length; i++)
+            {
+                userControl11.AddPointInHumidityDep(i+1, data[i]);
+                userControl11.AddPointInHumidityMaxHarv(i+1, harvData[1]);
+                userControl11.AddPointInHumidityMinHarv(i + 1, harvData[1]);
+            }
         }
     }
 }

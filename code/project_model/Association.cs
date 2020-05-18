@@ -171,10 +171,14 @@ namespace project_model
         {
             double compatible = 0;
 
-            if ((expectedinf < inf && inf < expectedsup)  ||  (expectedinf < sup && sup < expectedsup)) 
+            if ((expectedinf < inf && inf < expectedsup)) 
             {
                 compatible = current / expectedinf;
             }
+			else if((expectedinf < sup && sup < expectedsup))
+			{
+				compatible = current / expectedsup;
+			}
             return compatible;
         }
 

@@ -35,14 +35,16 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.harvestingLabel = new System.Windows.Forms.Label();
             this.HumidChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.PresLiqChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.TempChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.HumidChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PresLiqChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TempChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +96,7 @@
             this.HumidChart.Legends.Add(legend1);
             this.HumidChart.Location = new System.Drawing.Point(23, 334);
             this.HumidChart.Name = "HumidChart";
-            this.HumidChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
+            this.HumidChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Legend = "Legend1";
@@ -109,21 +111,37 @@
             this.HumidChart.TabIndex = 12;
             this.HumidChart.Text = "Humedad Relativa";
             // 
-            // PresLiqChart
+            // TempChart
             // 
             chartArea2.Name = "ChartArea1";
-            this.PresLiqChart.ChartAreas.Add(chartArea2);
+            this.TempChart.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
-            this.PresLiqChart.Legends.Add(legend2);
-            this.PresLiqChart.Location = new System.Drawing.Point(450, 334);
-            this.PresLiqChart.Name = "PresLiqChart";
+            this.TempChart.Legends.Add(legend2);
+            this.TempChart.Location = new System.Drawing.Point(450, 334);
+            this.TempChart.Name = "TempChart";
+            this.TempChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
             series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.LabelBorderWidth = 5;
             series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.PresLiqChart.Series.Add(series3);
-            this.PresLiqChart.Size = new System.Drawing.Size(364, 264);
-            this.PresLiqChart.TabIndex = 13;
-            this.PresLiqChart.Text = "chart2";
+            series3.MarkerBorderWidth = 2;
+            series3.MarkerStep = 5;
+            series3.Name = "Departamento";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.LabelBorderWidth = 5;
+            series4.Legend = "Legend1";
+            series4.Name = "Cultivo Max";
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Legend = "Legend1";
+            series5.Name = "Cultivo Min";
+            this.TempChart.Series.Add(series3);
+            this.TempChart.Series.Add(series4);
+            this.TempChart.Series.Add(series5);
+            this.TempChart.Size = new System.Drawing.Size(364, 264);
+            this.TempChart.TabIndex = 13;
+            this.TempChart.Text = "Temperatura";
             // 
             // dataGridView
             // 
@@ -150,14 +168,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.PresLiqChart);
+            this.Controls.Add(this.TempChart);
             this.Controls.Add(this.HumidChart);
             this.Controls.Add(this.gMapControl1);
             this.Controls.Add(this.harvestingLabel);
             this.Name = "UserControl1";
             this.Size = new System.Drawing.Size(834, 642);
             ((System.ComponentModel.ISupportInitialize)(this.HumidChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PresLiqChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TempChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -169,7 +187,7 @@
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
         private System.Windows.Forms.Label harvestingLabel;
         private System.Windows.Forms.DataVisualization.Charting.Chart HumidChart;
-        private System.Windows.Forms.DataVisualization.Charting.Chart PresLiqChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart TempChart;
         private System.Windows.Forms.DataGridView dataGridView;
     }
 }
