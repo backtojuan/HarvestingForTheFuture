@@ -11,22 +11,24 @@ namespace project_model
 {
     public class Association
     {
-        private Zone zone;
-        private List<Farming> farmings;
-        private Dictionary<String, List<Relation>> relations;
 
-        public Association()
+        private Zone zone;
+        
+        private List<Farming> farmings;        
+        private List<Relation> relations;
+
+        public Association(String area)
         {
             farmings = new List<Farming>();
             loadFarming(Farming.path);
-            loadZone(Analyzer.path);
-            relations = new Dictionary<string, List<Relation>>();
+            loadZone(area);
+            relations = new List<Relation>();
         }
 
-        private void loadZone(String path)
+        private void loadZone(String department)
         {
             zone = new Zone();
-            using (System.IO.StreamReader file = new System.IO.StreamReader(path))
+            using (System.IO.StreamReader file = new System.IO.StreamReader(Analyzer.path + department + ".csv"))
             {
                 String line = file.ReadLine();
 
@@ -114,19 +116,19 @@ namespace project_model
                 int i = 0;
                 while (i < 10)
                 {
-                    double LiquidPrecipitationPercent = Match(farmings.ElementAt(i).GetLiquidPrecipitation,
+                    double LiquidPrecipitationPercent = Match(farmings.ElementAt(i).GetLiquidPrecipitation/1000,
                                                         area.GetLiquidPrecipitation,
                                                         (area.GetLiquidPrecipitation - area.GetLiquidPrecipitationConfidence),
                                                         (area.GetLiquidPrecipitation + area.GetLiquidPrecipitationConfidence));
 
                     double[] RelativeHumidityPercent = new double[2];
 
-                    RelativeHumidityPercent[0] = Match(farmings.ElementAt(i).GetRelativeHumidity[0],
+                    RelativeHumidityPercent[0] = Match(farmings.ElementAt(i).GetRelativeHumidity[0]/100,
                                                          area.GetRelativeHumidity,
                                                          (area.GetRelativeHumidity - area.GetRelativeHumidityConfidence),
                                                          (area.GetRelativeHumidity + area.GetRelativeHumidityConfidence));
 
-                    RelativeHumidityPercent[0] = Match(farmings.ElementAt(i).GetRelativeHumidity[1],
+                    RelativeHumidityPercent[0] = Match(farmings.ElementAt(i).GetRelativeHumidity[1]/100,
                                                         area.GetRelativeHumidity,
                                                         (area.GetRelativeHumidity - area.GetRelativeHumidityConfidence),
                                                         (area.GetRelativeHumidity + area.GetRelativeHumidityConfidence));
@@ -148,12 +150,16 @@ namespace project_model
                                                         (area.GetWindSpeed - area.GetWindspeedConfidence),
                                                         (area.GetWindSpeed + area.GetWindspeedConfidence));
 
-                    Relation relation = new Relation("", LiquidPrecipitationPercent, RelativeHumidityPercent, TemperaturePercent, WindSpeedPercent, area, farmings.ElementAt(i));
+                    double compatibility = (LiquidPrecipitationPercent + RelativeHumidityPercent[0] + RelativeHumidityPercent[1] + TemperaturePercent[0] +
+                        TemperaturePercent[1] + WindSpeedPercent) /6;
+                   
+                    Relation relation = new Relation(compatibility , LiquidPrecipitationPercent, RelativeHumidityPercent, TemperaturePercent, 
+                        WindSpeedPercent, area, farmings.ElementAt(i));
+
                     relationS.Add(relation);
                 }
-
-                relations.Add(area.GetName, relationS);
             }
+            
         }
 
         public double Match(int expected, double current, double inf, double sup)
@@ -162,13 +168,13 @@ namespace project_model
 
             if (inf < expected && expected < sup)
             {
-                compatible = (expected - current) / (expected);
+                compatible = current/expected;
             }
             return compatible;
         }
 
         public Zone GetZone { get => zone; set => zone = value; }
         public List<Farming> GetFarmings { get => farmings; set => farmings = value; }
-        public Dictionary<String, List<Relation>> GetRelations { get => relations; set => relations = value; }
+        public List<Relation> GetRelations { get => relations; set => relations = value; }
     }
 }

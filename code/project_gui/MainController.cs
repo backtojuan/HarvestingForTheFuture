@@ -41,7 +41,7 @@ namespace project_gui
         public MainController(FirstPage first)
         {
             FirstPage = first;
-            program = new Program();
+            //program = new Program();
             //Principal = new Principal();
         }
 
@@ -69,15 +69,11 @@ namespace project_gui
          * uno de los metodo que retorna la info para mostrar la info del match
          */
          public String InfoHarvesting(String HarvestingName)
-        {
+         {
             //traer información del modelo para mostrar la info
             //llamar el metodo de mostrar
 
             return "Holii";
-        }
-        
-       
-
-
+         }             
     }
 }

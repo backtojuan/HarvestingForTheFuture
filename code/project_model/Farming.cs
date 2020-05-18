@@ -15,7 +15,7 @@ namespace project_model
         private int MinTemperature;
         private int MaxTemperature;
 
-        public const String path = "..\\..\\..\\..\\code\\data\\CULTIVOS\\DATOSDECULTIVOS.csv";
+        public const String path = "..\\..\\..\\..\\code\\Data\\CULTIVOS\\DATOSDECULTIVOS.csv";
         public const String noregister = "S/R";
 
         public Farming(String Name, int LiquidPrecipitation, int[] RelativeHumidity, int WindSpeed, int MinTemperature, int MaxTemperature)

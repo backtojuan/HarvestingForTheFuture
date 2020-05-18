@@ -37,7 +37,8 @@ namespace project_model
 
         public String toString()
         {
-            return name + " " + LiquidPrecipitation + " " + RelativeHumidity + " " + Temperature + " " + Windspeed;
+            return name + " " + LiquidPrecipitation + " " + RelativeHumidity + " " + Temperature + " " + Windspeed + 
+                " " + LiquidPrecipitationConfidence + " " + RelativeHumidityConfidence + " " + TemperatureConfidence + " " + WindspeedConfidence;
 
         }
 

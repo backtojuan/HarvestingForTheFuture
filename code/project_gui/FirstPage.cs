@@ -57,8 +57,7 @@ namespace project_gui
         private void ir_Click(object sender, EventArgs e)
         {
             //cargar consolidatedPage
-            MainController.LoadConsolidatedPage(departmentsCmb.Text);
-            
+            //MainController.LoadConsolidatedPage(departmentsCmb.Text);                                    
         }
 
         private void departamentos_SelectedIndexChanged(object sender, EventArgs e)
