@@ -53,28 +53,50 @@ namespace project_gui
         {
             ConsolidatedPage = new ConsolidatedPage();
             ConsolidatedPage.SetDepartmentLabel(name);
+            project.Association(name);
+            //load grid de harvestings
+            //project.
             ConsolidatedPage.ShowDialog();
+
+        }
+
+        /*
+         * carga los datos base de los cultivos en el DataGridView de ConsolidatedPage
+         */
+        public void LoadGridOfConsolidatedPage()
+        {
+            for(int i = 0; i < HarvestingListSize(); i++)
+            {
+                String name = project.NameHarvisting(i);
+                double comp = project.CompatibilityHarvisting(i);
+                //ConsolidatedPage.AddToDataGridView(i+1, name, comp);
+            }
+
         }
 
         /*
          */
-          public int HarvestingListSize(String Name)
+        public int HarvestingListSize()
           {
             
-            //ModelProgram.getAssociation.getRelationList(Name).Count;
+            //project.getAssociation.getRelationList(Name).Count;
             return 0;
           }
 
         /*
          * uno de los metodo que retorna la info para mostrar la info del match
          */
-         public String InfoHarvesting(String HarvestingName)
-        {
+         public String InfoHarvesting()
+         {
             //traer información del modelo para mostrar la info
             //llamar el metodo de mostrar
 
+
             return "Holii";
-        }
+         }
+
+        public double[] 
+
         
        
 

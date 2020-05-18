@@ -54,6 +54,14 @@ namespace project_gui
 
         }
 
+        /*
+         * Agrega una fila al DataGridView de UserControl
+         */
+        public void AddToDataGridView(int pos, String name, double comp)
+        {
+            userControl11.AddToDataGridView(pos, name, comp);
+        }
+
 
         /*
          * 
@@ -63,6 +71,7 @@ namespace project_gui
             //Llamar metodo para mostar info
             //MainController.
         }
+
 
 
 

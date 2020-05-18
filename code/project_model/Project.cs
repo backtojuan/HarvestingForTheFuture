@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace project_model
 {
-    public class Program
+    public class Project
     {
-
+		
         private Association association;
         private Analyzer analyzer;
         
@@ -16,7 +16,7 @@ namespace project_model
         /*
          * Constructor de la clase
          */
-        public Program()
+        public Project()
         {
             
         }
@@ -34,5 +34,26 @@ namespace project_model
         {
             //association = new Association(DepartmentName);
         }
+
+        /*
+         * retorna el nombre del cultivo de la relación creada con el departamento
+         * en la posisción entregada por parametro
+         */
+        public String NameHarvisting(int i)
+        {
+            //association.getRelations()[i].GetFarming().GetName;
+            return "hi";
+        }
+
+        /*
+         * retorna el porncetaje de compatibilidad del cultivo de la relación creada con el departamento
+         * en la posisción entregada por parametro
+         */
+        public double CompatibilityHarvisting(int i)
+        {
+            //association.getRelations()[i].GetFarming().GetCompatibility();
+            return 1.0;
+        }
+
     }
 }
