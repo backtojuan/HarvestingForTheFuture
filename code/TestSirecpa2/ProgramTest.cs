@@ -6,11 +6,11 @@ namespace TestSirecpa2
     [TestClass]
     public class ProgramTest
     {
-        protected project_model.Analyzer Analyzer;
+        protected project_model.Program Program;
 
         protected void SetupStage1()
         {
-            Analyzer = new project_model.Analyzer();
+            Program = new project_model.Program();
         }
 
 
@@ -19,11 +19,8 @@ namespace TestSirecpa2
         {
             SetupStage1();
 
-
-
-
-
-
+            Assert.IsNotNull(Program.GetAnalyzer);
+            Assert.IsNotNull(Program.GetAssociation);
         }
     }
 }
