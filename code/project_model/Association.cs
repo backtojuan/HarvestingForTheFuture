@@ -115,8 +115,8 @@ namespace project_model
                 {
                     double LiquidPrecipitationPercent = Match(farmings.ElementAt(i).GetLiquidPrecipitation,
                                                         area.GetLiquidPrecipitation,
-                                                        (area.GetLiquidPrecipitation - area.GetiquidPrecipitationConfidence),
-                                                        (area.GetLiquidPrecipitation + area.GetiquidPrecipitationConfidence)) ;
+                                                        (area.GetLiquidPrecipitation - area.GetLiquidPrecipitationConfidence),
+                                                        (area.GetLiquidPrecipitation + area.GetLiquidPrecipitationConfidence)) ;
 
                     double[] RelativeHumidityPercent = new double[2];
 

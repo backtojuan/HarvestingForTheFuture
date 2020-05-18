@@ -44,7 +44,7 @@ namespace project_model
         public double GetRelativeHumidity { get => RelativeHumidity; set => RelativeHumidity = value; }
         public double GetTemperature { get => Temperature; set => Temperature = value; }
         public double GetWindSpeed { get => Windspeed; set => Windspeed = value; }
-        public double GetiquidPrecipitationConfidence { get => LiquidPrecipitationConfidence; set => LiquidPrecipitationConfidence = value; }
+        public double GetLiquidPrecipitationConfidence { get => LiquidPrecipitationConfidence; set => LiquidPrecipitationConfidence = value; }
         public double GetRelativeHumidityConfidence { get => RelativeHumidityConfidence; set => RelativeHumidityConfidence = value; }
         public double GetTemperatureConfidence { get => TemperatureConfidence; set => TemperatureConfidence = value; }
         public double GetWindspeedConfidence { get => WindspeedConfidence; set => WindspeedConfidence = value; }

@@ -30,7 +30,7 @@ namespace TestSirecpa2
             Assert.AreEqual(Area.GetRelativeHumidity, Zone.GetAreas[0].GetRelativeHumidity, null, "The relative humidity should be 13 but actually is " + Zone.GetAreas[0].GetRelativeHumidity);
             Assert.AreEqual(Area.GetTemperature, Zone.GetAreas[0].GetTemperature, null, "The temperature should be 25 but actually is " + Zone.GetAreas[0].GetTemperature);
             Assert.AreEqual(Area.GetWindSpeed, Zone.GetAreas[0].GetWindSpeed, null, "The wind speed should be 3 but actually is " + Zone.GetAreas[0].GetWindSpeed);
-            Assert.AreEqual(Area.GetiquidPrecipitationConfidence, Zone.GetAreas[0].GetiquidPrecipitationConfidence, null, "The liquid precipitation confidence should be 45 but actually is " + Zone.GetAreas[0].GetiquidPrecipitationConfidence);
+            Assert.AreEqual(Area.GetLiquidPrecipitationConfidence, Zone.GetAreas[0].GetLiquidPrecipitationConfidence, null, "The liquid precipitation confidence should be 45 but actually is " + Zone.GetAreas[0].GetLiquidPrecipitationConfidence);
             Assert.AreEqual(Area.GetRelativeHumidityConfidence, Zone.GetAreas[0].GetRelativeHumidityConfidence, null, "The relative humidity confidence should be 40 but actually is " + Zone.GetAreas[0].GetRelativeHumidityConfidence);
             Assert.AreEqual(Area.GetTemperatureConfidence, Zone.GetAreas[0].GetTemperatureConfidence, null, "The temperature confidence should be 37 but actually is " + Zone.GetAreas[0].GetTemperatureConfidence);
             Assert.AreEqual(Area.GetWindspeedConfidence, Zone.GetAreas[0].GetWindspeedConfidence, null, "The wind speed confidence should be 2.7 but actually is " + Zone.GetAreas[0].GetWindspeedConfidence);    
