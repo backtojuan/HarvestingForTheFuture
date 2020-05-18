@@ -4,14 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using project_gui;
+<<<<<<< HEAD
 //using project_model;
 //using project_model.Program;
 //using _DataFirstPage_;
+=======
+using project_model;
+
+>>>>>>> e107a379326c19c66c01c762b4c411f30c89e6cc
 
 
 namespace project_gui
 {
-    class MainController
+    public class MainController
     {
         /*
          * Representa la relación con la interfaz FirstPage
@@ -26,7 +31,13 @@ namespace project_gui
          * representa la relación con el modelo
          */
 
-        //private Program ModelProgram;
+        private Project project;
+
+        /*
+         * representa la relación con el paquete de las descripciones para los detalles de la interfaz
+         */
+         //private Principal Principal;
+         
 
         /*
          * representa la relacion con el modelo de FirstPage
@@ -41,7 +52,10 @@ namespace project_gui
         public MainController(FirstPage first)
         {
             FirstPage = first;
+            project = new Project();
+            //Principal = new Principal();
         }
+
         /*
          * Carga ConsolidatedPage
          * 
@@ -55,13 +69,13 @@ namespace project_gui
 
         /*
          */
-         
           public int HarvestingListSize(String Name)
           {
             
             //ModelProgram.getAssociation.getRelationList(Name).Count;
             return 0;
           }
+<<<<<<< HEAD
             /*
              * Metodo que llena la lista del comboBox de la clase FirtsPage
              */
@@ -71,6 +85,20 @@ namespace project_gui
             list.ElementAt < i > = principalFirstPage.getList().getName();
             }
             */
+=======
+
+        /*
+         * uno de los metodo que retorna la info para mostrar la info del match
+         */
+         public String InfoHarvesting(String HarvestingName)
+        {
+            //traer información del modelo para mostrar la info
+            //llamar el metodo de mostrar
+
+            return "Holii";
+        }
+        
+>>>>>>> e107a379326c19c66c01c762b4c411f30c89e6cc
        
 
 

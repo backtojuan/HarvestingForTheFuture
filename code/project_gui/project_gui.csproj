@@ -43,6 +43,7 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -108,9 +109,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <ProjectReference Include="..\_DataFirstPage_\_DataFirstPage_.csproj">
       <Project>{f0e68bf9-300b-4bda-ae1e-76a07392af42}</Project>
       <Name>_DataFirstPage_</Name>
+=======
+    <ProjectReference Include="..\model\model.csproj">
+      <Project>{d5965cb9-bed2-4153-a6ce-effbb8c70120}</Project>
+      <Name>model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\project_model\project_model.csproj">
+      <Project>{274dc759-c9f6-47f3-88f2-46829336ab8a}</Project>
+      <Name>project_model</Name>
+>>>>>>> e107a379326c19c66c01c762b4c411f30c89e6cc
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

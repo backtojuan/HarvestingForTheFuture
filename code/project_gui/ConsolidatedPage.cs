@@ -15,6 +15,7 @@ namespace project_gui
 {
     public partial class ConsolidatedPage : Form
     {
+
         
 
         public ConsolidatedPage()
@@ -29,7 +30,11 @@ namespace project_gui
         public void LoadPage()
         {
             //cargar cultivos
-            userControl11.LoadPage();
+            userControl11.LoadPage(this);
+
+            
+            
+
             Test();
         }
 
@@ -39,31 +44,27 @@ namespace project_gui
             departmentLabel.Text = name;
         }
 
+        
+
         public void Test()
         {
-            harvestingCmb.Items.Add("Antioquia");
-            harvestingCmb.Items.Add("Valle del cauca ");
+            
+            
+            //dataGridView.DataSource = table;
+
         }
+
 
         /*
          * 
          */
-        private void harvestingCmb_SelectedIndexChanged(object sender, EventArgs e)
+         public void ShowInfoHarvesting(String Harvesting)
         {
-            //actualizar info cuando cambie el cultivo
-
-            //cambiar titulo del cultivo
-            userControl11.SetHarvestingLabel(harvestingCmb.Text);
-            //cambiar descripción del cultivo
-            //cargar el data grid con la info
-
-            //add all harvesting like option
-            //in this option the description harvesting ir null
-
-
+            //Llamar metodo para mostar info
+            //MainController.
         }
 
-        
+
 
     }
 }

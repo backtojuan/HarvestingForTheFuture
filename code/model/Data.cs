@@ -9,7 +9,9 @@ using Newtonsoft.Json;
 
 namespace model
 {
-
+    /**
+     * This class allows to represent a row of data as an easy manipulative object
+     */
     public class Data
     {
         /**

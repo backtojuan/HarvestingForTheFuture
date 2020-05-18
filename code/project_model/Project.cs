@@ -6,24 +6,33 @@ using System.Threading.Tasks;
 
 namespace project_model
 {
-    class Project
+    public class Program
     {
-        public static String DEPARTMENTS_ROUTE = "";
-        public static String DESCRIPTIONS_ROUTE = "";
 
-        public Project()
+        private Association association;
+        private Analyzer analyzer;
+        
+
+        /*
+         * Constructor de la clase
+         */
+        public Program()
         {
-
+            
         }
 
-        public Boolean ActualizeDB()
+        /*
+         * realiza el pre-procesamiento de datos de la base de datso principal
+         * y serializa la información
+         */
+        public void ActualiceDB()
         {
-            return true;
+            analyzer = new Analyzer();
         }
 
-        public void Association(String department)
+        public void Association(String DepartmentName)
         {
-
+            //association = new Association(DepartmentName);
         }
     }
 }

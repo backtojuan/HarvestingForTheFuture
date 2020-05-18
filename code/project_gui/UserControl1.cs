@@ -19,6 +19,8 @@ namespace project_gui
     {
         private DataTable table;
 
+        private ConsolidatedPage ConsolidatedPage;
+
         private GMarkerGoogle marker;
         private GMapOverlay markerOverlay;
         private double latInitial = 3.4372201;
@@ -27,7 +29,7 @@ namespace project_gui
         public UserControl1()
         {
             InitializeComponent();
-            LoadPage();
+            
         }
 
 
@@ -36,25 +38,29 @@ namespace project_gui
          * crea las columnas de la tabla para el dataGridView y
          * carga la lista de los cultivos 
          */
-        public void LoadPage()
+        public void LoadPage(ConsolidatedPage consolidated)
         {
-            table = new DataTable();
-            table.Columns.Add(new DataColumn("Posicion", typeof(int)));
-            table.Columns.Add(new DataColumn("Nombre", typeof(String)));
-            table.Columns.Add(new DataColumn("Compatibilidad", typeof(double)));
-            table.Columns.Add(new DataColumn("Latitud", typeof(double)));
-            table.Columns.Add(new DataColumn("Longitud", typeof(double)));
+            ConsolidatedPage = consolidated;
+            test();
 
         }
 
         public void test()
         {
+            table = new DataTable();
+            table.Columns.Add(new DataColumn("Posicion", typeof(int)));
+            table.Columns.Add(new DataColumn("Nombre", typeof(String)));
+            table.Columns.Add(new DataColumn("Compatibilidad", typeof(double)));
+            AddToDataGridView(1, "Papa", 90);
+            AddToDataGridView(2, "Tomate", 85);
+            AddToDataGridView(3, "Trigo", 70);
 
+            dataGridView.DataSource = table;
         }
 
-        public void AddToDataGridView(int pos, String name, double Comp, double lat, double lng)
+        public void AddToDataGridView(int pos, String name, double Comp)
         {
-            table.Rows.Add(pos, name, Comp, lat, lng);
+            table.Rows.Add(pos, name, Comp);
         }
 
         public void SetHarvestingLabel(String harverting)
@@ -69,8 +75,7 @@ namespace project_gui
 
         private void gMapControl1_Load(object sender, EventArgs e)
         {
-            table.Rows.Add(1, "Cali", 90);
-            dataGridView.DataSource = table;
+            
 
             gMapControl1.MapProvider = GMapProviders.GoogleMap;
             gMapControl1.Position = new PointLatLng(latInitial, longInitial);
@@ -90,6 +95,28 @@ namespace project_gui
 
             //Agregar el marcador al map control
             gMapControl1.Overlays.Add(markerOverlay);
+        }
+
+        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dataGridView.Columns[e.ColumnIndex].Name == "Compatibilidad")
+            {
+                if (Convert.ToInt32(e.Value) >= 90)
+                {
+                    e.CellStyle.ForeColor = Color.DarkGreen;
+                    e.CellStyle.BackColor = Color.GreenYellow;
+                }
+            }
+        }
+
+        private void HarvestingSelect(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int rowSelected = e.RowIndex;
+            String Harvesting = dataGridView.Rows[rowSelected].Cells[1].Value.ToString();
+            harvestingLabel.Text = Harvesting;
+            //metodo para cargar la info
+            ConsolidatedPage.ShowInfoHarvesting(Harvesting);
+
         }
     }
 }
