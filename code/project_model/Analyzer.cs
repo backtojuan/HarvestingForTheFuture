@@ -60,7 +60,7 @@ namespace project_model
                 {
                     file.WriteLine(area.toString());
                 }
-            }             
+            }
         }
 
         /**
@@ -124,7 +124,7 @@ namespace project_model
         /**
          * This method calculates the estimations of each year
          */
-        public List<double> EstimateByYear(String namevalue, string var) 
+        public List<double> EstimateByYear(String namevalue, string var)
         {
             List<double> estimationsofeachyear = new List<double>();
             String general = "..\\..\\..\\..\\code\\Data\\" + namevalue + "\\" + var;

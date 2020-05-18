@@ -13,8 +13,8 @@ namespace project_model
     {
 
         private Zone zone;
-        
-        private List<Farming> farmings;        
+
+        private List<Farming> farmings;
         private List<Relation> relations;
 
         public Association(String area)
@@ -116,19 +116,19 @@ namespace project_model
                 int i = 0;
                 while (i < 10)
                 {
-                    double LiquidPrecipitationPercent = Match(farmings.ElementAt(i).GetLiquidPrecipitation/1000,
+                    double LiquidPrecipitationPercent = Match(farmings.ElementAt(i).GetLiquidPrecipitation / 1000,
                                                         area.GetLiquidPrecipitation,
                                                         (area.GetLiquidPrecipitation - area.GetLiquidPrecipitationConfidence),
                                                         (area.GetLiquidPrecipitation + area.GetLiquidPrecipitationConfidence));
 
                     double[] RelativeHumidityPercent = new double[2];
 
-                    RelativeHumidityPercent[0] = Match(farmings.ElementAt(i).GetRelativeHumidity[0]/100,
+                    RelativeHumidityPercent[0] = Match(farmings.ElementAt(i).GetRelativeHumidity[0] / 100,
                                                          area.GetRelativeHumidity,
                                                          (area.GetRelativeHumidity - area.GetRelativeHumidityConfidence),
                                                          (area.GetRelativeHumidity + area.GetRelativeHumidityConfidence));
 
-                    RelativeHumidityPercent[0] = Match(farmings.ElementAt(i).GetRelativeHumidity[1]/100,
+                    RelativeHumidityPercent[0] = Match(farmings.ElementAt(i).GetRelativeHumidity[1] / 100,
                                                         area.GetRelativeHumidity,
                                                         (area.GetRelativeHumidity - area.GetRelativeHumidityConfidence),
                                                         (area.GetRelativeHumidity + area.GetRelativeHumidityConfidence));
@@ -151,15 +151,15 @@ namespace project_model
                                                         (area.GetWindSpeed + area.GetWindspeedConfidence));
 
                     double compatibility = (LiquidPrecipitationPercent + RelativeHumidityPercent[0] + RelativeHumidityPercent[1] + TemperaturePercent[0] +
-                        TemperaturePercent[1] + WindSpeedPercent) /6;
-                   
-                    Relation relation = new Relation(compatibility , LiquidPrecipitationPercent, RelativeHumidityPercent, TemperaturePercent, 
+                        TemperaturePercent[1] + WindSpeedPercent) / 6;
+
+                    Relation relation = new Relation(compatibility, LiquidPrecipitationPercent, RelativeHumidityPercent, TemperaturePercent,
                         WindSpeedPercent, area, farmings.ElementAt(i));
 
                     relationS.Add(relation);
                 }
             }
-            
+
         }
 
         public double Match(int expected, double current, double inf, double sup)
@@ -168,7 +168,7 @@ namespace project_model
 
             if (inf < expected && expected < sup)
             {
-                compatible = current/expected;
+                compatible = current / expected;
             }
             return compatible;
         }
