@@ -105,3 +105,16 @@ D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForT
 D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.csproj.CopyComplete
 D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.exe
 D:\MIS DOCUMENTOS\Documents\2020-1\Proyecto_Integrador\ProjectHFF\HarvestingForTheFuture\code\gui\obj\Debug\gui.pdb
+C:\Users\linas\source\repos\HarvestingForTheFuture\code\gui\bin\Debug\gui.exe.config
+C:\Users\linas\source\repos\HarvestingForTheFuture\code\gui\bin\Debug\gui.exe
+C:\Users\linas\source\repos\HarvestingForTheFuture\code\gui\bin\Debug\gui.pdb
+C:\Users\linas\source\repos\HarvestingForTheFuture\code\gui\bin\Debug\model.dll
+C:\Users\linas\source\repos\HarvestingForTheFuture\code\gui\bin\Debug\model.pdb
+C:\Users\linas\source\repos\HarvestingForTheFuture\code\gui\obj\Debug\gui.csprojAssemblyReference.cache
+C:\Users\linas\source\repos\HarvestingForTheFuture\code\gui\obj\Debug\gui.DataReader.resources
+C:\Users\linas\source\repos\HarvestingForTheFuture\code\gui\obj\Debug\gui.DataFilter.resources
+C:\Users\linas\source\repos\HarvestingForTheFuture\code\gui\obj\Debug\gui.Properties.Resources.resources
+C:\Users\linas\source\repos\HarvestingForTheFuture\code\gui\obj\Debug\gui.csproj.GenerateResource.cache
+C:\Users\linas\source\repos\HarvestingForTheFuture\code\gui\obj\Debug\gui.csproj.CopyComplete
+C:\Users\linas\source\repos\HarvestingForTheFuture\code\gui\obj\Debug\gui.exe
+C:\Users\linas\source\repos\HarvestingForTheFuture\code\gui\obj\Debug\gui.pdb
