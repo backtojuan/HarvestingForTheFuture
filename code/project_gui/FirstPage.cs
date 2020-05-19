@@ -48,6 +48,7 @@ namespace project_gui
         private void ir_Click(object sender, EventArgs e)
         {
             //cargar consolidatedPage
+            if(!departmentsCmb.Text.Equals("Departamento"))
             MainController.LoadConsolidatedPage(departmentsCmb.Text);                                                            
         }
 
@@ -78,7 +79,7 @@ namespace project_gui
         private void departments_SelectedIndexChanged(object sender, EventArgs e)
         {
             desciptionLabel.Text = MainController.GetDepartmentDescription(departmentsCmb.Text);
-            //image.
+            pictureBox3.Load(MainController.GetImageDepartament(departmentsCmb.Text));
         }
 
         private void FirstPage_Load(object sender, EventArgs e)
@@ -88,7 +89,7 @@ namespace project_gui
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            pictureBox3.Load(MainController.GetImageDepartament(departmentsCmb.Text));
+            
         }
     }
 }

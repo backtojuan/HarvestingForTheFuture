@@ -132,6 +132,7 @@
             this.desciptionLabel.Name = "desciptionLabel";
             this.desciptionLabel.Size = new System.Drawing.Size(389, 193);
             this.desciptionLabel.TabIndex = 8;
+            this.desciptionLabel.Text = "Seleccione el departamento";
             // 
             // pictureBox3
             // 
@@ -141,7 +142,6 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 9;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // FirstPage
             // 
@@ -158,7 +158,6 @@
             this.Controls.Add(this.actualice);
             this.Name = "FirstPage";
             this.Text = "FirstPage";
-            this.Load += new System.EventHandler(this.FirstPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

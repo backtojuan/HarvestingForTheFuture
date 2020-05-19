@@ -142,34 +142,34 @@ namespace project_gui
                     //e.CellStyle.ForeColor = Color.DarkGreen;
                     e.CellStyle.BackColor = Color.Red;
                 }
-                if (Convert.ToDouble(e.Value) >= 40)
+                if (Convert.ToDouble(e.Value) >= 10)
                 {
                     //e.CellStyle.ForeColor = Color.DarkGreen;
                     e.CellStyle.BackColor = Color.OrangeRed;
                 }
-                if (Convert.ToDouble(e.Value) >= 50)
+                if (Convert.ToDouble(e.Value) >= 20)
                 {
                     //e.CellStyle.ForeColor = Color.DarkGreen;
                     e.CellStyle.BackColor = Color.Orange;
                 }
-                if (Convert.ToDouble(e.Value) >= 60)
+                if (Convert.ToDouble(e.Value) >= 35)
                 {
                     //e.CellStyle.ForeColor = Color.DarkGreen;
                     e.CellStyle.BackColor = Color.Yellow;
                 }
-                if (Convert.ToDouble(e.Value) >= 70)
+                if (Convert.ToDouble(e.Value) >= 60)
                 {
                     //e.CellStyle.ForeColor = Color.DarkGreen;
                     e.CellStyle.BackColor = Color.YellowGreen;
                 }
 
-                if (Convert.ToDouble(e.Value) >= 80)
+                if (Convert.ToDouble(e.Value) >= 70)
                 {
                     //e.CellStyle.ForeColor = Color.DarkGreen;
                     e.CellStyle.BackColor = Color.GreenYellow;
                 }
 
-                if (Convert.ToDouble(e.Value) >= 90)
+                if (Convert.ToDouble(e.Value) >= 85)
                 {
                     //e.CellStyle.ForeColor = Color.DarkGreen;
                     e.CellStyle.BackColor = Color.Green;
