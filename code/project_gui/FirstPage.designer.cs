@@ -156,6 +156,8 @@
             this.Controls.Add(this.departmentsCmb);
             this.Controls.Add(this.ir);
             this.Controls.Add(this.actualice);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FirstPage";
             this.Text = "FirstPage";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

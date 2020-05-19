@@ -1,7 +1,6 @@
-docs/Finaldelivery/
-code/data/ANTIOQUIA/Velocidad_del_Viento.csv
-code/data/CUNDINAMARCA/Precipitación_Líquida.csv
-code/data/CUNDINAMARCA/Velocidad_del_Viento.csv
+docs/1st-delivery
+docs/2nd-delivery
+docs/3rd-delivery
 
 # Created by https://www.gitignore.io/api/visualstudio
 # Edit at https://www.gitignore.io/?templates=visualstudio

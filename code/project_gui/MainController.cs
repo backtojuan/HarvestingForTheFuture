@@ -42,7 +42,6 @@ namespace project_gui
             project = new Project();
             FirstPage = first;
             LoadDepartmentsCmbFirstPage();
-
         }
 
         /*
@@ -84,9 +83,9 @@ namespace project_gui
          */
         public void LoadConsolidatedPage(String name)
         {
-            ConsolidatedPage = new ConsolidatedPage(this);
-            ConsolidatedPage.SetDepartmentLabel(name);
             project.Association(GetDepartpentPath(name));
+            ConsolidatedPage = new ConsolidatedPage(this);
+            ConsolidatedPage.SetDepartmentLabel(name);            
             //load grid de harvestings
             LoadGridOfConsolidatedPage();
             ConsolidatedPage.ShowDialog();
@@ -158,17 +157,17 @@ namespace project_gui
 
         public double GetLongitude()
         {
-            //String Longitude = project.GetAssociation.GetRelations[0].GetArea.Longitude;
-            //return Convert.ToDouble(Longitude);
-            return -76.5224991;
+            String Longitude = project.GetAssociation.GetRelations[0].GetArea.Longitude;
+            return Convert.ToDouble(Longitude);
+            //return -76.5224991;
         }
 
 
         public double GetLatitude()
         {
-            //String Latitude = project.GetAssociation.GetRelations[0].GetArea.Latitude;
-            //return Convert.ToDouble(Latitude);
-            return 3.4590000;
+            String Latitude = project.GetAssociation.GetRelations[0].GetArea.Latitude;
+            return Convert.ToDouble(Latitude);
+            //return 3.4590000;
         }
 
         /*

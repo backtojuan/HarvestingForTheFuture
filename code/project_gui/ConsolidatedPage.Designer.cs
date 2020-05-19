@@ -81,11 +81,11 @@
             this.departmentLabel.AccessibleDescription = "departmentLabel";
             this.departmentLabel.AccessibleName = "departmentLabel";
             this.departmentLabel.AutoSize = true;
-            this.departmentLabel.Font = new System.Drawing.Font("Adobe Gothic Std B", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.departmentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.departmentLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(72)))), ((int)(((byte)(84)))));
             this.departmentLabel.Location = new System.Drawing.Point(303, 40);
             this.departmentLabel.Name = "departmentLabel";
-            this.departmentLabel.Size = new System.Drawing.Size(348, 60);
+            this.departmentLabel.Size = new System.Drawing.Size(342, 55);
             this.departmentLabel.TabIndex = 3;
             this.departmentLabel.Text = "Departamento";
             // 
@@ -142,6 +142,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsolidatedPage";
             this.Text = "ConsolidatedPage";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
