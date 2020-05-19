@@ -98,27 +98,68 @@ namespace project_gui
             }
         }
 
-        public double GetInfoChartHumidity(int Relation)
+        //Liquid precipitation
+        public List<double> GetInfoLiquidPrecipitationEstimations(int Relation)
         {
-            return project.GetInfoHumidity(Relation);
+            return project.GetAssociation.GetRelations[Relation].GetArea.Liquidprecipitationestimations;
         }
 
-        public int[] GetHumidityHarv(int Relation)
+        public double GetLiquidPrecipitation(int Relation)
         {
-            return project.GetInfoHumidityHarv(Relation);
+            return project.GetAssociation.GetRelations[Relation].GetFarming.GetLiquidPrecipitation;
         }
+
+        //Relative Humidity
+        public List<double> GetInfoChartHumidity(int Relation)
+        {
+            return project.GetAssociation.GetRelations[Relation].GetArea.Relativehumidityestimations;
+        }
+
+        public double[] GetInfoHumidity(int Relation)
+        {
+            return project.GetAssociation.GetRelations[Relation].GetFarming.GetRelativeHumidity;
+        }
+        
+        //Temperature
+        public List<double> GetInfoChartTemperature(int Relation)
+        {
+            return project.GetAssociation.GetRelations[Relation].GetArea.Temperatureestimations;
+        }
+
+        public double GetInfoMaxTemperature(int Relation)
+        {
+            return project.GetAssociation.GetRelations[Relation].GetFarming.GetMaxTemperature;
+        }
+        public double GetInfoMinTemperature(int Relation)
+        {
+            return project.GetAssociation.GetRelations[Relation].GetFarming.GetMinTemperature;
+        }
+
+        //Wind Spend
+        public List<double> GetInfoChartWindSpeed(int Relation)
+        {
+            return project.GetAssociation.GetRelations[Relation].GetArea.Windspeedestimations;
+        }
+
+        public double GetInfoWindSpeed(int Relation)
+        {
+            return project.GetAssociation.GetRelations[Relation].GetFarming.GetWindSpeed;
+        }
+
 
         public double GetLongitude()
         {
-            //return project.GetAssociation.GetZone.Get
+            //String Longitude = project.GetAssociation.GetRelations[0].GetArea.Longitude;
+            //return Convert.ToDouble(Longitude);
             return -76.5224991;
         }
 
 
         public double GetLatitude()
-        { 
-            //dw
-            return 3.437220;
+        {
+            //String Latitude = project.GetAssociation.GetRelations[0].GetArea.Latitude;
+            //return Convert.ToDouble(Latitude);
+            return 3.4590000;
         }
 
         /*

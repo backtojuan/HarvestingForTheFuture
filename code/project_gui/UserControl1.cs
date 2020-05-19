@@ -49,20 +49,12 @@ namespace project_gui
             table.Columns.Add(new DataColumn("Compatibilidad", typeof(double)));
         }
 
+
+        //Data Grid view
         public void AddToDataGridView(int pos, String name, double Comp)
         {
-            table.Rows.Add(pos, name, Comp);
+            table.Rows.Add(pos, name, 100*Comp);
             dataGridView.DataSource = table;
-        }
-
-        public void SetHarvestingLabel(String harverting)
-        {
-            harvestingLabel.Text = harverting;
-        }
-
-        private void descriptionDep_Click(object sender, EventArgs e)
-        {
-            //borrar - error
         }
 
         //Humidity Relative
@@ -86,14 +78,36 @@ namespace project_gui
             TempChart.Series["Departamento"].Points.AddXY(x, y);
         }
 
-        public void AddPointInTemperatureMaxDHar(double x, double y)
+        public void AddPointInTemperatureMaxHar(double x, double y)
         {
             TempChart.Series["Cultivo Max"].Points.AddXY(x, y);
         }
 
-        public void AddPointInTemperatureMinDHar(double x, double y)
+        public void AddPointInTemperatureMinHar(double x, double y)
         {
             TempChart.Series["Cultivo Min"].Points.AddXY(x, y);
+        }
+
+        //Liquid precipitation
+        public void AddPointInLiquidPrecDep(double x, double y)
+        {
+            LiquidChart.Series["Departamento"].Points.AddXY(x, y);
+        }
+
+        public void AddPointInLiquidPrecHar(double x, double y)
+        {
+            LiquidChart.Series["Cultivo"].Points.AddXY(x, y);
+        }
+
+        //Wind Speed
+        public void AddPointInWindSpeedDep(double x, double y)
+        {
+            WindChart.Series["Departamento"].Points.AddXY(x, y);
+        }
+
+        public void AddPointInWindSpeedcHar(double x, double y)
+        {
+            WindChart.Series["Cultivo"].Points.AddXY(x, y);
         }
 
         private void gMapControl1_Load(object sender, EventArgs e)
@@ -113,7 +127,7 @@ namespace project_gui
 
             //Agregar un tooltip de texto a los marcadores
             marker.ToolTipMode = MarkerTooltipMode.Always;
-            marker.ToolTipText = String.Format("Ubicación: \n Latitud:{0} \n Longitud: {1}", latitude, longitude));
+            marker.ToolTipText = String.Format("Ubicación: \n Latitud:{0} \n Longitud: {1}", latitude, longitude);
 
             //Agregar el marcador al map control
             gMapControl1.Overlays.Add(markerOverlay);
@@ -123,24 +137,68 @@ namespace project_gui
         {
             if (this.dataGridView.Columns[e.ColumnIndex].Name == "Compatibilidad")
             {
-                
-
-                if (Convert.ToInt32(e.Value) >= 90)
+                if (Convert.ToDouble(e.Value) >= 0)
                 {
-                    e.CellStyle.ForeColor = Color.DarkGreen;
+                    //e.CellStyle.ForeColor = Color.DarkGreen;
+                    e.CellStyle.BackColor = Color.Red;
+                }
+                if (Convert.ToDouble(e.Value) >= 40)
+                {
+                    //e.CellStyle.ForeColor = Color.DarkGreen;
+                    e.CellStyle.BackColor = Color.OrangeRed;
+                }
+                if (Convert.ToDouble(e.Value) >= 50)
+                {
+                    //e.CellStyle.ForeColor = Color.DarkGreen;
+                    e.CellStyle.BackColor = Color.Orange;
+                }
+                if (Convert.ToDouble(e.Value) >= 60)
+                {
+                    //e.CellStyle.ForeColor = Color.DarkGreen;
+                    e.CellStyle.BackColor = Color.Yellow;
+                }
+                if (Convert.ToDouble(e.Value) >= 70)
+                {
+                    //e.CellStyle.ForeColor = Color.DarkGreen;
+                    e.CellStyle.BackColor = Color.YellowGreen;
+                }
+
+                if (Convert.ToDouble(e.Value) >= 80)
+                {
+                    //e.CellStyle.ForeColor = Color.DarkGreen;
                     e.CellStyle.BackColor = Color.GreenYellow;
+                }
+
+                if (Convert.ToDouble(e.Value) >= 90)
+                {
+                    //e.CellStyle.ForeColor = Color.DarkGreen;
+                    e.CellStyle.BackColor = Color.Green;
                 }
             }
         }
 
         private void HarvestingSelect(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int rowSelected = e.RowIndex;
-            String Harvesting = dataGridView.Rows[rowSelected].Cells[1].Value.ToString();
+            int rowSelected = Convert.ToInt32(dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+            String Harvesting = dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
             harvestingLabel.Text = Harvesting;
-            //metodo para cargar la info
 
-            ConsolidatedPage.ShowInfoHarvesting(Harvesting, rowSelected);
+            HumidChart.Series["Departamento"].Points.Clear();
+            HumidChart.Series["Cultivo Min"].Points.Clear();
+            HumidChart.Series["Cultivo Max"].Points.Clear();
+
+            TempChart.Series["Departamento"].Points.Clear();
+            TempChart.Series["Cultivo Max"].Points.Clear();
+            TempChart.Series["Cultivo Min"].Points.Clear();
+
+            LiquidChart.Series["Departamento"].Points.Clear();
+            LiquidChart.Series["Cultivo"].Points.Clear();
+
+
+            WindChart.Series["Departamento"].Points.Clear();
+            WindChart.Series["Cultivo"].Points.Clear();
+
+            ConsolidatedPage.ShowInfoHarvesting(Harvesting, rowSelected-1);
 
         }
     }

@@ -57,14 +57,37 @@ namespace project_gui
         public void ShowInfoHarvesting(String Harvesting, int Relation)
         {
             //Llamar metodo para mostar info
-            double [] data = MainController.GetInfoChartHumidity(Relation);
-            int [] harvData = MainController.GetHumidityHarv(Relation);
+            List<double> liquid = MainController.GetInfoLiquidPrecipitationEstimations(Relation);
+            List<double> humidity = MainController.GetInfoChartHumidity(Relation);
+            List<double> temperature = MainController.GetInfoChartTemperature(Relation);
+            List<double> windspeed = MainController.GetInfoChartWindSpeed(Relation);
+
+            double liquidN = MainController.GetLiquidPrecipitation(Relation);
+            double[] humidityN = MainController.GetInfoHumidity(Relation);
+            double maxTemp = MainController.GetInfoMaxTemperature(Relation);
+            double minTemp = MainController.GetInfoMinTemperature(Relation);
+            double windSpeedN = MainController.GetInfoWindSpeed(Relation);
             //int year = 2011;
-            for(int i = 0; i < data.Length; i++)
+            for (int i = 2010; i < 2017; i++)
             {
-                userControl11.AddPointInHumidityDep(i+1, data[i]);
-                userControl11.AddPointInHumidityMaxHarv(i+1, harvData[1]);
-                userControl11.AddPointInHumidityMinHarv(i + 1, harvData[1]);
+                //Liquid Precipitation
+                if (i < liquid.Count)
+                    userControl11.AddPointInLiquidPrecDep(i + 1, liquid[i]);
+                userControl11.AddPointInLiquidPrecHar(i + 1, liquidN);
+                //Relative Humidity
+                if (i < humidity.Count)
+                    userControl11.AddPointInHumidityDep(i + 1, humidity[i]);
+                userControl11.AddPointInHumidityMaxHarv(i + 1, humidityN[1]);
+                userControl11.AddPointInHumidityMinHarv(i + 1, humidityN[0]);
+                //Temperature
+                if (i < temperature.Count)
+                    userControl11.AddPointInTemperatureDep(i + 1, temperature[i]);
+                userControl11.AddPointInTemperatureMaxHar(i + 1, maxTemp);
+                userControl11.AddPointInTemperatureMinHar(i + 1, minTemp);
+                //Wind Speed
+                if (i < windspeed.Count)
+                    userControl11.AddPointInWindSpeedDep(i + 1, windspeed[i]);
+                userControl11.AddPointInWindSpeedcHar(i + 1, windSpeedN);
             }
         }
     }

@@ -36,6 +36,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.userControl11 = new project_gui.UserControl1();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
@@ -48,7 +49,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(865, 26);
+            this.panel1.Size = new System.Drawing.Size(994, 26);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -92,7 +93,7 @@
             // 
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(830, 26);
+            this.panel3.Location = new System.Drawing.Point(959, 26);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(35, 586);
             this.panel3.TabIndex = 8;
@@ -105,18 +106,26 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 26);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(830, 143);
+            this.panel4.Size = new System.Drawing.Size(959, 143);
             this.panel4.TabIndex = 9;
             // 
             // userControl11
             // 
-            this.userControl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.userControl11.AutoScroll = true;
             this.userControl11.BackColor = System.Drawing.Color.White;
+            this.userControl11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userControl11.Location = new System.Drawing.Point(0, 169);
             this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(830, 443);
+            this.userControl11.Size = new System.Drawing.Size(959, 443);
             this.userControl11.TabIndex = 10;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 169);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(959, 12);
+            this.panel2.TabIndex = 11;
             // 
             // ConsolidatedPage
             // 
@@ -126,7 +135,8 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(72)))), ((int)(((byte)(84)))));
-            this.ClientSize = new System.Drawing.Size(865, 612);
+            this.ClientSize = new System.Drawing.Size(994, 612);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.userControl11);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -153,5 +163,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private UserControl1 userControl11;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -66,16 +66,6 @@ namespace project_model
             return association.GetRelations[i].GetCompatibility;
         }
 
-        public double GetInfoHumidity(int name)
-        {
-            return association.GetRelations[name].GetRelativeHumidityPercent;
-        }
-
-        public int[] GetInfoHumidityHarv(int Relation)
-        {
-            return association.GetRelations[Relation].GetFarming.GetRelativeHumidity;
-        }
-
         public Analyzer GetZone { get => analyzer; set => analyzer = value; }
         public Association GetAssociation { get => association; set => association = value; }
 

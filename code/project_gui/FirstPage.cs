@@ -22,14 +22,7 @@ namespace project_gui
         public FirstPage()
         {
             InitializeComponent();
-            //Inicializa MainController
-            MainController = new MainController(this);
-            //addElementsComboBox();
-
-            //agregar metodo de carga;
-            //departamentos.DropDownStyle = ComboBoxStyle.DropDownList;
-            //Test();
-            
+            MainController = new MainController(this);            
         }
 
         public void LoadFirstPage(List<String> departmets)

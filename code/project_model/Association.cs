@@ -62,38 +62,38 @@ namespace project_model
                     String[] infor = line.Split(';');
 
                     String Name = infor[0];
-                    int LiquidPrecipitation = 0;
-                    int WindSpeed = 0;
-                    int MinTemperature = 0;
-                    int MaxTemperature = 0;
-                    int[] RelativeHumidity = new int[2];
+                    double LiquidPrecipitation = 0;
+                    double WindSpeed = 0;
+                    double MinTemperature = 0;
+                    double MaxTemperature = 0;
+                    double[] RelativeHumidity = new double[2];
 
                     if (!infor[1].Equals(Farming.noregister))
                     {
-                        LiquidPrecipitation = Convert.ToInt32(infor[1]);
+                        LiquidPrecipitation = Convert.ToDouble(infor[1]);
                     }
 
                     if (!infor[2].Equals(Farming.noregister))
                     {
-                        WindSpeed = Convert.ToInt32(infor[2]);
+                        WindSpeed = Convert.ToDouble(infor[2]);
                     }
 
                     if (!infor[3].Equals(Farming.noregister))
                     {
-                        MinTemperature = Convert.ToInt32(infor[3]);
+                        MinTemperature = Convert.ToDouble(infor[3]);
                     }
 
                     if (!infor[4].Equals(Farming.noregister))
                     {
-                        MaxTemperature = Convert.ToInt32(infor[4]);
+                        MaxTemperature = Convert.ToDouble(infor[4]);
                     }
 
 
                     if (!infor[5].Equals(Farming.noregister))
                     {
                         String[] partialinfor = infor[5].Split('-');
-                        RelativeHumidity[0] = Convert.ToInt32(partialinfor[0]);
-                        RelativeHumidity[1] = Convert.ToInt32(partialinfor[1]);
+                        RelativeHumidity[0] = Convert.ToDouble(partialinfor[0]);
+                        RelativeHumidity[1] = Convert.ToDouble(partialinfor[1]);
                     }
 
                     Farming farming = new Farming(Name, LiquidPrecipitation, RelativeHumidity, WindSpeed, MinTemperature, MaxTemperature);
@@ -153,7 +153,7 @@ namespace project_model
         /**
          * This method measures the compatibility percent of the expected value and the current value of the variable of interest.
          */
-        public double Match(int expected, double current, double inf, double sup)
+        public double Match(double expected, double current, double inf, double sup)
         {
             double compatible = 0;
 
@@ -167,7 +167,7 @@ namespace project_model
         /**
         * This method measures the compatibility percent of the expected value and the current value of the variable of interest.
         */
-        public double Match(int expectedinf, int expectedsup, double current, double inf, double sup) 
+        public double Match(double expectedinf, double expectedsup, double current, double inf, double sup) 
         {
             double compatible = 0;
 
