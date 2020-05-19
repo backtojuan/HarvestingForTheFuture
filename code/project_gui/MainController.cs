@@ -71,6 +71,15 @@ namespace project_gui
         }
 
         /*
+         * retorna la url de la imagen indicada por parámetro
+         */
+
+        public String GetImageDepartament(String departamentName)
+        {
+            return Principal.GetDepartments[departamentName].GetImage;
+        }
+
+        /*
          * Carga ConsolidatedPage
          */
         public void LoadConsolidatedPage(String name)

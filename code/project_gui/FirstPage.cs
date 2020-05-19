@@ -87,5 +87,15 @@ namespace project_gui
             desciptionLabel.Text = MainController.GetDepartmentDescription(departmentsCmb.Text);
             //image.
         }
+
+        private void FirstPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            pictureBox3.Load(MainController.GetImageDepartament(departmentsCmb.Text));
+        }
     }
 }
