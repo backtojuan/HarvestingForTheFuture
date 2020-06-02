@@ -10,10 +10,10 @@ _________________________________________________________________________
 
 **Pre visualización**
 
-![FirstPageView](https://github.com/backtojuan/HarvestingForTheFuture/tree/v1.1.0/v1.1.0/firstpageview.PNG)
-![DepartmentSelected](https://github.com/backtojuan/HarvestingForTheFuture/tree/v1.1.0/v1.1.0/departmentselected.PNG)
-![ConsolidatedPageView](https://github.com/backtojuan/HarvestingForTheFuture/tree/v1.1.0/v1.1.0/consolidatedpageview.PNG)
-![Graphs](https://github.com/backtojuan/HarvestingForTheFuture/tree/v1.1.0/v1.1.0/graphs.PNG)
+![FirstPageView](https://github.com/backtojuan/HarvestingForTheFuture/blob/master/overview/v1.1.0/firstpageview.PNG)
+![DepartmentSelected](https://github.com/backtojuan/HarvestingForTheFuture/blob/master/overview/v1.1.0/departmentselected.PNG)
+![ConsolidatedPageView](https://github.com/backtojuan/HarvestingForTheFuture/blob/master/overview/v1.1.0/consolidatedpage.PNG)
+![Graphs](https://github.com/backtojuan/HarvestingForTheFuture/blob/master/overview/v1.1.0/graphs.PNG)
 
 _____________________________________________________
 
