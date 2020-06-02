@@ -4,7 +4,7 @@ _______________________________________________________________
 
 Esta entrega incluye los siguientes puntos:
 
-- Especificación de requerimientos funcionales.
+- Especificación de [requerimientos](https://github.com/backtojuan/HarvestingForTheFuture/tree/master/docs/2nd-delivery/Especificación_de_requerimientos.pdf) funcionales.
 
 - [Diagrama](https://drive.google.com/file/d/1khdktTyoYZpk3YOs77DdQqvVRXclhKrg/view?usp=sharing) de clases del modelo. 
 
